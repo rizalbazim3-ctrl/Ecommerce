@@ -1,0 +1,153 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "category": "Fiction",
+      "price": 15,
+      "rating": 4.4,
+      "stock": 20,
+      "pages": 180,
+      "description": "A classic novel about wealth, love, ambition, and the American Dream.",
+      "image": "https://media.bookchor.com/images/cover/568/9781447225928.jpg"
+    },
+    {
+      "id": 2,
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "category": "Fiction",
+      "price": 18,
+      "rating": 4.8,
+      "stock": 15,
+      "pages": 336,
+      "description": "A powerful story about justice, morality, and growing up in a divided society.",
+      "image": "https://media.bookchor.com/images/cover/568/9780099549482.jpg"
+    },
+    {
+      "id": 3,
+      "title": "The Alchemist",
+      "author": "Paulo Coelho",
+      "category": "Fiction",
+      "price": 14,
+      "rating": 4.7,
+      "stock": 25,
+      "pages": 208,
+      "description": "A young shepherd follows his dreams and discovers the meaning of destiny.",
+      "image": "https://media.bookchor.com/images/cover/bc/9780785841722.jpg"
+    },
+
+    {
+      "id": 4,
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "category": "Self-Help",
+      "price": 22,
+      "rating": 4.9,
+      "stock": 30,
+      "pages": 320,
+      "description": "A practical guide to building good habits and breaking bad ones through small improvements.",
+      "image": "https://media.bookchor.com/images/cover/bc/9781847941831_1.jpg"
+    },
+    {
+      "id": 5,
+      "title": "The Power of Now",
+      "author": "Eckhart Tolle",
+      "category": "Self-Help",
+      "price": 19,
+      "rating": 4.6,
+      "stock": 18,
+      "pages": 236,
+      "description": "A guide to mindfulness and living peacefully in the present moment.",
+      "image": "https://media.bookchor.com/images/cover/583/9788190105910.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Think and Grow Rich",
+      "author": "Napoleon Hill",
+      "category": "Self-Help",
+      "price": 16,
+      "rating": 4.5,
+      "stock": 22,
+      "pages": 320,
+      "description": "A classic personal development book about mindset, goals, and achieving success.",
+      "image": "https://media.bookchor.com/images/cover/586/9788192681047.jpg"
+    },
+    {
+      "id": 13,
+      "title": "Steve Jobs",
+      "author": "Walter Isaacson",
+      "category": "Biography",
+      "price": 30,
+      "rating": 4.7,
+      "stock": 12,
+      "pages": 656,
+      "description": "A detailed biography of Steve Jobs and his life, career, creativity, and impact on technology.",
+      "image": "https://media.bookchor.com/images/cover/592/9781451648539.jpg"
+    },
+    {
+      "id": 14,
+      "title": "Long Walk to Freedom",
+      "author": "Nelson Mandela",
+      "category": "Biography",
+      "price": 25,
+      "rating": 4.8,
+      "stock": 17,
+      "pages": 656,
+      "description": "Nelson Mandela's autobiography describing his journey and struggle against apartheid.",
+      "image": "https://media.bookchor.com/images/cover/595/9780349139623.jpg"
+    },
+    {
+      "id": 15,
+      "title": "The Diary of a Young Girl",
+      "author": "Anne Frank",
+      "category": "Biography",
+      "price": 17,
+      "rating": 4.9,
+      "stock": 24,
+      "pages": 352,
+      "description": "The diary of Anne Frank documenting her life and experiences during World War II.",
+      "image": "https://media.bookchor.com/images/cover/579/9780140264739.jpg"
+    },
+
+    {
+      "id": 16,
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "category": "Science Fiction",
+      "price": 23,
+      "rating": 4.8,
+      "stock": 15,
+      "pages": 688,
+      "description": "An epic science fiction story about politics, power, survival, and destiny on a desert planet.",
+      "image": "https://media.bookchor.com/images/cover/bc/9780593098271.jpg" 
+    },
+    {
+      "id": 17,
+      "title": "The Martian",
+      "author": "Andy Weir",
+      "category": "Science Fiction",
+      "price": 20,
+      "rating": 4.7,
+      "stock": 19,
+      "pages": 384,
+      "description": "An astronaut stranded on Mars uses science and engineering to survive against impossible odds.",
+      "image": "https://99bookstores.com/cdn/shop/files/29752927.jpg?v=1780827624&width=990"
+    },
+    {
+      "id": 18,
+      "title": "Project Hail Mary",
+      "author": "Andy Weir",
+      "category": "Science Fiction",
+      "price": 24,
+      "rating": 4.9,
+      "stock": 21,
+      "pages": 496,
+      "description": "A lone astronaut awakens on a desperate mission to save humanity from an extinction-level threat.",
+      "image": "https://99bookstores.com/cdn/shop/files/245571012.jpg?v=1781511935&width=990"
+    }
+  ],
+  "users" : [
+    
+  ]
+}

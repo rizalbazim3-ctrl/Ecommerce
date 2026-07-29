@@ -36,7 +36,6 @@
       "description": "A young shepherd follows his dreams and discovers the meaning of destiny.",
       "image": "https://media.bookchor.com/images/cover/bc/9780785841722.jpg"
     },
-
     {
       "id": 4,
       "title": "Atomic Habits",
@@ -109,7 +108,6 @@
       "description": "The diary of Anne Frank documenting her life and experiences during World War II.",
       "image": "https://media.bookchor.com/images/cover/579/9780140264739.jpg"
     },
-
     {
       "id": 16,
       "title": "Dune",
@@ -120,7 +118,7 @@
       "stock": 15,
       "pages": 688,
       "description": "An epic science fiction story about politics, power, survival, and destiny on a desert planet.",
-      "image": "https://media.bookchor.com/images/cover/bc/9780593098271.jpg" 
+      "image": "https://media.bookchor.com/images/cover/bc/9780593098271.jpg"
     },
     {
       "id": 17,
@@ -147,7 +145,41 @@
       "image": "https://99bookstores.com/cdn/shop/files/245571012.jpg?v=1781511935&width=990"
     }
   ],
-  "users" : [
-    
+  "users": [
+    {
+      "name": "shan",
+      "email": "shan@gmail.com",
+      "phone": "9995555308",
+      "password": "00000000",
+      "id": 1
+    },
+    {
+      "name": "shadhil",
+      "email": "shadhil@gmail.com",
+      "phone": "7994263689",
+      "password": "00000000",
+      "id": 2
+    },
+    {
+      "name": "rizal",
+      "email": "basim@gmail.com",
+      "phone": "7934733838",
+      "password": "000000000",
+      "id": 3
+    },
+    {
+      "name": "basim",
+      "email": "basim2@gmail.com",
+      "phone": "7994263689",
+      "password": "00000000",
+      "id": 4
+    },
+    {
+      "name": "messi",
+      "email": "messi@gmail.com",
+      "phone": "9090909090",
+      "password": "99999999",
+      "id": 5
+    }
   ]
 }

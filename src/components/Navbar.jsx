@@ -55,7 +55,11 @@ export default function Navbar({isLogin}) {
             <li
               className="relative cursor-pointer"
               onMouseEnter={() => setCategoriesOpen(true)}
-              onMouseLeave={() => setCategoriesOpen(false)}
+              onMouseLeave={() =>{
+                setTimeout(()=>{
+                  setCategoriesOpen(false)
+                },3000)
+              }}
             >
               <span className="flex items-center gap-1 hover:text-[#8a4a1f] transition-colors">
                 Categories
@@ -64,14 +68,35 @@ export default function Navbar({isLogin}) {
 
               {categoriesOpen && (
                 <ul className="absolute left-0 top-full mt-3 w-52 bg-[#fbf6ec] border border-[#3b2a1f]/15 shadow-lg py-2 z-20">
-                  {categories.map((cat) => (
-                    <li
-                      key={cat}
-                      className="px-4 py-2 text-[14px] text-[#2c2117] hover:bg-[#8a4a1f]/10 hover:text-[#8a4a1f] transition-colors cursor-pointer"
-                    >
-                      {cat}
-                    </li>
-                  ))}
+                 
+                    <li className="px-4 py-2 text-[14px] text-[#2c2117] hover:bg-[#8a4a1f]/10 hover:text-[#8a4a1f] transition-colors "
+                    onClick={ ()=> {
+                      navigate("/BooksFiction")
+                    }} >Fiction</li>
+                    <li className="px-4 py-2 text-[14px] text-[#2c2117] hover:bg-[#8a4a1f]/10 hover:text-[#8a4a1f] transition-colors "
+                    onClick={ ()=> {
+                      navigate("/BooksBiography")
+                    }} >Biography</li>
+                    <li className="px-4 py-2 text-[14px] text-[#2c2117] hover:bg-[#8a4a1f]/10 hover:text-[#8a4a1f] transition-colors "
+                    onClick={ ()=> {
+                      navigate("/BooksRomance")
+                    }} >Romance</li>
+                    <li className="px-4 py-2 text-[14px] text-[#2c2117] hover:bg-[#8a4a1f]/10 hover:text-[#8a4a1f] transition-colors "
+                    onClick={ ()=> {
+                      navigate("/BooksHistory")
+                    }} >History</li>
+                    <li className="px-4 py-2 text-[14px] text-[#2c2117] hover:bg-[#8a4a1f]/10 hover:text-[#8a4a1f] transition-colors "
+                    onClick={ ()=> {
+                      navigate("/BooksMystery")
+                    }} >Mystery</li>
+                    <li className="px-4 py-2 text-[14px] text-[#2c2117] hover:bg-[#8a4a1f]/10 hover:text-[#8a4a1f] transition-colors "
+                    onClick={ ()=> {
+                      navigate("/BooksScienceFiction")
+                    }} >Science-Fiction</li>
+                    <li className="px-4 py-2 text-[14px] text-[#2c2117] hover:bg-[#8a4a1f]/10 hover:text-[#8a4a1f] transition-colors "
+                    onClick={ ()=> {
+                      navigate("/BooksSelfhelp")
+                    }} >Self-Help</li>
                 </ul>
               )}
             </li>
@@ -107,6 +132,9 @@ export default function Navbar({isLogin}) {
             <button
               aria-label="Wishlist"
               className="hover:text-[#8a4a1f] transition-colors"
+              onClick={()=>{
+                navigate("/Wishlist")
+              }}
             >
               <Heart size={21} strokeWidth={1.5} />
             </button>
@@ -114,6 +142,9 @@ export default function Navbar({isLogin}) {
             <button
               aria-label="Cart"
               className="relative hover:text-[#8a4a1f] transition-colors"
+              onClick={()=>{
+                navigate("/Cart" )
+              }}
             >
               <ShoppingCart size={21} strokeWidth={1.5} />
             </button>

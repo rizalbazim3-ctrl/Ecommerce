@@ -2,33 +2,18 @@ import React,{useEffect} from "react";
 import axios from "axios"
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import {useQuery} from "@tanstack/react-query"
 import BookCard from "../components/BookCard";
 import {useNavigate} from "react-router-dom"
-import {useSelector} from "react-redux";
+import useBooks from "../services/useBooks";
 
 function Home() {
 
   const navigate = useNavigate()
-  const kithab = useSelector((state)=>state.AllBooks.kithab)
-  const featuredBook = kithab.slice(0,4)
-  // useEffect(()=>{
-  //     const fetchFeatureadBooks = async ()=>{
-  //  try{ const response = await axios.get("http://localhost:4001/books")
-  //   console.log(response.data.slice(0,3))
-  //    dispatch(addBook(response.data))
-  // }
-  //   catch(error){
-  //     console.error(error)
-  //   }
-  // }
-  //  fetchFeatureadBooks()
-  // },[dispatch])
-
-  // const {data : books = []} = useQuery({
-  //   queryKey : ["book"],
-  //   queryFn : fetchFeatureadBooks,
-  // })
+  const {data : books = [],
+    isLoading,
+    isError
+  } = useBooks()
+  const featuredBook = books.slice(0,4)
 
   return (
     <div className="m-4 ">

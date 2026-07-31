@@ -3,10 +3,14 @@ import BookCard from '../components/BookCard'
 import {useSelector} from "react-redux"
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import useBooks from '../services/useBooks'
 
 function BooksBiography() {
-  const kithab = useSelector((state=> state.AllBooks.kithab))
-  const BiographyBook = kithab.filter((book)=> book.category === "Biography")
+  const {data : books = [],
+    isLoading,
+    isError
+  } = useBooks()
+  const BiographyBook = books.filter((book)=> book.category === "Biography")
   return (
       <div>
       <Navbar/>

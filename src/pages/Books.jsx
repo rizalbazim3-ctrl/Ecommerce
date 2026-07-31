@@ -1,21 +1,13 @@
 import React from 'react'
 import BookCard from '../components/BookCard'
+import useBooks from '../services/useBooks'
 
 function Books() {
-  const fetchFeatureadBooks = async ()=>{
-   try{ const response = await axios.get("http://localhost:4001/books")
-    console.log(response.data.slice(0,8))
-    return response.data
-  }
-    catch(error){
-      console.error(error)
-    }
-  } 
 
-  const {data : books = []} = useQuery({
-    queryKey : ["book"],
-    queryFn : fetchFeatureadBooks,
-  })
+  const {data : books = [],
+    isLoading,
+    isError
+  } = useBooks()
 
   return (
     

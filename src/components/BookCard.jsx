@@ -2,22 +2,49 @@ import React,{useState} from 'react'
 import {Heart} from "lucide-react"
 import Books from '../pages/Books'
 import { useNavigate } from 'react-router-dom'
+import axios from "axios"
+import {toast} from "sonner"
 
 function BookCard({book}) {
+  // const  uptaing = async()=>{
+  //                 const response = await axios.get(` http://localhost:4001/books`)
+
+  //                 const data = response.data
+
+  //                 await Promise.all(
+  //                     data.map((book)=> {
+  //                        axios.patch(` http://localhost:4001/books/${book.id}`,{
+  //                           addcart :   false 
+  //                        })
+  //                     })
+  //                 )
+  //               }
   const [isclick,setIsclick] = useState(false)
   const navigate =useNavigate()
+
+  const wishlist = async ()=> {
+                         axios.patch(` http://localhost:4001/books/${book.id}`,{
+                            wishlist : book.wishlist ?  false :  true
+                         })
+                        }
+
+  const addcart = async ()=> {
+                         axios.patch(` http://localhost:4001/books/${book.id}`,{
+                            addcart : true
+                         })
+                        }
   return (
-    <div className='text-center group block'>
-    <div className=" w-[80%] md:w-[250px] h-[300px] rounded-lg border-2 border-[#3b2a1f]/10 p-4 bg-[#8a4a1f]/10 hover:border-[#8a4a1f]  transition duration-300 relative">
+    <div className='mx-auto my-10 bg-[#fbf6ec] rounded-2xl shadow-2xl py-3 px-3 text-center group block hover:scale-110 tansition duration-700'>
+    <div className=" w-[80%] md:w-[200px] h-[250px] mx-auto rounded-lg border-2 border-[#3b2a1f]/10 p-4 bg-[#8a4a1f]/10 hover:border-[#8a4a1f]  transition duration-300 relative">
        <img src={book.image} alt="bookImage" 
        className="w-[100%] h-full object-cover mx-auto overflow-hidden"
        onClick={()=>{
       navigate(`/Books/${book.id}`)
     }}
        />
-               <Heart className={`hidden  p-1  bg-white rounded-full group-hover:inline-block absolute top-2 right-4 ${isclick ? "text-red-500 fill-red-500" : `text-black/40` }`} 
+               <Heart className={`hidden  p-1  bg-white rounded-full group-hover:inline-block absolute top-2 right-4 ${book.wishlist ? "text-red-500 fill-red-500" : `text-black/40` }`} 
                onClick={()=>{
-                isclick ? setIsclick(false) : setIsclick(true)
+                wishlist()
                }}/>
     </div>
     <div className='w-[100%]'
@@ -28,7 +55,12 @@ function BookCard({book}) {
         <p >{book.rating}</p>
       <p>Price&nbsp;:&nbsp; {book.price}</p>
     </div>
-    <button className=' border bg-[#241a12]/80 text-[#e7dcc4] px-2 rounded '>Add Cart</button>
+    <button className=' border bg-[#241a12]/80 text-[#e7dcc4] px-2 rounded'
+    onClick={()=>{
+      book.addcart ? toast.error("already added") :
+                addcart() 
+               }}
+               >Add Cart</button>
     </div>
   )
 }

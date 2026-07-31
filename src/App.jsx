@@ -20,26 +20,13 @@ import BooksMystery from "./pages/BooksMystery"
 import BooksSelfhelp from "./pages/BooksSelfhelp"
 import BooksBiography from "./pages/BooksBiography"
 import BooksScienceFiction from "./pages/BooksScienceFiction"
-import { useSelector,useDispatch } from 'react-redux'
-import { addBook } from './services/BookSlice'
 import ScrollTop from "./services/ScrollTop"
+import PaymentResult from "./pages/PaymentResult"
 
 
 
 function App() {
-  const dispatch = useDispatch()
-  const kithab = useSelector((state)=>state.AllBooks.kithab)
-  useEffect(()=>{
-      const fetchFeatureadBooks = async ()=>{
-   try{ const response = await axios.get("http://localhost:4001/books")
-     dispatch(addBook(response.data))
-  }
-    catch(error){
-      console.error(error)
-    }
-  }
-   fetchFeatureadBooks()
-  },[dispatch])
+  
   return (
     <div>
       <ScrollTop/>
@@ -50,7 +37,7 @@ function App() {
         <Route path = "/Books/:id" element = {<BookDetails/>}/>
         <Route path = "/Books" element = {<Books/>}/>
         <Route path = "/Cart" element = {<Cart/>}/>
-        <Route path = "/Checkout" element = {<Checkout/>}/>
+        <Route path = "/Checkout/:id" element = {<Checkout/>}/>
         <Route path = "/Login" element = {<Login/>}/>
         <Route path = "/Orders" element = {<Orders/>}/>
         <Route path = "/Register" element = {<Register/>}/>
@@ -62,6 +49,7 @@ function App() {
         <Route path = "/BooksSelfhelp" element = {<BooksSelfhelp/>}/>
         <Route path = "/BooksBiography" element = {<BooksBiography/>}/>
         <Route path = "/BooksScienceFiction" element = {<BooksScienceFiction/>}/>
+        <Route path ="/PaymentResult"  element = {<PaymentResult/>} />
       </Routes>
     </div>
   )

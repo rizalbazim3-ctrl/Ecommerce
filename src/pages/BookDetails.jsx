@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import axios from "axios"
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 function BookDetails() {
   const {id} = useParams()
@@ -51,6 +52,7 @@ function BookDetails() {
       </div>
     
   }
+  <Footer/>
   </div>
   )
 }

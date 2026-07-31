@@ -1,6 +1,6 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { Routes,Route } from 'react-router-dom'
-
+import axios from "axios"
 import BookCard from "./components/BookCard"
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
@@ -20,12 +20,29 @@ import BooksMystery from "./pages/BooksMystery"
 import BooksSelfhelp from "./pages/BooksSelfhelp"
 import BooksBiography from "./pages/BooksBiography"
 import BooksScienceFiction from "./pages/BooksScienceFiction"
+import { useSelector,useDispatch } from 'react-redux'
+import { addBook } from './services/BookSlice'
+import ScrollTop from "./services/ScrollTop"
 
 
 
 function App() {
+  const dispatch = useDispatch()
+  const kithab = useSelector((state)=>state.AllBooks.kithab)
+  useEffect(()=>{
+      const fetchFeatureadBooks = async ()=>{
+   try{ const response = await axios.get("http://localhost:4001/books")
+     dispatch(addBook(response.data))
+  }
+    catch(error){
+      console.error(error)
+    }
+  }
+   fetchFeatureadBooks()
+  },[dispatch])
   return (
     <div>
+      <ScrollTop/>
       <Routes>
         <Route path = "/" element = {<Home/>} />
         <Route path = "/Footer" element = {<Footer/>}/>

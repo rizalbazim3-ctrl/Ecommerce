@@ -26,16 +26,18 @@ export default function Navbar({isLogin}) {
   return (
     <div
       style={{ fontFamily: "'EB Garamond', Georgia, serif" }}
-      className="w-full "
+      className="w-full sticky top-0 z-12"
     >
 
       {/* Main nav */}
-      <nav className="w-full bg-[#fbf6ec]  rounded-xl border-b border-[#3b2a1f]/15">
+      <nav className="w-full bg-[#fbf6ec]  rounded-xl border-b border-[#3b2a1f]/15 ">
         <div className="max-w-7xl mx-auto px-6 flex items-center gap-6 h-20">
           {/* Logo / home */}
           <a
-            href="#home"
             className="flex items-center gap-2 cursor-pointer group shrink-0"
+            onClick={()=>{
+              navigate("/")
+            }}
           >
             <BookOpen
               size={26}

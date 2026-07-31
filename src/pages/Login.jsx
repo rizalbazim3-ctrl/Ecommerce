@@ -59,7 +59,7 @@ function Login() {
         <span className='absolute right-3'>ForgotPassword?</span>
       </p>
       <footer className = " mt-4 w-sm h-[100px] z-10">
-        <button className = "border rounded-xl w-full py-2 bg-white/30 hover:bg-black/80 hover:text-white mb-10" 
+        <button className = "border border-white/30 rounded-xl w-full py-2 bg-white/30 hover:bg-black/80 hover:border-black/80 hover:text-white mb-10" 
         onClick = {handleSignIn}
         >Login</button>
         <p className = "mb-5 w-sm text-center">or</p>

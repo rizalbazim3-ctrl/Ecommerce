@@ -4,15 +4,32 @@ import {useSelector} from "react-redux"
 import {toast} from "sonner"
 import { useNavigate } from 'react-router-dom' 
 import useBooks from '../services/useBooks'
+import Footer from "../components/Footer"
+import { User } from 'lucide-react'
+import { useMutation,useQueryClient,useQuery } from '@tanstack/react-query'
+import axios from "axios"
+import useUsers from '../services/useUsers'
+import Navbar from '../components/Navbar'
 
 function Checkout() {
-  const {id} = useParams()
+  const checkoutItems = JSON.parse(
+  localStorage.getItem("checkoutItems") || "[]"
+ )
+ console.log(checkoutItems)
   const navigate = useNavigate()
+
   const {data : books = [],
-    isLoading,
-    isError
+    isLoading : booksloading,
+    isError : bookserror
   } = useBooks()
-  const checkout = books.find((book)=> book.id === Number(id))
+
+  const {
+    data : user ,
+    isLoading : userloading,
+    isError : usererror
+  } = useUsers()
+
+  // const checkout = books.find((book)=> book.id === Number(id))
   const [quantity,setQuantity] = useState(1)
   const [name,setName] = useState("")
   const [number,setNumber] = useState(0)
@@ -21,40 +38,201 @@ function Checkout() {
   const [state,setState] = useState("")
   const [pincode,setPincode] = useState("")
   const [paymentMethod,setPaymentMethod] = useState("")
+  const [orderDetails,setOrderDetails] = useState([])
+  const userId = localStorage.getItem("userId")
+  const queryClient = useQueryClient()
+  
 
-  const handlePlaceOrder = ()=>{
-    if(name === ""){
-      toast.error("Enter your name")
-    }else if(number === "" || number.length !== 10){
-      toast.error("check your number")
-    }else if(street === ""){
-      toast.error("Enter Street/House")
-      console.log(street)
-    }else if(place === ""){
-      toast.error("Enter city")
-    }else if(state === ""){
-      toast.error("Enter your State")
-    }else if(pincode === ""){
-      toast.error("Enter your valid pincode")
-    }else if(paymentMethod === ""){
-      toast.error("Select any pament method")
-    }else{
-      setName("")
-      setNumber("")
-      setStreet("")
-      setPlace("")
-      setPincode("")
-      setState("")
-      setPaymentMethod("")
-      
-      toast.success("Successfull")
-      navigate("/PaymentResult")
+const addAddress = async ({ userId, newDetails }) => {
+  // Get the latest user data from server
+  const userResponse = await axios.get(
+    `http://localhost:4001/users/${userId}`
+  )
+
+  const user = userResponse.data
+
+  // Add only the current new order
+  const updatedOrders = [
+    ...(user.orderedUserDetails || []),
+    newDetails
+  ]
+
+  // Update server
+  const response = await axios.patch(
+    `http://localhost:4001/users/${userId}`,
+    {
+      orderedUserDetails: updatedOrders
     }
+  )
+
+  return response.data
+}
+
+const patchMutation = useMutation({
+  mutationFn: addAddress,
+
+  onSuccess: () => {
+    queryClient.invalidateQueries({
+      queryKey: ["user"]
+    })
+
+    // Delete only checkout data after successful order
+    localStorage.removeItem("checkoutItems")
+
+    console.log("Order successfully saved")
+  },
+
+  onError: (error) => {
+    console.log("Order failed:", error)
+    toast.error("Order failed")
+  }
+})
+
+const increaseQuantity = (id) => {
+  const updatedItems = checkoutItems.map((item) =>
+    item.id === id
+      ? {
+          ...item,
+          quantity: item.quantity + 1
+        }
+      : item
+  )
+
+  localStorage.setItem(
+    "checkoutItems",
+    JSON.stringify(updatedItems)
+  )
+
+  window.location.reload()
+}
+
+const decreaseQuantity = (id) => {
+  const updatedItems = checkoutItems.map((item) =>
+    item.id === id
+      ? {
+          ...item,
+          quantity: item.quantity - 1
+        }
+      : item
+  )
+
+  localStorage.setItem(
+    "checkoutItems",
+    JSON.stringify(updatedItems)
+  )
+
+  window.location.reload()
+}
+
+
+const handlePlaceOrder = async () => {
+  if (checkoutItems.length === 0) {
+    toast.error("Select product")
+    return
+  }
+
+  if (name === "") {
+    toast.error("Enter your name")
+    return
+  }
+
+  if (number === "" || number.length !== 10) {
+    toast.error("Check your number")
+    return
+  }
+
+  if (street === "") {
+    toast.error("Enter Street/House")
+    return
+  }
+
+  if (place === "") {
+    toast.error("Enter city")
+    return
+  }
+
+  if (state === "") {
+    toast.error("Enter your State")
+    return
+  }
+
+  if (pincode === "") {
+    toast.error("Enter your valid pincode")
+    return
+  }
+
+  if (paymentMethod === "") {
+    toast.error("Select any payment method")
+    return
+  }
+
+  const newDetails = {
+    orderDate: new Date().toISOString(),
+
+    address: {
+      orderedName: name,
+      orderedNumber: number,
+      orderedStreet: street,
+      orderedPlace: place,
+      orderedPincode: pincode,
+      orderedState: state
+    },
+
+    payment: paymentMethod,
+
+    items: checkoutItems
+  }
+
+  try {
+    await patchMutation.mutate({
+      userId,
+      newDetails
+    })
+
+    toast.success("Order successfully placed")
+
+    navigate("/PaymentResult")
+
+  } catch (error) {
+    toast.error("Failed to place order")
+    console.log(error)
+  }
+}
+
+  console.log(checkoutItems)
+
+  // const checkoutItems = id ? [checkout] : items
+
+  const totalPrice = checkoutItems.reduce(
+  (total, item) => {
+    return total + item.price * item.quantity
+  },
+  0
+)
+
+  const totalQuantity = checkoutItems.reduce(
+  (total, item) => total +  item.quantity,
+  0
+  );
+
+  if(booksloading){
+   return  <p>Loading...</p>
+  }
+  if(booksloading){
+    return <p>something is wrong ,Try again</p>
   }
 
   return (
+    <>
     <div className='w-full  flex  flex-col  items-center mb-20 '>
-       <div 
+
+      <Navbar/>
+
+      <h1 className="text-4xl font-serif font-bold text-[#3b2a20] border-b text-center m-10 hover:scale-102 duration-500">
+            Complete Your Purchase</h1>
+     {
+       checkoutItems.map((checkout)=>(
+          <div key = {checkout.id}
        className="w-[50%] flex flex-row py-5 my-10 bg-[#fbf6ec] rounded-2xl shadow-2xl overflow-hidden hover:scale-110 tansition duration-700">
            <section className='w-[50%] '>
                         <img
@@ -77,28 +255,27 @@ function Checkout() {
                 ₹{checkout.price}
               </p>
               
-              <button disabled = {quantity === 1}
+              <button disabled = {checkout.quantity === 1}
               className="p-4   text-2xl  font-bold bg-black/10 rounded-lg hover:scale-110 transition duration-300"
-              onClick={()=>{
-                setQuantity(quantity-1)
-              }}
+              onClick={()=> decreaseQuantity(checkout.id)}
               >-</button>
               <span 
               className='text-xl font-bold mx-3'>
-                {quantity}</span>
+                {checkout.quantity}</span>
               <button
                 className="p-4 text-2xl  font-bold bg-black/10 rounded-lg hover:scale-110 transition duration-300"
-              onClick = {()=>{
-                setQuantity(quantity+1)
-              }}
+              onClick = {()=>  increaseQuantity(checkout.id)
+              }
               >+</button>
               <span className='text-xl font-semibold text-gray-500 ml-10'
               >Total&nbsp;:-&nbsp;</span>
               <span className="text-xl font-bold text-[#8a4a1f]"
-              >₹{quantity*checkout.price}</span>
+              >₹{checkout.quantity*checkout.price}</span>
 
             </article>
           </div>
+       ))
+     }
           <div className='w-[50%] bg-[#fbf6ec] rounded-2xl shadow-2xl hover:scale-110 tansition duration-700'>
             <p className="text-2xl font-bold text-[#3b2a1f] mb-5 text-center mt-7">Address :</p>
             <div 
@@ -158,7 +335,7 @@ function Checkout() {
         Payment Method
       </h2>
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 mb-10">
 
         <label className="flex items-center gap-3 w-[80%] p-4 mx-auto border rounded-lg hover:bg-[#3b2a1f]/5 hover:scale-110 tansition duration-700 ">
           <input
@@ -192,16 +369,20 @@ function Checkout() {
 
         <p className='font-bold text-2xl text-center text-red-500 '>Order Info:-</p>
         <footer className='w-[80%] border mx-auto mb-10 rounded-2xl px-10'>
-          <p className='border-b my-5 italic text-lg text-green-500'><span className='font-bold text-xl '>Price&nbsp;:&nbsp;</span>₹{checkout.price}</p>
+          <p className='border-b my-5 italic text-lg text-green-500'><span className='font-bold text-xl '>Quantity&nbsp;:&nbsp;</span>{totalQuantity}</p>
           <p className='border-b my-5 italic text-lg text-green-500'><span className='font-bold text-xl '>PaymentMethod&nbsp;:&nbsp;</span>{paymentMethod}</p>
-          <p className='border-b my-5 italic text-lg text-green-500'> <span className='font-bold text-xl '>Quantity&nbsp;:&nbsp;</span>₹{checkout.price * quantity}</p>
+          <p className='border-b my-5 italic text-lg text-green-500'> <span className='font-bold text-xl '>Price&nbsp;:&nbsp;</span>₹{totalPrice}</p>
           <button onClick={handlePlaceOrder}
           className='rounded mx-auto ml-[40%] my-4 bg-yellow-900 text-white p-3 hover:bg-green-600 hover:scale-125   duration-500  '>Place Order</button>
         </footer>
 
           </div>
+          
              
     </div>
+    <Footer />
+    </>
+    
   )
 }
 

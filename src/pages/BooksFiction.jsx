@@ -15,7 +15,10 @@ function BooksFiction() {
   return (
     <div>
       <Navbar  />
+      
       <img src="fictionBanner.png" alt="banner"className=" w-[90%] h-[380px] mx-auto overflow-hidden rounded-xl my-10"/>
+      <h1 className="text-4xl font-serif font-bold text-[#3b2a20] text-center m-10 hover:scale-102 duration-500">
+            Fiction</h1>
       <section className='flex flex-wrap gap-10 justify-center mb-10'>
        {fictionBook.map((book)=> (
             <div key = {book.id}>

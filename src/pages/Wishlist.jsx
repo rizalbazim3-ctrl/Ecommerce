@@ -1,18 +1,22 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useSelector,useDispatch } from 'react-redux'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { Heart } from 'lucide-react'
 import axios from "axios"
 import useBooks from '../services/useBooks'
 import { toast } from 'sonner'
+import { setwishlistCount } from "../services/cartSlice"
 
 function Wishlist() {
+  const dispatch = useDispatch()
+
   const {data : books = [],
     isLoading,
     isError
   } = useBooks()
   const list = books.filter( (book)=> book.wishlist )
+
 
   const wishlist = async (id)=> {
                          axios.patch(` http://localhost:4001/books/${id}`,{
@@ -32,12 +36,12 @@ function Wishlist() {
         list.length ? 
       list.map((book)=> (
        <div key = {book.id}
-       className="w-[70%] flex flex-row py-5 mx-auto my-20 bg-[#fbf6ec] rounded-2xl shadow-2xl overflow-hidden group  hover:scale-115 transition duration-700">
+       className="w-[50%] flex flex-row py-5 mx-auto my-20 bg-[#fbf6ec] rounded-2xl shadow-2xl overflow-hidden group  hover:scale-115 transition duration-700">
            <section className='w-[50%] '>
                         <img
                   src={book.image}
                   alt={book.title}
-                  className="w-[55%] h-[350px] object-cover mx-auto rounded-lg border-2 border-[#3b2a1f]/10 p-4 bg-[#8a4a1f]/10 hover:border-[#8a4a1f]  transition duration-300"
+                  className="w-[55%] h-[350px] object-contain mx-auto rounded-lg border-2 border-[#3b2a1f]/10 p-4 bg-[#8a4a1f]/10 hover:border-[#8a4a1f]  transition duration-300"
                 />
            </section>
             <article className='w-[50%]'>

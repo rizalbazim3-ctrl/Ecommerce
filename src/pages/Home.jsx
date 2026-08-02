@@ -18,10 +18,31 @@ function Home() {
   return (
     <div className="m-4 ">
       <Navbar/>
-        <section className="mt-10 mb-10 bg-black/20">
+        <div className = "flex flex-row justify-center group">
+          <p className="text-4xl font-serif font-bold text-[#3b2a20] text-center my-10 group-hover:-rotate-7 duration-500 ">
+            WELCOME
+          </p>
+          <p className="text-xl font-serif font-bold text-[#3b2a20] text-center mt-11 my-10 mx-4 group-hover:scale-150 duration-500">
+            TO
+          </p>
+          <p className="text-4xl font-serif font-bold text-[#3b2a20] text-center my-10 group-hover:rotate-7 duration-500 ">
+            WILDINK
+          </p>
+        </div>
+        
+        <section className=" mb-10 bg-black/20">
           <img src="hero-section-image.png" alt="banner" 
-          className="object-cover w-full overflow-hidden rounded-xl h-[450px] "/>
+          className="object-cover w-full overflow-hidden rounded-xl h-[450px] relative "/>
+          <button className="rounded absolute w-[19%] h-[8%] top-[76%] left-[25%]"
+          onClick = {()=>{
+            navigate("/Books")
+          }}
+          > </button>
         </section>
+        <h1 
+        className="text-4xl font-serif font-bold text-[#3b2a20] text-center m-10 hover:scale-102 duration-500 border-b p-2">
+          CATEGORY 
+        </h1>
         <section className="flex flex-wrap justify-center gap-10  mb-10">
           <button className="w-[20%] ">
             <img src="fiction.jpg" alt="fiction" 
@@ -71,6 +92,10 @@ function Home() {
           }}
           /></button>
         </section>
+        <h1 
+        className="text-4xl font-serif font-bold text-[#3b2a20] text-center m-10 hover:scale-102 duration-500 border-b p-2">
+          Featured Books
+        </h1>
         <section className='flex flex-wrap gap-10 justify-center mb-10'>
           {featuredBook.map((book)=> (
             <div key = {book.id}>

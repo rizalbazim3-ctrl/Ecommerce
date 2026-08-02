@@ -3,9 +3,12 @@ import { useParams } from 'react-router-dom'
 import axios from "axios"
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import {useNavigate} from "react-router-dom"
+import { toast } from 'sonner'
 
 function BookDetails() {
   const {id} = useParams()
+  const navigate = useNavigate()
   const [Details,setDetails] = useState([])
   useEffect( ()=>{
     const fetchDetails = async (id)=>{
@@ -14,6 +17,37 @@ function BookDetails() {
     }
     fetchDetails(id)
   },[id])
+
+  const addcart = async ()=> {
+                         axios.patch(` http://localhost:4001/books/${Details.id}`,{
+                            addcart : true
+                         })
+                        }
+
+  const handleBuyNow = (book) => {
+
+    if(localStorage.getItem("userId")){
+                  navigate(`/Checkout/${Details.id}`)
+  const checkoutItem = {
+    id: book.id,
+    image: book.image,
+    title: book.title,
+    price: book.price,
+    quantity: 1
+  }
+
+  localStorage.setItem(
+    "checkoutItems",
+    JSON.stringify([checkoutItem])
+  )
+
+  navigate("/Checkout")
+  }
+  else{
+   navigate("/Login")
+  }
+  }
+
   
   return (
     <div className='w-full h-screen'>
@@ -40,11 +74,28 @@ function BookDetails() {
             ₹{Details.price}
           </p>
           <div className="flex flex-wrap gap-4 mt-6">
-            <button className="px-8 py-3 bg-[#8a4a1f] text-white font-semibold rounded-lg hover:bg-[#3b2a1f] transition duration-300">
+            <button 
+            className="px-8 py-3 bg-[#8a4a1f] text-white font-semibold rounded-lg hover:bg-[#3b2a1f] transition duration-300"
+             onClick={()=>{
+                if(!localStorage.getItem("userId")){
+                  navigate("/Login")
+                }else{
+                  if(Details.addcart){
+                    toast.error("already added")
+                  }else{
+                    addcart()
+                    toast.success("added Successfully")
+                  }
+                            
+                }
+              }
+            }>
               Add to Cart
             </button>
 
-            <button className="px-8 py-3 border-2 border-[#8a4a1f] text-[#8a4a1f] font-semibold rounded-lg hover:bg-[#8a4a1f] hover:text-white transition duration-300">
+            <button 
+            className="px-8 py-3 border-2 border-[#8a4a1f] text-[#8a4a1f] font-semibold rounded-lg hover:bg-[#8a4a1f] hover:text-white transition duration-300"
+            onClick={()=> handleBuyNow(Details)}>
               Buy now
             </button>
         </div>

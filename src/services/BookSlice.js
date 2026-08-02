@@ -3,13 +3,13 @@ import { createSlice } from "@reduxjs/toolkit";
 const BookSlice = createSlice({
     name : "book",
     initialState : {
-        kithab : []
+        search : ""
     },
     reducers : {
-        addBook : (state,action)=>{
-            state.kithab = action.payload
+        setSearch : (state,action)=>{
+            state.search = action.payload
         }
     }
 })
 export default BookSlice.reducer
-export const {addBook} = BookSlice.actions
+export const {setSearch} = BookSlice.actions

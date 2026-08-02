@@ -22,7 +22,8 @@ import BooksBiography from "./pages/BooksBiography"
 import BooksScienceFiction from "./pages/BooksScienceFiction"
 import ScrollTop from "./services/ScrollTop"
 import PaymentResult from "./pages/PaymentResult"
-
+import Profile from "./pages/Profile"
+import ProtectorRouter from './services/ProtectorRouter'
 
 
 function App() {
@@ -31,17 +32,22 @@ function App() {
     <div>
       <ScrollTop/>
       <Routes>
+        <Route element = {<ProtectorRouter/>} >
+          <Route path = "/Profile" element = {<Profile/>} />
+          <Route path ="/PaymentResult"  element = {<PaymentResult/>} />
+          <Route path = "/Wishlist" element = {<Wishlist/>}/>
+          <Route path = "/Orders" element = {<Orders/>}/>
+          <Route path = "/Cart" element = {<Cart/>}/>
+        <Route path = "/Checkout/:id" element = {<Checkout/>}/>
+        <Route path="/Checkout" element={<Checkout />} />
+        </Route>
         <Route path = "/" element = {<Home/>} />
         <Route path = "/Footer" element = {<Footer/>}/>
         <Route path = "/Navbar" element = {<Navbar/>} />
         <Route path = "/Books/:id" element = {<BookDetails/>}/>
         <Route path = "/Books" element = {<Books/>}/>
-        <Route path = "/Cart" element = {<Cart/>}/>
-        <Route path = "/Checkout/:id" element = {<Checkout/>}/>
         <Route path = "/Login" element = {<Login/>}/>
-        <Route path = "/Orders" element = {<Orders/>}/>
         <Route path = "/Register" element = {<Register/>}/>
-        <Route path = "/Wishlist" element = {<Wishlist/>}/>
         <Route path = "/BooksFiction" element = {<BooksFiction/>}/>
         <Route path = "/BooksRomance" element = {<BooksRomance/>}/>
         <Route path = "/BooksHistory" element = {<BooksHistory/>}/>
@@ -49,7 +55,6 @@ function App() {
         <Route path = "/BooksSelfhelp" element = {<BooksSelfhelp/>}/>
         <Route path = "/BooksBiography" element = {<BooksBiography/>}/>
         <Route path = "/BooksScienceFiction" element = {<BooksScienceFiction/>}/>
-        <Route path ="/PaymentResult"  element = {<PaymentResult/>} />
       </Routes>
     </div>
   )

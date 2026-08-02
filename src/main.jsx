@@ -17,6 +17,7 @@ createRoot(document.getElementById('root')).render(
       <BrowserRouter>
        <Toaster
           position="top-right"
+          offset="80px"
           toastOptions={{
             classNames: {
               error: "bg-red-600 text-white border-red-700",

@@ -15,6 +15,8 @@ function BooksHistory() {
       <div>
       <Navbar/>
       <img src="HistoryBnner.png" alt="banner" className = "w-[90%] h-[380px] overflow-hidden rounded-xl my-10 mx-auto " />
+      <h1 className="text-4xl font-serif font-bold text-[#3b2a20] text-center m-10 hover:scale-102 duration-500">
+            History</h1>
       <section className='flex flex-wrap gap-10 justify-center mb-10'>
           {HistoryBook.map((book)=> (
             <div key = {book.id}>

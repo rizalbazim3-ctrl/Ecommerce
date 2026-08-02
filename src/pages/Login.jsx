@@ -16,7 +16,7 @@ function Login() {
         const response =  await axios.get(`http://localhost:4001/users?email=${email}`)
         return response.data
         }
-
+        
       const handleSignIn = async ()=>{
       const data = await fetchLogin()
       if(data.length === 0){
@@ -26,6 +26,7 @@ function Login() {
           }else if(data.length !== 0 && data[0].password === pass){
             console.log(typeof data[0].password)
             toast.success("Login successfull")
+            localStorage.setItem("userId",data[0].id)
             setEmail("")
             setPass("")
             navigate("/")
@@ -60,7 +61,9 @@ function Login() {
       </p>
       <footer className = " mt-4 w-sm h-[100px] z-10">
         <button className = "border border-white/30 rounded-xl w-full py-2 bg-white/30 hover:bg-black/80 hover:border-black/80 hover:text-white mb-10" 
-        onClick = {handleSignIn}
+        onClick = {()=>{
+          handleSignIn()
+        }}
         >Login</button>
         <p className = "mb-5 w-sm text-center">or</p>
         <span className = "ml-35 text-white" >Don't you have account? </span>

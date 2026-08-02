@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState,useRef,useEffect} from "react"
 import {
   ChevronDown,
   Search,
@@ -8,9 +8,15 @@ import {
   Package,
   BookOpen,
 } from "lucide-react"
-import { useNavigate } from "react-router-dom"
+import { data, useNavigate } from "react-router-dom"
+import { useSelector,useDispatch } from "react-redux"
+import { setSearch } from "../services/BookSlice"
+import { useLocation } from "react-router-dom"
+import useBooks from "../services/useBooks"
+import { setwishlistCount,setcartcount } from "../services/cartSlice"
 
 export default function Navbar({isLogin}) {
+  const searchRef = useRef(null)
   const [categoriesOpen, setCategoriesOpen] = useState(false)
   const [accountOpen, setAccountOpen] = useState(false)
   const categories = [
@@ -22,6 +28,45 @@ export default function Navbar({isLogin}) {
     "History",
   ];
   const navigate = useNavigate()
+  const search = useSelector((state)=> state.AllBooks.search)
+  const dispatch = useDispatch()
+  const {pathname} = useLocation()
+  const wishlistCount = useSelector((state)=> state.cartStates.wishlistCount)
+  const cartcount = useSelector((state)=> state.cartStates.cartcount)
+
+
+  pathname === "/Books" && useEffect(()=>{
+    searchRef.current.focus()
+  })
+
+  const handleSearching = (e)=>{
+
+    if(pathname === "/" || pathname === "/Cart" || pathname === "/Profile" || pathname === "/Wishlist" || pathname === "/BooksMystery"
+      || pathname === "/BooksHistory" || pathname === "/BooksSelfhelp" || pathname === "/BooksScienceFiction" || pathname === "/BooksBiography"
+      || pathname === "/BooksScienceFiction" || pathname === "/BooksRomance" 
+    ){
+      navigate("/Books")
+      const value = e.target.value
+       dispatch(setSearch(value))
+    }
+    else {
+       const value = e.target.value
+       dispatch(setSearch(value))
+    }
+  } 
+
+  const {data : books = []} = useBooks()
+
+  const cartItems = books.filter((item)=> item.addcart === true  )
+  const wishlistItems = books.filter((item)=> item.wishlist === true)
+
+  const cartLength = cartItems.length
+  const wishLength = wishlistItems.length
+
+  useEffect(()=>{
+    dispatch(setwishlistCount(wishLength))
+    dispatch(setcartcount(cartLength))
+  },[wishLength,cartLength])
 
   return (
     <div
@@ -69,8 +114,15 @@ export default function Navbar({isLogin}) {
               </span>
 
               {categoriesOpen && (
-                <ul className="absolute left-0 top-full mt-3 w-52 bg-[#fbf6ec] border border-[#3b2a1f]/15 shadow-lg py-2 z-20">
-                 
+                <ul 
+                className="absolute left-0 top-full mt-3 w-52 bg-[#fbf6ec] border border-[#3b2a1f]/15 shadow-lg py-2 z-20">
+
+
+                    <li 
+                    className="px-4 py-2 text-[14px] text-[#2c2117] hover:bg-[#8a4a1f]/10 hover:text-[#8a4a1f] transition-colors "
+                    onClick={ ()=> {
+                      navigate("/Books")
+                    }} >All </li>
                     <li className="px-4 py-2 text-[14px] text-[#2c2117] hover:bg-[#8a4a1f]/10 hover:text-[#8a4a1f] transition-colors "
                     onClick={ ()=> {
                       navigate("/BooksFiction")
@@ -103,12 +155,12 @@ export default function Navbar({isLogin}) {
               )}
             </li>
 
-            <li className="cursor-pointer hover:text-[#8a4a1f] transition-colors whitespace-nowrap">
+            {/* <li className="cursor-pointer hover:text-[#8a4a1f] transition-colors whitespace-nowrap">
               Best sellers
             </li>
             <li className="cursor-pointer hover:text-[#8a4a1f] transition-colors whitespace-nowrap">
               New arrivals
-            </li>
+            </li> */}
           </ul>
 
           {/* Search bar */}
@@ -117,8 +169,12 @@ export default function Navbar({isLogin}) {
               <input
                 type="text"
                 placeholder="Search books"
+                ref={searchRef}
                 className="w-full bg-transparent outline-none pl-5 pr-2 py-2.5 text-[15px] text-[#2c2117] placeholder:text-[#9a8b76]"
                 style={{ fontFamily: "'EB Garamond', Georgia, serif" }}
+                onChange={(e)=>{
+                  handleSearching(e)
+                }}
               />
               <button
                 aria-label="Search"
@@ -130,25 +186,35 @@ export default function Navbar({isLogin}) {
           </div>
 
           {/* Right icons */}
-          <div className="flex items-center gap-5 shrink-0 text-[#2c2117] ml-auto">
+          <div className="flex items-center gap-5 shrink-0 text-[#2c2117] ml-auto ">
             <button
               aria-label="Wishlist"
-              className="hover:text-[#8a4a1f] transition-colors"
+              className="hover:text-[#8a4a1f] transition-colors relative"
               onClick={()=>{
                 navigate("/Wishlist")
               }}
             >
-              <Heart size={21} strokeWidth={1.5} />
+              <Heart size={21} strokeWidth={1.5} className="" />
+                {wishlistCount > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full min-w-5 h-5 flex items-center justify-center">
+                      {wishlistCount}
+                    </span>
+                  )}
             </button>
 
             <button
               aria-label="Cart"
-              className="relative hover:text-[#8a4a1f] transition-colors"
+              className="relative hover:text-[#8a4a1f] transition-colors relative"
               onClick={()=>{
                 navigate("/Cart" )
               }}
             >
               <ShoppingCart size={21} strokeWidth={1.5} />
+              {cartcount > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full min-w-5 h-5 flex items-center justify-center">
+                      {cartcount}
+                    </span>
+                  )}
             </button>
 
             <div
@@ -169,14 +235,27 @@ export default function Navbar({isLogin}) {
 
               {accountOpen && (
                 <ul className="absolute right-0 top-full mt-3 w-44 bg-[#fbf6ec] border border-[#3b2a1f]/15 shadow-lg py-2 z-20 text-[14px]">
+
+                 { localStorage.getItem("userId") ? <li className="px-4 py-2 text-[#2c2117] hover:bg-[#8a4a1f]/10 hover:text-[#8a4a1f] transition-colors cursor-pointer"
+                  onClick={()=> {
+                    navigate("/Profile")
+                  }}>
+                    Profile
+                  </li>
+                  :
                   <li className="px-4 py-2 text-[#2c2117] hover:bg-[#8a4a1f]/10 hover:text-[#8a4a1f] transition-colors cursor-pointer"
                   onClick={()=> {
                     navigate("/Login")
                   }}>
                     Login
-                  </li>
-                  <li className="px-4 py-2 text-[#2c2117] hover:bg-[#8a4a1f]/10 hover:text-[#8a4a1f] transition-colors cursor-pointer flex items-center gap-2">
-                    <Package size={15} strokeWidth={1.5} />
+                  </li> } 
+                  <li 
+                   onClick = {()=>{
+                  navigate("/Orders")
+                }}
+                  className="px-4 py-2 text-[#2c2117] hover:bg-[#8a4a1f]/10 hover:text-[#8a4a1f] transition-colors cursor-pointer flex items-center gap-2">
+                    <Package size={15} strokeWidth={1.5} 
+                   />
                     My orders
                   </li>
                 </ul>

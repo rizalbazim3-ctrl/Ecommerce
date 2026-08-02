@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useState,useEffect } from 'react'
 import axios from "axios"
 import Navbar from '../components/Navbar'
 import {Trash2} from "lucide-react"
@@ -7,6 +6,8 @@ import Footer from '../components/Footer'
 import { useNavigate } from 'react-router-dom'
 import useBooks from '../services/useBooks'
 import {toast} from "sonner"
+import { useSelector,useDispatch } from 'react-redux'
+import {setcartcount} from "../services/cartSlice"
 
 function Cart() {
   const {data : books = [],
@@ -16,25 +17,83 @@ function Cart() {
   const list = books.filter( (book)=> book.addcart )
   const navigate = useNavigate()
 
+  const [quantities, setQuantities] = useState({})
+
   const addcart = async (id)=> {
-                         axios.patch(` http://localhost:4001/books/${id}`,{
-                            addcart : false
-                         })
-                        }
-  console.log(list)
+          axios.patch(` http://localhost:4001/books/${id}`,{
+            addcart : false
+          })
+      }
+
+  const increaseQuantity = (id) => {
+    setQuantities((prev) => ({
+      ...prev,
+      [id]: (prev[id] || 1) + 1
+    }))
+  }
+
+  const decreaseQuantity = (id) => {
+  setQuantities((prev) => ({
+    ...prev,
+    [id]: Math.max((prev[id] || 1) - 1, 1)
+  }))
+}
+
+const dispatch = useDispatch()
+
+const handleBuyNow = (book) => {
+  const checkoutItem = {
+    id: book.id,
+    image: book.image,
+    title: book.title,
+    price: book.price,
+    quantity: quantities[book.id] || 1
+  }
+
+  localStorage.setItem(
+    "checkoutItems",
+    JSON.stringify([checkoutItem])
+  )
+
+  navigate("/Checkout")
+}
+
+const handleBuyAll = () => {
+  const checkoutItems = list.map((book) => ({
+    id: book.id,
+    image: book.image,
+    title: book.title,
+    price: book.price,
+    quantity: quantities[book.id] || 1
+  }))
+
+  localStorage.setItem(
+    "checkoutItems",
+    JSON.stringify(checkoutItems)
+  )
+
+  navigate("/Checkout")
+}
+
+
+  const totalPrice = list.reduce((total, book) => {
+  const quantity = quantities[book.id] || 1;
+
+    return total + book.price * quantity;
+  }, 0);
+
   return (
     <div className='w-full h-screen '>
           <Navbar/>
-        { 
-        list.length ? 
+        {  
       list.map((book)=> (
        <div key = {book.id}
-       className="w-[70%] flex flex-row py-5 mx-auto my-20 bg-[#fbf6ec] rounded-2xl shadow-2xl overflow-hidden group hover:scale-110 tansition duration-700">
+       className="w-[50%] flex flex-row py-5 mx-auto my-20 bg-[#fbf6ec] rounded-2xl shadow-2xl overflow-hidden group hover:scale-110 tansition duration-700">
            <section className='w-[50%] '>
                         <img
                   src={book.image}
                   alt={book.title}
-                  className="w-[55%] h-[350px] object-cover mx-auto rounded-lg border-2 border-[#3b2a1f]/10 p-4 bg-[#8a4a1f]/10 hover:border-[#8a4a1f]  transition duration-300"
+                  className="w-[55%] h-[350px]  mx-auto rounded-lg border-2 border-[#3b2a1f]/10 p-4 bg-[#8a4a1f]/10 hover:border-[#8a4a1f]  transition duration-300"
                 />
            </section>
             <article className='w-[50%]'>
@@ -56,32 +115,57 @@ function Cart() {
               </p>
               <div className="flex flex-col gap-4 mt-6">
                 <div className='ml-5'>
-                  <button 
-                className="p-4   text-2xl  font-bold bg-black/10 rounded-lg hover:text-red-500 hover:bg-gray-400/40 transition duration-300">
-                  -
-                </button>&nbsp;&nbsp;&nbsp;
-                <span className='text-xl font-bold'>1</span>&nbsp;&nbsp;&nbsp;
-                <button
-                className="p-4 text-2xl  font-bold bg-black/10 rounded-lg hover:text-green-500 hover:bg-gray-400/40 transition duration-300"
-                >+</button>
-                <span className='ml-20 text-xl font-bold text-[#8a4a1f]'>j-{book.price*3}</span>
+                    <button
+                      disabled={(quantities[book.id] || 1) === 1}
+                      className="p-4 text-2xl font-bold bg-black/10 rounded-lg hover:text-red-500 hover:bg-gray-400/40 transition duration-300"
+                      onClick={() => decreaseQuantity(book.id)}
+                        >
+                          -
+                    </button>
+
+                      <span className="text-xl font-bold">
+                        {quantities[book.id] || 1}
+                      </span>
+
+                      <button
+                        className="p-4 text-2xl font-bold bg-black/10 rounded-lg hover:text-green-500 hover:bg-gray-400/40 transition duration-300"
+                        onClick={() => increaseQuantity(book.id)}
+                          >
+                        +
+                    </button>
+                <span className="ml-20 text-xl font-bold text-[#8a4a1f]">
+                ₹{book.price * (quantities[book.id] || 1)}
+                </span>
                 </div>
                 <button 
                 onClick={
-                  ()=>{
-                    navigate(`/Checkout/${book.id}`)
-                  }
+                  ()=>handleBuyNow(book)
                 }
                 className="w-[80%] px-8 py-3 border-2 border-[#8a4a1f] text-[#8a4a1f] font-semibold rounded-lg hover:bg-[#8a4a1f] hover:text-white transition duration-300">
                   Buy now
                 </button>
             </div>
             </article>
+           
           </div>
-      ))
-          :<p>Empty</p>
+          
+      )) 
         
       }
+
+       <div className='w-[50%] bg-[#fbf6ec] my-10 rounded-lg mx-auto p-10  text-center'>
+
+        <p className="ml-20 text-xl font-bold text-[#8a4a1f] mb-3">
+          Total Price : ₹{totalPrice}
+        </p>
+              <button 
+                onClick={
+                  handleBuyAll
+                }
+                className="w-[60%]  px-8 py-3 border-2 border-[#8a4a1f] text-[#8a4a1f] font-semibold rounded-lg hover:bg-[#8a4a1f] hover:text-white transition duration-300">
+                  Buy All
+                </button>
+            </div>
       <Footer/>
       </div>
     // <div>

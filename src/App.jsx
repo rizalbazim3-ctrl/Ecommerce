@@ -24,6 +24,7 @@ import ScrollTop from "./services/ScrollTop"
 import PaymentResult from "./pages/PaymentResult"
 import Profile from "./pages/Profile"
 import ProtectorRouter from './services/ProtectorRouter'
+import PublicRoute from "./services/PublicRoute"
 
 
 function App() {
@@ -41,13 +42,15 @@ function App() {
         <Route path = "/Checkout/:id" element = {<Checkout/>}/>
         <Route path="/Checkout" element={<Checkout />} />
         </Route>
+        <Route element = {<PublicRoute/>}>
+          <Route path = "/Login" element = {<Login/>}/>
+          <Route path = "/Register" element = {<Register/>}/>
+        </Route>
         <Route path = "/" element = {<Home/>} />
         <Route path = "/Footer" element = {<Footer/>}/>
         <Route path = "/Navbar" element = {<Navbar/>} />
         <Route path = "/Books/:id" element = {<BookDetails/>}/>
         <Route path = "/Books" element = {<Books/>}/>
-        <Route path = "/Login" element = {<Login/>}/>
-        <Route path = "/Register" element = {<Register/>}/>
         <Route path = "/BooksFiction" element = {<BooksFiction/>}/>
         <Route path = "/BooksRomance" element = {<BooksRomance/>}/>
         <Route path = "/BooksHistory" element = {<BooksHistory/>}/>

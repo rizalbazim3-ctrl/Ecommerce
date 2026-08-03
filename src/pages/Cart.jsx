@@ -8,21 +8,45 @@ import useBooks from '../services/useBooks'
 import {toast} from "sonner"
 import { useSelector,useDispatch } from 'react-redux'
 import {setcartcount} from "../services/cartSlice"
+import useUsers from '../services/useUsers'
+import { useQueryClient } from '@tanstack/react-query'
 
 function Cart() {
-  const {data : books = [],
-    isLoading,
-    isError
-  } = useBooks()
-  const list = books.filter( (book)=> book.addcart )
+
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const queryClient = useQueryClient()
+  const userid = localStorage.getItem("userId")
 
   const [quantities, setQuantities] = useState({})
 
-  const addcart = async (id)=> {
-          axios.patch(` http://localhost:4001/books/${id}`,{
-            addcart : false
+   const {data : userCart = [],
+    isLoading,
+    isError
+  } = useUsers()
+  
+
+   if(isLoading){
+    return <p>Loading...</p>
+  }
+
+
+ const list = userCart.cart.map( (book)=> book )
+
+  const removecart = async (id)=> {
+
+   try{ const cartUpdated =  list.filter((item)=> item.id !== id )
+
+          axios.patch(` http://localhost:4001/users/${userid}`,{
+            cart : cartUpdated
           })
+
+          queryClient.invalidateQueries({
+            queryKey : ["user"]
+          })
+        }catch(error){
+          console.log(error)
+        }
       }
 
   const increaseQuantity = (id) => {
@@ -38,8 +62,6 @@ function Cart() {
     [id]: Math.max((prev[id] || 1) - 1, 1)
   }))
 }
-
-const dispatch = useDispatch()
 
 const handleBuyNow = (book) => {
   const checkoutItem = {
@@ -82,6 +104,19 @@ const handleBuyAll = () => {
     return total + book.price * quantity;
   }, 0);
 
+
+  const cartItems = list.filter((item)=> item.id )
+  
+
+ if(cartItems.length === 0){
+  return( 
+  <div className='w-full h-screen text-center'>
+          <Navbar/>
+  <p className=' text-red text-xl font-semibold m-[20%]'> Not Added Yet</p>
+  <Footer/>
+  </div>
+  )
+ }
   return (
     <div className='w-full h-screen '>
           <Navbar/>
@@ -100,7 +135,7 @@ const handleBuyAll = () => {
               <Trash2 className="text-red-500 cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity duraton-700 ml-[90%]" 
                onClick={
                  ()=>{
-                  addcart(book.id) 
+                  removecart(book.id) 
                  }
                 }/>
               <p className="text-3xl md:text-4xl font-bold text-[#3b2a1f] mb-3">{book.title}</p>
@@ -168,20 +203,6 @@ const handleBuyAll = () => {
             </div>
       <Footer/>
       </div>
-    // <div>
-    //  {list.length ? 
-    //   list.map((book)=> (
-    //   <div key = {book.id}>
-    //     <img key={book.id} src= {book.image} alert = {book.title} />
-    //     <button className='rounded p-2 bg-gray-900/80'
-    //     onClick={()=>
-    //     addcart(book.id)
-    //   }>remove</button>
-    //   </div>
-    //   )) :
-      
-    //   }
-    // </div>
   )
 }
 

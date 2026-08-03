@@ -13,7 +13,8 @@ function Home() {
     isLoading,
     isError
   } = useBooks()
-  const featuredBook = books.slice(0,4)
+  const featuredBook = books.filter((item)=> item.bestSeller)
+  
 
   return (
     <div className="m-4 ">

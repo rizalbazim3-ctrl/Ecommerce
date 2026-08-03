@@ -5,11 +5,14 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import {useNavigate} from "react-router-dom"
 import { toast } from 'sonner'
+import useUsers from '../services/useUsers'
 
 function BookDetails() {
   const {id} = useParams()
   const navigate = useNavigate()
   const [Details,setDetails] = useState([])
+  const userid = localStorage.getItem("userId")
+
   useEffect( ()=>{
     const fetchDetails = async (id)=>{
       const response = await axios.get(`http://localhost:4001/books/${id}`)
@@ -18,11 +21,23 @@ function BookDetails() {
     fetchDetails(id)
   },[id])
 
+  const {data : user = [],
+    isLoading,
+    isError
+  } = useUsers()
+
   const addcart = async ()=> {
-                         axios.patch(` http://localhost:4001/books/${Details.id}`,{
-                            addcart : true
-                         })
-                        }
+    const addingCart = user.cart.filter((item)=> item.id === Details.id)
+    if(addingCart.length !== 0 ){
+      toast.error("already added")
+    }else{
+        axios.patch(` http://localhost:4001/users/${userid}`,{
+        cart : [...(user.cart) || [],Details]
+          })
+
+            toast.success("added Successfully")
+      }
+  }
 
   const handleBuyNow = (book) => {
 
@@ -80,13 +95,7 @@ function BookDetails() {
                 if(!localStorage.getItem("userId")){
                   navigate("/Login")
                 }else{
-                  if(Details.addcart){
-                    toast.error("already added")
-                  }else{
-                    addcart()
-                    toast.success("added Successfully")
-                  }
-                            
+                  addcart()          
                 }
               }
             }>

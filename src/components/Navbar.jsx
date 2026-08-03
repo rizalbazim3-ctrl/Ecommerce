@@ -13,7 +13,7 @@ import { useSelector,useDispatch } from "react-redux"
 import { setSearch } from "../services/BookSlice"
 import { useLocation } from "react-router-dom"
 import useBooks from "../services/useBooks"
-import { setwishlistCount,setcartcount } from "../services/cartSlice"
+import useUsers from "../services/useUsers"
 
 export default function Navbar({isLogin}) {
   const searchRef = useRef(null)
@@ -31,12 +31,11 @@ export default function Navbar({isLogin}) {
   const search = useSelector((state)=> state.AllBooks.search)
   const dispatch = useDispatch()
   const {pathname} = useLocation()
-  const wishlistCount = useSelector((state)=> state.cartStates.wishlistCount)
-  const cartcount = useSelector((state)=> state.cartStates.cartcount)
+  const userid = localStorage.getItem("userId")
 
 
   pathname === "/Books" && useEffect(()=>{
-    searchRef.current.focus()
+    searchRef.current?.focus()
   })
 
   const handleSearching = (e)=>{
@@ -57,16 +56,24 @@ export default function Navbar({isLogin}) {
 
   const {data : books = []} = useBooks()
 
-  const cartItems = books.filter((item)=> item.addcart === true  )
-  const wishlistItems = books.filter((item)=> item.wishlist === true)
+  let cartCount = 0
+  let wishlistCount = 0
 
-  const cartLength = cartItems.length
-  const wishLength = wishlistItems.length
+  if(userid){const {
+    data : user=[],
+    isLoading
+  } = useUsers()
 
-  useEffect(()=>{
-    dispatch(setwishlistCount(wishLength))
-    dispatch(setcartcount(cartLength))
-  },[wishLength,cartLength])
+  if(isLoading){
+    return <p>Loading...</p>
+  }
+
+  cartCount = user?.cart.filter((item)=> item) 
+  wishlistCount = user?.wishlist.filter((item)=> item) 
+
+
+}
+
 
   return (
     <div
@@ -195,9 +202,9 @@ export default function Navbar({isLogin}) {
               }}
             >
               <Heart size={21} strokeWidth={1.5} className="" />
-                {wishlistCount > 0 && (
+                {wishlistCount.length > 0 && (
                     <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full min-w-5 h-5 flex items-center justify-center">
-                      {wishlistCount}
+                      {wishlistCount.length}
                     </span>
                   )}
             </button>
@@ -210,9 +217,9 @@ export default function Navbar({isLogin}) {
               }}
             >
               <ShoppingCart size={21} strokeWidth={1.5} />
-              {cartcount > 0 && (
+              {cartCount.length > 0 && (
                     <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full min-w-5 h-5 flex items-center justify-center">
-                      {cartcount}
+                      {cartCount.length}
                     </span>
                   )}
             </button>

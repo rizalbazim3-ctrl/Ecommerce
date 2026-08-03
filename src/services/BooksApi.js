@@ -12,6 +12,5 @@ export async function Users(){
   const response = await axios.get(
     `http://localhost:4001/users/${id}`
   )
-  console.log(response.data)
   return response.data
 } 

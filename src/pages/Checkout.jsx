@@ -15,7 +15,7 @@ function Checkout() {
   const checkoutItems = JSON.parse(
   localStorage.getItem("checkoutItems") || "[]"
  )
- console.log(checkoutItems)
+
   const navigate = useNavigate()
 
   const {data : books = [],
@@ -68,19 +68,45 @@ const addAddress = async ({ userId, newDetails }) => {
   return response.data
 }
 
+
+const removeOrderedItemsFromCart = async () => {
+  const userResponse = await axios.get(
+    `http://localhost:4001/users/${userId}`
+  )
+
+  const user = userResponse.data
+
+  const updatedCart = (user.cart || []).filter(
+    (cartItem) =>
+      !checkoutItems.some(
+        (checkoutItem) => checkoutItem.id === cartItem.id
+      )
+  )
+
+  await axios.patch(
+    `http://localhost:4001/users/${userId}`,
+    {
+      cart: updatedCart
+    }
+  )
+}
+
+
+
 const patchMutation = useMutation({
   mutationFn: addAddress,
 
-  onSuccess: () => {
-    queryClient.invalidateQueries({
-      queryKey: ["user"]
-    })
+  onSuccess: async () => {
+  await removeOrderedItemsFromCart()
 
-    // Delete only checkout data after successful order
-    localStorage.removeItem("checkoutItems")
+  queryClient.invalidateQueries({
+    queryKey: ["user"]
+  })
 
-    console.log("Order successfully saved")
-  },
+  localStorage.removeItem("checkoutItems")
+
+  console.log("Order successfully saved")
+},
 
   onError: (error) => {
     console.log("Order failed:", error)
@@ -214,6 +240,22 @@ const handlePlaceOrder = async () => {
   (total, item) => total +  item.quantity,
   0
   );
+// //deleting cart
+//   const removecart = async (id)=> {
+  
+//      try{ const cartUpdated =  list.filter((item)=> item.id !== id )
+  
+//             axios.patch(` http://localhost:4001/users/${userid}`,{
+//               cart : cartUpdated
+//             })
+  
+//             queryClient.invalidateQueries({
+//               queryKey : ["user"]
+//             })
+//           }catch(error){
+//             console.log(error)
+//           }
+//         }
 
   if(booksloading){
    return  <p>Loading...</p>

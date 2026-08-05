@@ -39,20 +39,17 @@ export default function Navbar({isLogin}) {
   })
 
   const handleSearching = (e)=>{
+    
+     const value = e.target.value
+       dispatch(setSearch(value))
 
     if(pathname === "/" || pathname === "/Cart" || pathname === "/Profile" || pathname === "/Wishlist" || pathname === "/BooksMystery"
       || pathname === "/BooksHistory" || pathname === "/BooksSelfhelp" || pathname === "/BooksScienceFiction" || pathname === "/BooksBiography"
       || pathname === "/BooksScienceFiction" || pathname === "/BooksRomance" 
     ){
-      navigate("/Books")
-      const value = e.target.value
-       dispatch(setSearch(value))
+       navigate("/Books")
     }
-    else {
-       const value = e.target.value
-       dispatch(setSearch(value))
-    }
-  } 
+  }
 
   const {data : books = []} = useBooks()
 
@@ -180,6 +177,7 @@ export default function Navbar({isLogin}) {
                 type="text"
                 placeholder="Search books"
                 ref={searchRef}
+                value={search}
                 className="w-full bg-transparent outline-none pl-5 pr-2 py-2.5 text-[15px] text-[#2c2117] placeholder:text-[#9a8b76]"
                 style={{ fontFamily: "'EB Garamond', Georgia, serif" }}
                 onChange={(e)=>{

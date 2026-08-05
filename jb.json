@@ -537,36 +537,51 @@
               "quantity": 1
             }
           ]
+        },
+        {
+          "orderDate": "2026-08-05T14:06:23.966Z",
+          "address": {
+            "orderedName": "basim",
+            "orderedNumber": "7994263689",
+            "orderedStreet": "vilayur",
+            "orderedPlace": "pattambi",
+            "orderedPincode": "679309",
+            "orderedState": "kerala"
+          },
+          "payment": "Cash On Delivery",
+          "items": [
+            {
+              "id": 2,
+              "image": "https://media.bookchor.com/images/cover/568/9780099549482.jpg",
+              "title": "To Kill a Mockingbird",
+              "price": 818,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "orderDate": "2026-08-05T14:07:50.879Z",
+          "address": {
+            "orderedName": "basim",
+            "orderedNumber": "7838493849",
+            "orderedStreet": "kpd",
+            "orderedPlace": "sdafs ",
+            "orderedPincode": "fv zdf",
+            "orderedState": "vzdfsg"
+          },
+          "payment": "Cash On Delivery",
+          "items": [
+            {
+              "id": 5,
+              "image": "https://media.bookchor.com/images/cover/583/9788190105910.jpg",
+              "title": "The Power of Now",
+              "price": 519,
+              "quantity": 1
+            }
+          ]
         }
       ],
       "cart": [
-        {
-          "id": 4,
-          "title": "Atomic Habits",
-          "author": "James Clear",
-          "category": "Self-Help",
-          "price": 522,
-          "rating": 4.9,
-          "stock": 30,
-          "pages": 320,
-          "description": "A practical guide to building good habits and breaking bad ones through small improvements.",
-          "image": "https://media.bookchor.com/images/cover/bc/9781847941831_1.jpg",
-          "bestSeller": true
-        }
-      ],
-      "wishlist": [
-        {
-          "id": 1,
-          "title": "The Great Gatsby",
-          "author": "F. Scott Fitzgerald",
-          "category": "Fiction",
-          "price": 15,
-          "rating": 4.4,
-          "stock": 20,
-          "pages": 180,
-          "description": "A classic novel about wealth, love, ambition, and the American Dream.",
-          "image": "https://media.bookchor.com/images/cover/568/9781447225928.jpg"
-        },
         {
           "id": 6,
           "title": "Think and Grow Rich",
@@ -581,292 +596,53 @@
           "bestSeller": true
         },
         {
-          "id": 50,
-          "title": "The 7 Habits of Highly Effective People",
-          "author": "Stephen R. Covey",
-          "category": "Self-Help",
-          "price": 1553,
-          "rating": 4.7,
-          "stock": 20,
-          "pages": 464,
-          "description": "A timeless guide to developing effective habits and improving personal and professional success.",
-          "image": "https://atlanticbooks.com/cdn/shop/files/9781684818358_434x650.webp?v=1769294418",
-          "bestSeller": true
-        }
-      ]
-    },
-    {
-      "name": "muna",
-      "email": "muna@gmail.com",
-      "phone": "7992873782",
-      "password": "00000000",
-      "id": 2,
-      "orderedUserDetails": [
-        {
-          "orderDate": "2026-08-04T06:23:57.516Z",
-          "address": {
-            "orderedName": "dsfs",
-            "orderedNumber": "3232323232",
-            "orderedStreet": "gdfga",
-            "orderedPlace": "sdags",
-            "orderedPincode": "sda",
-            "orderedState": "sdags"
-          },
-          "payment": "Cash On Delivery",
-          "items": [
-            {
-              "id": 3,
-              "image": "https://media.bookchor.com/images/cover/bc/9780785841722.jpg",
-              "title": "The Alchemist",
-              "price": 614,
-              "quantity": 1
-            }
-          ]
-        }
-      ],
-      "cart": []
-    },
-    {
-      "id": "30b5059b-f298-4789-9de4-9deb2a7fa346",
-      "name": "basim",
-      "email": "basim@gmail.com",
-      "phone": "7994263689",
-      "password": "00000000",
-      "orderedUserDetails": [
-        {
-          "orderDate": "2026-08-04T06:37:56.967Z",
-          "address": {
-            "orderedName": "risal basim",
-            "orderedNumber": "7994263689",
-            "orderedStreet": "kpd ",
-            "orderedPlace": "koppam",
-            "orderedPincode": "679309",
-            "orderedState": "kerala"
-          },
-          "payment": "Cash On Delivery",
-          "items": [
-            {
-              "id": 6,
-              "image": "https://media.bookchor.com/images/cover/586/9788192681047.jpg",
-              "title": "Think and Grow Rich",
-              "price": 716,
-              "quantity": 1
-            }
-          ]
-        },
-        {
-          "orderDate": "2026-08-04T06:38:49.809Z",
-          "address": {
-            "orderedName": "rizal",
-            "orderedNumber": "7994263689",
-            "orderedStreet": "KPD",
-            "orderedPlace": "pattambi",
-            "orderedPincode": "679309",
-            "orderedState": "kerala"
-          },
-          "payment": "Cash On Delivery",
-          "items": [
-            {
-              "id": 2,
-              "image": "https://media.bookchor.com/images/cover/568/9780099549482.jpg",
-              "title": "To Kill a Mockingbird",
-              "price": 818,
-              "quantity": 1
-            }
-          ]
-        }
-      ],
-      "cart": [
-        {
-          "id": 1,
-          "title": "The Great Gatsby",
-          "author": "F. Scott Fitzgerald",
-          "category": "Fiction",
-          "price": 715,
+          "id": 21,
+          "title": "A People's History of the United States",
+          "author": "Howard Zinn",
+          "category": "History",
+          "price": 699,
           "rating": 4.4,
-          "stock": 20,
-          "pages": 180,
-          "description": "A classic novel about wealth, love, ambition, and the American Dream.",
-          "image": "https://media.bookchor.com/images/cover/568/9781447225928.jpg",
-          "bestSeller": true
-        }
-      ],
-      "wishlist": [
-        {
-          "id": 1,
-          "title": "The Great Gatsby",
-          "author": "F. Scott Fitzgerald",
-          "category": "Fiction",
-          "price": 715,
-          "rating": 4.4,
-          "stock": 20,
-          "pages": 180,
-          "description": "A classic novel about wealth, love, ambition, and the American Dream.",
-          "image": "https://media.bookchor.com/images/cover/568/9781447225928.jpg",
-          "bestSeller": true
-        }
-      ]
-    },
-    {
-      "id": "74596498-1d2c-4942-9399-c247d762f7b3",
-      "name": "afla",
-      "email": "afla@gmail.com",
-      "phone": "7994564728",
-      "password": "00000000",
-      "orderedUserDetails": [],
-      "cart": [
-        {
-          "id": 3,
-          "title": "The Alchemist",
-          "author": "Paulo Coelho",
-          "category": "Fiction",
-          "price": 614,
-          "rating": 4.7,
-          "stock": 25,
-          "pages": 208,
-          "description": "A young shepherd follows his dreams and discovers the meaning of destiny.",
-          "image": "https://media.bookchor.com/images/cover/bc/9780785841722.jpg",
-          "bestSeller": true
-        }
-      ],
-      "wishlist": [
-        {
-          "id": 2,
-          "title": "To Kill a Mockingbird",
-          "author": "Harper Lee",
-          "category": "Fiction",
-          "price": 818,
-          "rating": 4.8,
           "stock": 15,
-          "pages": 336,
-          "description": "A powerful story about justice, morality, and growing up in a divided society.",
-          "image": "https://media.bookchor.com/images/cover/568/9780099549482.jpg",
+          "pages": 768,
+          "description": "A history of the United States told from the perspectives of ordinary people and marginalized communities.",
+          "image": "https://atlanticbooks.com/cdn/shop/files/9781138133969_431x650.webp?v=1769215996"
+        },
+        {
+          "id": 17,
+          "title": "The Martian",
+          "author": "Andy Weir",
+          "category": "Science Fiction",
+          "price": 720,
+          "rating": 4.7,
+          "stock": 19,
+          "pages": 384,
+          "description": "An astronaut stranded on Mars uses science and engineering to survive against impossible odds.",
+          "image": "https://99bookstores.com/cdn/shop/files/29752927.jpg?v=1780827624&width=990",
+          "bestSeller": true
+        }
+      ],
+      "wishlist": [
+        {
+          "id": 14,
+          "title": "Long Walk to Freedom",
+          "author": "Nelson Mandela",
+          "category": "Biography",
+          "price": 525,
+          "rating": 4.8,
+          "stock": 17,
+          "pages": 656,
+          "description": "Nelson Mandela's autobiography describing his journey and struggle against apartheid.",
+          "image": "https://media.bookchor.com/images/cover/595/9780349139623.jpg",
           "bestSeller": true
         }
       ]
     },
     {
-      "id": "a567a29c-d4ca-42e6-ae78-88ab595c0c8b",
-      "name": "basimk",
-      "email": "hey@gmail.com",
-      "phone": "7994263647",
-      "password": "00000000",
-      "orderedUserDetails": [
-        {
-          "orderDate": "2026-08-04T10:17:30.554Z",
-          "address": {
-            "orderedName": "basiim",
-            "orderedNumber": "7992348599",
-            "orderedStreet": "kpd",
-            "orderedPlace": "koppam",
-            "orderedPincode": "6789",
-            "orderedState": "kerala"
-          },
-          "payment": "Cash On Delivery",
-          "items": [
-            {
-              "id": 2,
-              "image": "https://media.bookchor.com/images/cover/568/9780099549482.jpg",
-              "title": "To Kill a Mockingbird",
-              "price": 818,
-              "quantity": 2
-            }
-          ]
-        },
-        {
-          "orderDate": "2026-08-04T14:49:18.318Z",
-          "address": {
-            "orderedName": "rizal",
-            "orderedNumber": "7994263689",
-            "orderedStreet": "kpd",
-            "orderedPlace": "koppam",
-            "orderedPincode": "679309",
-            "orderedState": "kerala"
-          },
-          "payment": "Cash On Delivery",
-          "items": [
-            {
-              "id": 2,
-              "image": "https://media.bookchor.com/images/cover/568/9780099549482.jpg",
-              "title": "To Kill a Mockingbird",
-              "price": 818,
-              "quantity": 1
-            }
-          ]
-        },
-        {
-          "orderDate": "2026-08-04T14:51:04.402Z",
-          "address": {
-            "orderedName": "shan ",
-            "orderedNumber": "9995555308",
-            "orderedStreet": "pooo`",
-            "orderedPlace": "padinatumpuram",
-            "orderedPincode": "679309",
-            "orderedState": "kerala"
-          },
-          "payment": "Cash On Delivery",
-          "items": [
-            {
-              "id": 17,
-              "image": "https://99bookstores.com/cdn/shop/files/29752927.jpg?v=1780827624&width=990",
-              "title": "The Martian",
-              "price": 720,
-              "quantity": 1
-            }
-          ]
-        },
-        {
-          "orderDate": "2026-08-04T15:27:44.590Z",
-          "address": {
-            "orderedName": "basim",
-            "orderedNumber": "7883848383",
-            "orderedStreet": "kkooraci",
-            "orderedPlace": "pattambi",
-            "orderedPincode": "6797890",
-            "orderedState": "kerala"
-          },
-          "payment": "Cash On Delivery",
-          "items": [
-            {
-              "id": 17,
-              "image": "https://99bookstores.com/cdn/shop/files/29752927.jpg?v=1780827624&width=990",
-              "title": "The Martian",
-              "price": 720,
-              "quantity": 1
-            }
-          ]
-        },
-        {
-          "orderDate": "2026-08-04T15:28:57.872Z",
-          "address": {
-            "orderedName": "sdfasdf",
-            "orderedNumber": "1234567890",
-            "orderedStreet": "sdfsa",
-            "orderedPlace": "sdfasd",
-            "orderedPincode": "dsafsdaf",
-            "orderedState": "sdafsdf"
-          },
-          "payment": "Cash On Delivery",
-          "items": [
-            {
-              "id": 4,
-              "image": "https://media.bookchor.com/images/cover/bc/9781847941831_1.jpg",
-              "title": "Atomic Habits",
-              "price": 522,
-              "quantity": 1
-            }
-          ]
-        }
-      ],
-      "cart": [],
-      "wishlist": []
-    },
-    {
-      "id": "e516b608-c25d-4f98-a345-ab2febae9e6f",
-      "name": "basimk",
-      "email": "hey@gmail.com",
-      "phone": "7994263647",
-      "password": "00000000",
+      "id": "a3181aba-3269-433e-8548-ea4a81de0e8b",
+      "name": "Rizal Bazim",
+      "email": "basimrisal@gmail.com",
+      "phone": "7994263689",
+      "password": "123456",
       "orderedUserDetails": [],
       "cart": [],
       "wishlist": []

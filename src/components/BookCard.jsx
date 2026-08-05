@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from "axios"
 import {toast} from "sonner"
 import useUsers from "../services/useUsers"
+import { useQueryClient } from '@tanstack/react-query'
 
 function BookCard({book}) {
   // const  uptaing = async()=>{
@@ -24,6 +25,7 @@ function BookCard({book}) {
   const navigate =useNavigate()
 
   const userid = localStorage.getItem("userId")
+  const queryClient = useQueryClient()
 
   const {
     data : data = {},
@@ -57,6 +59,9 @@ function BookCard({book}) {
         const response = await axios.patch(`http://localhost:4001/users/${userid}`,{
           wishlist : deletedWish
         }) 
+        queryClient.invalidateQueries({
+                queryKey : ["user"]
+              })
          toast.success("removed successfully")
       }else{
         const updated = [
@@ -66,6 +71,10 @@ function BookCard({book}) {
       const response = axios.patch(` http://localhost:4001/users/${userid}`,{
         wishlist : updated
     })
+
+    queryClient.invalidateQueries({
+                queryKey : ["user"]
+              })
      toast.success("Added successfully")
       }
       
@@ -83,9 +92,12 @@ function BookCard({book}) {
       ]
 
         const response = axios.patch(` http://localhost:4001/users/${userid}`,{
-                            cart : updated
-                         })
+                cart : updated
+              })
 
+              queryClient.invalidateQueries({
+                queryKey : ["user"]
+              })
             toast.success("Added successfully")
     }catch(error){
       console.log(error)

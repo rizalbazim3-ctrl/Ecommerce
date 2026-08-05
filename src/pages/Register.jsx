@@ -25,12 +25,20 @@ function Register() {
     )
   }
 
-  const handleSignup =  ()=>{ 
-    if(
+  const handleSignup =  async ()=>{ 
+   
+      const response = await axios.get(`http://localhost:4001/users?email=${email}`)
+         
+    
+    if(response.data.length !== 0){
+      toast.error("Email already exist")
+      return;
+    }
+    else if(
       name.length > 2 && 
       email.endsWith("@gmail.com") &&  
       phone.length === 10 && 
-      pass.length > 7 && 
+      pass.length >= 6 && 
       pass === confirm
     ){
       console.log("finish")

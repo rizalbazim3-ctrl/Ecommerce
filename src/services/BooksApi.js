@@ -14,3 +14,16 @@ export async function Users(){
   )
   return response.data
 } 
+export async function  removecart(id) {
+  const userid = localStorage.getItem("userId")
+  const list = await axios.get(` http://localhost:4001/users`)
+  const listData = list.data
+  console.log(listData)
+   try{ const cartUpdated = await listData.filter((item)=> item.id !== id )
+          await axios.patch(` http://localhost:4001/users/${userid}`,{
+            cart : cartUpdated
+          })
+        }catch(error){
+          console.log(error)
+        }
+      }

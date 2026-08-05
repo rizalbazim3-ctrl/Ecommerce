@@ -251,7 +251,7 @@ const handlePlaceOrder = async () => {
     return <p>something is wrong ,Try again</p>
   }
 
-  if(!checkoutItems.length !== 0){
+  if(checkoutItems.length === 0){
    return <Navigate to = "/" replace />
 }
 

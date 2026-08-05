@@ -6,12 +6,14 @@ import Footer from '../components/Footer'
 import {useNavigate} from "react-router-dom"
 import { toast } from 'sonner'
 import useUsers from '../services/useUsers'
+import {useQueryClient} from "@tanstack/react-query"
 
 function BookDetails() {
   const {id} = useParams()
   const navigate = useNavigate()
   const [Details,setDetails] = useState([])
   const userid = localStorage.getItem("userId")
+  const queryClient = useQueryClient()
 
   useEffect( ()=>{
     const fetchDetails = async (id)=>{
@@ -28,15 +30,22 @@ function BookDetails() {
 
   const addcart = async ()=> {
     const addingCart = user.cart.filter((item)=> item.id === Details.id)
-    if(addingCart.length !== 0 ){
+   try{ if(addingCart.length !== 0 ){
       toast.error("already added")
     }else{
         axios.patch(` http://localhost:4001/users/${userid}`,{
         cart : [...(user.cart) || [],Details]
           })
 
+          queryClient.invalidateQueries({
+                queryKey : ["user"]
+              })
+
             toast.success("added Successfully")
       }
+    }catch(error){
+      console.log(error)
+    }
   }
 
   const handleBuyNow = (book) => {
@@ -74,7 +83,7 @@ function BookDetails() {
                     <img
               src={Details.image}
               alt={Details.title}
-              className="w-[55%] h-[350px] object-cover mx-auto rounded-lg border-2 border-[#3b2a1f]/10 p-4 bg-[#8a4a1f]/10 hover:border-[#8a4a1f]  transition duration-300"
+              className="w-[55%] h-[350px]  mx-auto rounded-lg border-2 border-[#3b2a1f]/10 p-4 bg-[#8a4a1f]/10 hover:border-[#8a4a1f]  transition duration-300"
             />
        </section>
         <article className='w-[50%]'>

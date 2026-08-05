@@ -12,6 +12,7 @@ import useUsers from '../services/useUsers'
 import { useQueryClient } from '@tanstack/react-query'
 import {ShoppingCart} from "lucide-react"
 
+
 function Cart() {
 
   const navigate = useNavigate()
@@ -40,7 +41,7 @@ function Cart() {
 
    try{ const cartUpdated =  list.filter((item)=> item.id !== id )
 
-          axios.patch(` http://localhost:4001/users/${userid}`,{
+          await axios.patch(` http://localhost:4001/users/${userid}`,{
             cart : cartUpdated
           })
 
@@ -114,7 +115,7 @@ const handleBuyAll = () => {
   return( 
   <div className=' text-center'>
           <Navbar/>
-  <div className='w-full my-[20%] flex justify-center '>
+  <div className='w-full my-[21%] flex justify-center '>
     <ShoppingCart />
     <p className=' text-red text-xl ml-5 font-semibold '> 
      Not Added Yet</p> 

@@ -8,10 +8,12 @@
   import { toast } from 'sonner'
   import { setwishlistCount } from "../services/cartSlice"
   import useUsers from '../services/useUsers'
+  import { useQueryClient } from '@tanstack/react-query'
 
   function Wishlist() {
     const userid = localStorage.getItem("userId")
     const dispatch = useDispatch()
+    const queryClient = useQueryClient()
 
     const {data : user = [],
       isLoading,
@@ -36,7 +38,13 @@
 
           axios.patch(` http://localhost:4001/users/${userid}`,{
                 wishlist : wishUpdated
-            })}catch(error){
+              })
+
+              queryClient.invalidateQueries({
+                queryKey : ["user"]
+                })
+            
+            }catch(error){
               console.log(error)
             }
             }  
@@ -56,7 +64,6 @@
       }else{
         toast.error("Already added")
       }
-      console.log(id)
                           
     }                          
    
@@ -103,8 +110,11 @@
         ))
             :
             <div  
-              className=" flex justify-center items-center w-[70%] h-[40%] flex flex-row py-5 mx-auto my-20 bg-[#fbf6ec] rounded-2xl shadow-2xl overflow-hidden group  text-center">
-                <p className='font-bold text-[#3b2a1f] text-3xl'>Empty</p>
+              className="  w-[70%] py-5 mx-auto my-20 ">
+                <div className='flex justify-center items-center m-[20%]'>
+                  <Heart className = "text-red-500 mr-3 mt-1" />
+                <p className='font-semibold text-[#3b2a1f] text-xl italic'>Not Added Yet</p>
+                </div>
             </div>
           
         }

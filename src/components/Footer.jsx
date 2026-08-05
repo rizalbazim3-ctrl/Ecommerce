@@ -1,7 +1,7 @@
 import { BookOpen, Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
-  const quickLinks = ["Home", "Books", "Best sellers", "New arrivals"];
+  const quickLinks = ["Home", "Books", "Best sellers"];
   const categories = ["Fiction", "Romance", "Mystery", "Self-help"];
   const customerService = ["My account", "My orders", "Wishlist"];
 

@@ -68,8 +68,11 @@ export default function Navbar({isLogin}) {
     return <p>Loading...</p>
   }
 
+  if(user.cart){
   cartCount = user?.cart.filter((item)=> item) 
   wishlistCount = user?.wishlist.filter((item)=> item) 
+}
+  
 
 
 }

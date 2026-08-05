@@ -5,156 +5,156 @@
       "title": "The Great Gatsby",
       "author": "F. Scott Fitzgerald",
       "category": "Fiction",
-      "price": 15,
+      "price": 715,
       "rating": 4.4,
       "stock": 20,
       "pages": 180,
       "description": "A classic novel about wealth, love, ambition, and the American Dream.",
       "image": "https://media.bookchor.com/images/cover/568/9781447225928.jpg",
-      "bestSeller" : true 
+      "bestSeller": true
     },
     {
       "id": 2,
       "title": "To Kill a Mockingbird",
       "author": "Harper Lee",
       "category": "Fiction",
-      "price": 18,
+      "price": 818,
       "rating": 4.8,
       "stock": 15,
       "pages": 336,
       "description": "A powerful story about justice, morality, and growing up in a divided society.",
       "image": "https://media.bookchor.com/images/cover/568/9780099549482.jpg",
-      "bestSeller" : true
+      "bestSeller": true
     },
     {
       "id": 3,
       "title": "The Alchemist",
       "author": "Paulo Coelho",
       "category": "Fiction",
-      "price": 14,
+      "price": 614,
       "rating": 4.7,
       "stock": 25,
       "pages": 208,
       "description": "A young shepherd follows his dreams and discovers the meaning of destiny.",
       "image": "https://media.bookchor.com/images/cover/bc/9780785841722.jpg",
-      "bestSeller" : true
+      "bestSeller": true
     },
     {
       "id": 4,
       "title": "Atomic Habits",
       "author": "James Clear",
       "category": "Self-Help",
-      "price": 22,
+      "price": 522,
       "rating": 4.9,
       "stock": 30,
       "pages": 320,
       "description": "A practical guide to building good habits and breaking bad ones through small improvements.",
       "image": "https://media.bookchor.com/images/cover/bc/9781847941831_1.jpg",
-      "bestSeller" : true
+      "bestSeller": true
     },
     {
       "id": 5,
       "title": "The Power of Now",
       "author": "Eckhart Tolle",
       "category": "Self-Help",
-      "price": 19,
+      "price": 519,
       "rating": 4.6,
       "stock": 18,
       "pages": 236,
       "description": "A guide to mindfulness and living peacefully in the present moment.",
       "image": "https://media.bookchor.com/images/cover/583/9788190105910.jpg",
-      "bestSeller" : true
+      "bestSeller": true
     },
     {
       "id": 6,
       "title": "Think and Grow Rich",
       "author": "Napoleon Hill",
       "category": "Self-Help",
-      "price": 16,
+      "price": 716,
       "rating": 4.5,
       "stock": 22,
       "pages": 320,
       "description": "A classic personal development book about mindset, goals, and achieving success.",
       "image": "https://media.bookchor.com/images/cover/586/9788192681047.jpg",
-      "bestSeller" : true
+      "bestSeller": true
     },
     {
       "id": 13,
       "title": "Steve Jobs",
       "author": "Walter Isaacson",
       "category": "Biography",
-      "price": 30,
+      "price": 430,
       "rating": 4.7,
       "stock": 12,
       "pages": 656,
       "description": "A detailed biography of Steve Jobs and his life, career, creativity, and impact on technology.",
       "image": "https://media.bookchor.com/images/cover/592/9781451648539.jpg",
-      "bestSeller" : true
+      "bestSeller": true
     },
     {
       "id": 14,
       "title": "Long Walk to Freedom",
       "author": "Nelson Mandela",
       "category": "Biography",
-      "price": 25,
+      "price": 525,
       "rating": 4.8,
       "stock": 17,
       "pages": 656,
       "description": "Nelson Mandela's autobiography describing his journey and struggle against apartheid.",
       "image": "https://media.bookchor.com/images/cover/595/9780349139623.jpg",
-      "bestSeller" : true
+      "bestSeller": true
     },
     {
       "id": 15,
       "title": "The Diary of a Young Girl",
       "author": "Anne Frank",
       "category": "Biography",
-      "price": 17,
+      "price": 417,
       "rating": 4.9,
       "stock": 24,
       "pages": 352,
       "description": "The diary of Anne Frank documenting her life and experiences during World War II.",
       "image": "https://media.bookchor.com/images/cover/579/9780140264739.jpg",
-      "bestSeller" : true
+      "bestSeller": true
     },
     {
       "id": 16,
       "title": "Dune",
       "author": "Frank Herbert",
       "category": "Science Fiction",
-      "price": 23,
+      "price": 623,
       "rating": 4.8,
       "stock": 15,
       "pages": 688,
       "description": "An epic science fiction story about politics, power, survival, and destiny on a desert planet.",
       "image": "https://media.bookchor.com/images/cover/bc/9780593098271.jpg",
-      "bestSeller" : true
+      "bestSeller": true
     },
     {
       "id": 17,
       "title": "The Martian",
       "author": "Andy Weir",
       "category": "Science Fiction",
-      "price": 20,
+      "price": 720,
       "rating": 4.7,
       "stock": 19,
       "pages": 384,
       "description": "An astronaut stranded on Mars uses science and engineering to survive against impossible odds.",
       "image": "https://99bookstores.com/cdn/shop/files/29752927.jpg?v=1780827624&width=990",
-      "bestSeller" : true
+      "bestSeller": true
     },
     {
       "id": 18,
       "title": "Project Hail Mary",
       "author": "Andy Weir",
       "category": "Science Fiction",
-      "price": 24,
+      "price": 424,
       "rating": 4.9,
       "stock": 21,
       "pages": 496,
       "description": "A lone astronaut awakens on a desperate mission to save humanity from an extinction-level threat.",
       "image": "https://99bookstores.com/cdn/shop/files/245571012.jpg?v=1781511935&width=990",
-      "bestSeller" : true
+      "bestSeller": true
     },
     {
       "id": 19,
@@ -166,7 +166,7 @@
       "stock": 25,
       "pages": 443,
       "description": "A fascinating exploration of human history, from the emergence of Homo sapiens to the modern world.",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/713jIoMO3UL.jpg"
+      "image": "https://atlanticbooks.com/cdn/shop/files/9780063422018_436x650.webp?v=1768582597"
     },
     {
       "id": 20,
@@ -178,7 +178,7 @@
       "stock": 18,
       "pages": 528,
       "description": "An exploration of how geography, environment, and technology shaped the rise of civilizations.",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/91J4D4gQJTL.jpg"
+      "image": "https://atlanticbooks.com/cdn/shop/files/9780393354324_431x650.webp?v=1767098197"
     },
     {
       "id": 21,
@@ -190,7 +190,7 @@
       "stock": 15,
       "pages": 768,
       "description": "A history of the United States told from the perspectives of ordinary people and marginalized communities.",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/71w0F7W7JmL.jpg"
+      "image": "https://atlanticbooks.com/cdn/shop/files/9781138133969_431x650.webp?v=1769215996"
     },
     {
       "id": 22,
@@ -202,7 +202,7 @@
       "stock": 22,
       "pages": 656,
       "description": "A sweeping history of the world that places the ancient trade routes of Asia at the center of global civilization.",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/81z7K7m3QTL.jpg"
+      "image": "https://atlanticbooks.com/cdn/shop/files/9781101912379_431x650.webp?v=1769201686"
     },
     {
       "id": 23,
@@ -214,7 +214,7 @@
       "stock": 30,
       "pages": 283,
       "description": "The powerful diary of Anne Frank, documenting her life in hiding during the Nazi occupation of the Netherlands.",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/81yH3w5H4GL.jpg"
+      "image": "https://atlanticbooks.com/cdn/shop/files/9798650062189_502x650.webp?v=1767938959"
     },
     {
       "id": 24,
@@ -226,7 +226,7 @@
       "stock": 16,
       "pages": 336,
       "description": "The inspiring story of Wilbur and Orville Wright and their journey toward achieving powered human flight.",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/81M5Xq5n2TL.jpg"
+      "image": "https://atlanticbooks.com/cdn/shop/files/9781023472067_434x650.webp?v=1769045107"
     },
     {
       "id": 25,
@@ -238,7 +238,7 @@
       "stock": 20,
       "pages": 386,
       "description": "A detailed account of the pivotal year 1776 and the struggles that shaped the American Revolution.",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/81Q6Z8QZ9TL.jpg"
+      "image": "https://atlanticbooks.com/cdn/shop/files/9781615794157_433x650.webp?v=1770272731"
     },
     {
       "id": 26,
@@ -250,43 +250,43 @@
       "stock": 12,
       "pages": 608,
       "description": "A classic historical account of the conflict between Athens and Sparta in ancient Greece.",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/71QJQ2YJQGL.jpg"
+      "image": "https://atlanticbooks.com/cdn/shop/files/9781545524138_434x650.webp?v=1767125810"
     },
     {
       "id": 27,
       "title": "Pride and Prejudice",
       "author": "Jane Austen",
       "category": "Romance",
-      "price": 199,
+      "price": 1779,
       "rating": 4.8,
       "stock": 25,
       "pages": 352,
       "description": "A timeless romantic classic about Elizabeth Bennet and Mr. Darcy, exploring love, pride, prejudice, and social expectations.",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/81x4J7YJQTL.jpg"
+      "image": "https://atlanticbooks.com/cdn/shop/files/9781773566078_434x650.webp?v=1782912266"
     },
     {
       "id": 28,
       "title": "The Fault in Our Stars",
       "author": "John Green",
       "category": "Romance",
-      "price": 450,
+      "price": 1450,
       "rating": 4.7,
       "stock": 30,
       "pages": 352,
       "description": "A touching love story about Hazel and Augustus, two young people who find love while facing the challenges of illness.",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/817t9B9JQTL.jpg"
+      "image": "https://atlanticbooks.com/cdn/shop/files/9780142424179_437x650.webp?v=1767142127"
     },
     {
       "id": 29,
       "title": "Me Before You",
       "author": "Jojo Moyes",
       "category": "Romance",
-      "price": 499,
+      "price": 1288,
       "rating": 4.7,
       "stock": 20,
       "pages": 480,
       "description": "An emotional story about Louisa Clark and Will Traynor that explores love, choices, and the meaning of living.",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/81J6Y7YJQTL.jpg"
+      "image": "https://atlanticbooks.com/cdn/shop/files/9798280304253_406x650.webp?v=1768591771"
     },
     {
       "id": 30,
@@ -298,7 +298,7 @@
       "stock": 18,
       "pages": 272,
       "description": "A deeply emotional romance about Noah and Allie whose love survives separation, time, and life's greatest challenges.",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/81L7Y8YJQTL.jpg"
+      "image": "https://atlanticbooks.com/cdn/shop/files/9781455582877_408x650.webp?v=1769290427"
     },
     {
       "id": 31,
@@ -310,7 +310,7 @@
       "stock": 28,
       "pages": 384,
       "description": "A powerful contemporary romance that explores love, difficult choices, relationships, and breaking harmful cycles.",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/81s6x8YJQTL.jpg"
+      "image": "https://atlanticbooks.com/cdn/shop/files/9781501110368_419x650.webp?v=1769201618"
     },
     {
       "id": 32,
@@ -322,7 +322,7 @@
       "stock": 22,
       "pages": 400,
       "description": "A fun and charming romantic comedy about a young scientist whose fake relationship unexpectedly turns into something real.",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/81X2Y3YJQTL.jpg"
+      "image": "https://atlanticbooks.com/cdn/shop/files/9781408725764_411x650.webp?v=1769207522"
     },
     {
       "id": 33,
@@ -334,7 +334,7 @@
       "stock": 24,
       "pages": 264,
       "description": "A heartfelt Indian love story about Ravin and Khushi and the unexpected challenges that test their relationship.",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/71Q7Y8YJQTL.jpg"
+      "image": "https://atlanticbooks.com/cdn/shop/files/9780670090747_426x651.webp?v=1769298645"
     },
     {
       "id": 34,
@@ -346,7 +346,7 @@
       "stock": 16,
       "pages": 432,
       "description": "An emotional story of Violet and Finch, exploring love, loss, grief, and the impact two people can have on each other's lives.",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/81W5Y6YJQTL.jpg"
+      "image": "https://atlanticbooks.com/cdn/shop/files/9780385755917_434x650.webp?v=1769202430"
     },
     {
       "id": 35,
@@ -358,7 +358,7 @@
       "stock": 25,
       "pages": 272,
       "description": "Ten strangers are invited to an isolated island, where they mysteriously begin to die one by one.",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/81rK5Y8YQTL.jpg"
+      "image": "https://atlanticbooks.com/cdn/shop/files/9780062325549_431x650.webp?v=1767143257"
     },
     {
       "id": 36,
@@ -370,7 +370,7 @@
       "stock": 20,
       "pages": 288,
       "description": "Hercule Poirot investigates a shocking murder in a quiet English village filled with secrets and suspects.",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/81H7Y8YJQTL.jpg"
+      "image": "https://atlanticbooks.com/cdn/shop/files/9780008255817_405x650.webp?v=1767105515"
     },
     {
       "id": 37,
@@ -382,7 +382,7 @@
       "stock": 30,
       "pages": 256,
       "description": "Sherlock Holmes investigates a mysterious curse and a terrifying hound haunting the Baskerville family.",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/81K7Y8YJQTL.jpg"
+      "image": "https://atlanticbooks.com/cdn/shop/files/9798347572090_434x650.webp?v=1768571841"
     },
     {
       "id": 38,
@@ -394,7 +394,7 @@
       "stock": 18,
       "pages": 480,
       "description": "A journalist and a brilliant hacker investigate the mysterious disappearance of a wealthy family's daughter.",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/81M7Y8YJQTL.jpg"
+      "image": "https://atlanticbooks.com/cdn/shop/files/9781785861734_429x650.webp?v=1769213879"
     },
     {
       "id": 39,
@@ -406,19 +406,19 @@
       "stock": 22,
       "pages": 432,
       "description": "When Amy Dunne disappears on her wedding anniversary, her husband Nick becomes the center of a disturbing mystery.",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/81Q7Y8YJQTL.jpg"
+      "image": "https://atlanticbooks.com/cdn/shop/files/9780307588371_423x650.webp?v=1768542430"
     },
     {
       "id": 40,
       "title": "The Da Vinci Code",
       "author": "Dan Brown",
       "category": "Mystery",
-      "price": 399,
+      "price": 1899,
       "rating": 4.6,
       "stock": 28,
       "pages": 592,
       "description": "A symbologist and a cryptologist race to solve a series of mysterious clues connected to an ancient secret.",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/81R7Y8YJQTL.jpg"
+      "image": "https://atlanticbooks.com/cdn/shop/files/9780385504201_431x650.webp?v=1769202500"
     },
     {
       "id": 41,
@@ -430,7 +430,7 @@
       "stock": 15,
       "pages": 480,
       "description": "A mysterious death brings hidden secrets and complicated relationships among a group of parents to the surface.",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/81S7Y8YJQTL.jpg"
+      "image": "https://atlanticbooks.com/cdn/shop/files/9780425274866_434x650.webp?v=1769206233"
     },
     {
       "id": 42,
@@ -442,7 +442,71 @@
       "stock": 24,
       "pages": 336,
       "description": "A famous painter stops speaking after being accused of murdering her husband, and a therapist becomes determined to uncover the truth.",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/81T7Y8YJQTL.jpg"
+      "image": "https://atlanticbooks.com/cdn/shop/files/9798249739669_421x650.webp?v=1777996105"
+    },
+    {
+      "id": 50,
+      "title": "The 7 Habits of Highly Effective People",
+      "author": "Stephen R. Covey",
+      "category": "Self-Help",
+      "price": 1553,
+      "rating": 4.7,
+      "stock": 20,
+      "pages": 464,
+      "description": "A timeless guide to developing effective habits and improving personal and professional success.",
+      "image": "https://atlanticbooks.com/cdn/shop/files/9781684818358_434x650.webp?v=1769294418",
+      "bestSeller": true
+    },
+    {
+      "id": 51,
+      "title": "How to Win Friends and Influence People",
+      "author": "Dale Carnegie",
+      "category": "Self-Help",
+      "price": 1688,
+      "rating": 4.8,
+      "stock": 18,
+      "pages": 288,
+      "description": "A practical guide to improving communication, building relationships, and interacting effectively with others.",
+      "image": "https://atlanticbooks.com/cdn/shop/files/9781946963758_434x650.webp?v=1774892166",
+      "bestSeller": true
+    },
+    {
+      "id": 52,
+      "title": "The Power of Now",
+      "author": "Eckhart Tolle",
+      "category": "Self-Help",
+      "price": 1544,
+      "rating": 4.7,
+      "stock": 22,
+      "pages": 236,
+      "description": "A guide to mindfulness and living in the present moment to find greater peace and awareness.",
+      "image": "https://atlanticbooks.com/cdn/shop/files/9781399743303_404x650.webp?v=1769289820"
+    },
+    {
+      "id": 53,
+      "title": "1984",
+      "author": "George Orwell",
+      "category": "Fiction",
+      "originalPrice": 16,
+      "price": 614,
+      "rating": 4.7,
+      "stock": 20,
+      "pages": 328,
+      "description": "A dystopian novel about a society controlled by surveillance, propaganda, and an authoritarian government.",
+      "image": "https://atlanticbooks.com/cdn/shop/files/9780008442613_421x650.webp?v=1769219647"
+    },
+    {
+      "id": 56,
+      "title": "The Kite Runner",
+      "author": "Khaled Hosseini",
+      "category": "Fiction",
+      "originalPrice": 18,
+      "price": 1115,
+      "rating": 4.8,
+      "stock": 15,
+      "pages": 371,
+      "description": "A powerful story of friendship, betrayal, redemption, and the lasting impact of childhood choices.",
+      "image": "https://atlanticbooks.com/cdn/shop/files/9781594631931_416x650.webp?v=1769202670"
     }
   ],
   "users": [
@@ -451,7 +515,7 @@
       "email": "shan@gmail.com",
       "phone": "9995555308",
       "password": "00000000",
-      "id": 1,
+      "id": 74837,
       "orderedUserDetails": [
         {
           "orderDate": "2026-08-03T16:15:23.187Z",
@@ -477,32 +541,21 @@
       ],
       "cart": [
         {
-          "id": 1,
-          "title": "The Great Gatsby",
-          "author": "F. Scott Fitzgerald",
-          "category": "Fiction",
-          "price": 15,
-          "rating": 4.4,
-          "stock": 20,
-          "pages": 180,
-          "description": "A classic novel about wealth, love, ambition, and the American Dream.",
-          "image": "https://media.bookchor.com/images/cover/568/9781447225928.jpg"
+          "id": 4,
+          "title": "Atomic Habits",
+          "author": "James Clear",
+          "category": "Self-Help",
+          "price": 522,
+          "rating": 4.9,
+          "stock": 30,
+          "pages": 320,
+          "description": "A practical guide to building good habits and breaking bad ones through small improvements.",
+          "image": "https://media.bookchor.com/images/cover/bc/9781847941831_1.jpg",
+          "bestSeller": true
         }
       ],
       "wishlist": [
         {
-          "id": 2,
-          "title": "To Kill a Mockingbird",
-          "author": "Harper Lee",
-          "category": "Fiction",
-          "price": 18,
-          "rating": 4.8,
-          "stock": 15,
-          "pages": 336,
-          "description": "A powerful story about justice, morality, and growing up in a divided society.",
-          "image": "https://media.bookchor.com/images/cover/568/9780099549482.jpg"
-        },
-        {
           "id": 1,
           "title": "The Great Gatsby",
           "author": "F. Scott Fitzgerald",
@@ -513,6 +566,32 @@
           "pages": 180,
           "description": "A classic novel about wealth, love, ambition, and the American Dream.",
           "image": "https://media.bookchor.com/images/cover/568/9781447225928.jpg"
+        },
+        {
+          "id": 6,
+          "title": "Think and Grow Rich",
+          "author": "Napoleon Hill",
+          "category": "Self-Help",
+          "price": 716,
+          "rating": 4.5,
+          "stock": 22,
+          "pages": 320,
+          "description": "A classic personal development book about mindset, goals, and achieving success.",
+          "image": "https://media.bookchor.com/images/cover/586/9788192681047.jpg",
+          "bestSeller": true
+        },
+        {
+          "id": 50,
+          "title": "The 7 Habits of Highly Effective People",
+          "author": "Stephen R. Covey",
+          "category": "Self-Help",
+          "price": 1553,
+          "rating": 4.7,
+          "stock": 20,
+          "pages": 464,
+          "description": "A timeless guide to developing effective habits and improving personal and professional success.",
+          "image": "https://atlanticbooks.com/cdn/shop/files/9781684818358_434x650.webp?v=1769294418",
+          "bestSeller": true
         }
       ]
     },
@@ -521,7 +600,276 @@
       "email": "muna@gmail.com",
       "phone": "7992873782",
       "password": "00000000",
-      "id": 2
+      "id": 2,
+      "orderedUserDetails": [
+        {
+          "orderDate": "2026-08-04T06:23:57.516Z",
+          "address": {
+            "orderedName": "dsfs",
+            "orderedNumber": "3232323232",
+            "orderedStreet": "gdfga",
+            "orderedPlace": "sdags",
+            "orderedPincode": "sda",
+            "orderedState": "sdags"
+          },
+          "payment": "Cash On Delivery",
+          "items": [
+            {
+              "id": 3,
+              "image": "https://media.bookchor.com/images/cover/bc/9780785841722.jpg",
+              "title": "The Alchemist",
+              "price": 614,
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "cart": []
+    },
+    {
+      "id": "30b5059b-f298-4789-9de4-9deb2a7fa346",
+      "name": "basim",
+      "email": "basim@gmail.com",
+      "phone": "7994263689",
+      "password": "00000000",
+      "orderedUserDetails": [
+        {
+          "orderDate": "2026-08-04T06:37:56.967Z",
+          "address": {
+            "orderedName": "risal basim",
+            "orderedNumber": "7994263689",
+            "orderedStreet": "kpd ",
+            "orderedPlace": "koppam",
+            "orderedPincode": "679309",
+            "orderedState": "kerala"
+          },
+          "payment": "Cash On Delivery",
+          "items": [
+            {
+              "id": 6,
+              "image": "https://media.bookchor.com/images/cover/586/9788192681047.jpg",
+              "title": "Think and Grow Rich",
+              "price": 716,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "orderDate": "2026-08-04T06:38:49.809Z",
+          "address": {
+            "orderedName": "rizal",
+            "orderedNumber": "7994263689",
+            "orderedStreet": "KPD",
+            "orderedPlace": "pattambi",
+            "orderedPincode": "679309",
+            "orderedState": "kerala"
+          },
+          "payment": "Cash On Delivery",
+          "items": [
+            {
+              "id": 2,
+              "image": "https://media.bookchor.com/images/cover/568/9780099549482.jpg",
+              "title": "To Kill a Mockingbird",
+              "price": 818,
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "cart": [
+        {
+          "id": 1,
+          "title": "The Great Gatsby",
+          "author": "F. Scott Fitzgerald",
+          "category": "Fiction",
+          "price": 715,
+          "rating": 4.4,
+          "stock": 20,
+          "pages": 180,
+          "description": "A classic novel about wealth, love, ambition, and the American Dream.",
+          "image": "https://media.bookchor.com/images/cover/568/9781447225928.jpg",
+          "bestSeller": true
+        }
+      ],
+      "wishlist": [
+        {
+          "id": 1,
+          "title": "The Great Gatsby",
+          "author": "F. Scott Fitzgerald",
+          "category": "Fiction",
+          "price": 715,
+          "rating": 4.4,
+          "stock": 20,
+          "pages": 180,
+          "description": "A classic novel about wealth, love, ambition, and the American Dream.",
+          "image": "https://media.bookchor.com/images/cover/568/9781447225928.jpg",
+          "bestSeller": true
+        }
+      ]
+    },
+    {
+      "id": "74596498-1d2c-4942-9399-c247d762f7b3",
+      "name": "afla",
+      "email": "afla@gmail.com",
+      "phone": "7994564728",
+      "password": "00000000",
+      "orderedUserDetails": [],
+      "cart": [
+        {
+          "id": 3,
+          "title": "The Alchemist",
+          "author": "Paulo Coelho",
+          "category": "Fiction",
+          "price": 614,
+          "rating": 4.7,
+          "stock": 25,
+          "pages": 208,
+          "description": "A young shepherd follows his dreams and discovers the meaning of destiny.",
+          "image": "https://media.bookchor.com/images/cover/bc/9780785841722.jpg",
+          "bestSeller": true
+        }
+      ],
+      "wishlist": [
+        {
+          "id": 2,
+          "title": "To Kill a Mockingbird",
+          "author": "Harper Lee",
+          "category": "Fiction",
+          "price": 818,
+          "rating": 4.8,
+          "stock": 15,
+          "pages": 336,
+          "description": "A powerful story about justice, morality, and growing up in a divided society.",
+          "image": "https://media.bookchor.com/images/cover/568/9780099549482.jpg",
+          "bestSeller": true
+        }
+      ]
+    },
+    {
+      "id": "a567a29c-d4ca-42e6-ae78-88ab595c0c8b",
+      "name": "basimk",
+      "email": "hey@gmail.com",
+      "phone": "7994263647",
+      "password": "00000000",
+      "orderedUserDetails": [
+        {
+          "orderDate": "2026-08-04T10:17:30.554Z",
+          "address": {
+            "orderedName": "basiim",
+            "orderedNumber": "7992348599",
+            "orderedStreet": "kpd",
+            "orderedPlace": "koppam",
+            "orderedPincode": "6789",
+            "orderedState": "kerala"
+          },
+          "payment": "Cash On Delivery",
+          "items": [
+            {
+              "id": 2,
+              "image": "https://media.bookchor.com/images/cover/568/9780099549482.jpg",
+              "title": "To Kill a Mockingbird",
+              "price": 818,
+              "quantity": 2
+            }
+          ]
+        },
+        {
+          "orderDate": "2026-08-04T14:49:18.318Z",
+          "address": {
+            "orderedName": "rizal",
+            "orderedNumber": "7994263689",
+            "orderedStreet": "kpd",
+            "orderedPlace": "koppam",
+            "orderedPincode": "679309",
+            "orderedState": "kerala"
+          },
+          "payment": "Cash On Delivery",
+          "items": [
+            {
+              "id": 2,
+              "image": "https://media.bookchor.com/images/cover/568/9780099549482.jpg",
+              "title": "To Kill a Mockingbird",
+              "price": 818,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "orderDate": "2026-08-04T14:51:04.402Z",
+          "address": {
+            "orderedName": "shan ",
+            "orderedNumber": "9995555308",
+            "orderedStreet": "pooo`",
+            "orderedPlace": "padinatumpuram",
+            "orderedPincode": "679309",
+            "orderedState": "kerala"
+          },
+          "payment": "Cash On Delivery",
+          "items": [
+            {
+              "id": 17,
+              "image": "https://99bookstores.com/cdn/shop/files/29752927.jpg?v=1780827624&width=990",
+              "title": "The Martian",
+              "price": 720,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "orderDate": "2026-08-04T15:27:44.590Z",
+          "address": {
+            "orderedName": "basim",
+            "orderedNumber": "7883848383",
+            "orderedStreet": "kkooraci",
+            "orderedPlace": "pattambi",
+            "orderedPincode": "6797890",
+            "orderedState": "kerala"
+          },
+          "payment": "Cash On Delivery",
+          "items": [
+            {
+              "id": 17,
+              "image": "https://99bookstores.com/cdn/shop/files/29752927.jpg?v=1780827624&width=990",
+              "title": "The Martian",
+              "price": 720,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "orderDate": "2026-08-04T15:28:57.872Z",
+          "address": {
+            "orderedName": "sdfasdf",
+            "orderedNumber": "1234567890",
+            "orderedStreet": "sdfsa",
+            "orderedPlace": "sdfasd",
+            "orderedPincode": "dsafsdaf",
+            "orderedState": "sdafsdf"
+          },
+          "payment": "Cash On Delivery",
+          "items": [
+            {
+              "id": 4,
+              "image": "https://media.bookchor.com/images/cover/bc/9781847941831_1.jpg",
+              "title": "Atomic Habits",
+              "price": 522,
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "cart": [],
+      "wishlist": []
+    },
+    {
+      "id": "e516b608-c25d-4f98-a345-ab2febae9e6f",
+      "name": "basimk",
+      "email": "hey@gmail.com",
+      "phone": "7994263647",
+      "password": "00000000",
+      "orderedUserDetails": [],
+      "cart": [],
+      "wishlist": []
     }
   ]
 }

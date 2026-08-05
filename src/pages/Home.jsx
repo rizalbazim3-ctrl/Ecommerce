@@ -42,7 +42,7 @@ function Home() {
         </section>
         <h1 
         className="text-4xl font-serif font-bold text-[#3b2a20] text-center m-10 hover:scale-102 duration-500 border-b p-2">
-          CATEGORY 
+          CATEGORIES
         </h1>
         <section className="flex flex-wrap justify-center gap-10  mb-10">
           <button className="w-[20%] ">

@@ -21,8 +21,11 @@
     if(isLoading){
       return <p>Loading...</p>
     }
-    const list = user.wishlist.map( (book)=> book )
+
+      const list = user.wishlist.map( (book)=> book ) 
     const cartlist = user.cart.map((item)=> item )
+    
+    
  
 
     const wishlist = async (id)=> {

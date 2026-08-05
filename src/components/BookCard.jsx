@@ -99,7 +99,7 @@ function BookCard({book}) {
     <div
      className=" w-[80%] md:w-[200px] h-[250px] mx-auto rounded-lg border-2 border-[#3b2a1f]/10 p-4 bg-[#8a4a1f]/10 hover:border-[#8a4a1f]  transition duration-300 relative">
        <img src={book.image} alt="bookImage" 
-       className="w-[100%] h-full object-cover mx-auto overflow-hidden"
+       className="w-[100%] h-full  mx-auto overflow-hidden"
        onClick={()=>{
       navigate(`/Books/${book.id}`)
     }}

@@ -32,9 +32,9 @@ function Books() {
       <Navbar/>
        
       <img src="booksforbooks.png" alt="banner" 
-      className='w-[90%] h-[400px] mx-auto my-10 rounded-3xl'
+      className='w-[90%] h-[500px] mx-auto my-10 rounded-xl'
       />
-      <p className="text-4xl font-serif font-bold text-[#3b2a20] text-center m-10 hover:scale-102 duration-500 ">
+      <p className="text-4xl font-serif font-bold text-[#3b2a20] text-center  hover:scale-102 duration-500 ">
         The Story Shelf
       </p>
      
@@ -43,7 +43,7 @@ function Books() {
         filteredBooks.map((book)=> <BookCard key={book.id}  book = {book}/> )
         }
       </section>
-       <div className=' absolute top-156 left-50 flex gap-15'>
+       <div className=' absolute top-170 left-40 flex gap-15'>
         <p className='font-semibold text-lg text-black/60 mt-3'>Filter</p>
         <div className='w-70'>
            <div className=" flex justify-between mx-2 mb-2">

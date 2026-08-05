@@ -14,7 +14,7 @@ function BooksSelfhelp() {
   return (
       <div>
       <Navbar/>
-      <img src="SelfBanner.png" alt="banner" className = "w-[90%] h-[380px] overflow-hidden mx-auto rounded-xl my-10"/>
+      <img src="SelfBanner.png" alt="banner" className = "w-[90%] h-[430px] overflow-hidden mx-auto rounded-lg my-10"/>
       <h1 className="text-4xl font-serif font-bold text-[#3b2a20] text-center m-10 hover:scale-102 duration-500">
             Self-Help</h1>
       <section className='flex flex-wrap gap-10 justify-center mb-10'>

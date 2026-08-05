@@ -10,6 +10,7 @@ import { useMutation,useQueryClient,useQuery } from '@tanstack/react-query'
 import axios from "axios"
 import useUsers from '../services/useUsers'
 import Navbar from '../components/Navbar'
+import { Navigate } from 'react-router-dom' 
 
 function Checkout() {
   const checkoutItems = JSON.parse(
@@ -151,6 +152,7 @@ const decreaseQuantity = (id) => {
 }
 
 
+
 const handlePlaceOrder = async () => {
   if (checkoutItems.length === 0) {
     toast.error("Select product")
@@ -217,7 +219,7 @@ const handlePlaceOrder = async () => {
 
     toast.success("Order successfully placed")
 
-    navigate("/PaymentResult")
+    navigate("/PaymentResult" , {replace : true})
 
   } catch (error) {
     toast.error("Failed to place order")
@@ -240,22 +242,7 @@ const handlePlaceOrder = async () => {
   (total, item) => total +  item.quantity,
   0
   );
-// //deleting cart
-//   const removecart = async (id)=> {
-  
-//      try{ const cartUpdated =  list.filter((item)=> item.id !== id )
-  
-//             axios.patch(` http://localhost:4001/users/${userid}`,{
-//               cart : cartUpdated
-//             })
-  
-//             queryClient.invalidateQueries({
-//               queryKey : ["user"]
-//             })
-//           }catch(error){
-//             console.log(error)
-//           }
-//         }
+
 
   if(booksloading){
    return  <p>Loading...</p>
@@ -263,6 +250,10 @@ const handlePlaceOrder = async () => {
   if(booksloading){
     return <p>something is wrong ,Try again</p>
   }
+
+  if(!checkoutItems.length !== 0){
+   return <Navigate to = "/" replace />
+}
 
   return (
     <>

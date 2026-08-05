@@ -10,6 +10,7 @@ import { useSelector,useDispatch } from 'react-redux'
 import {setcartcount} from "../services/cartSlice"
 import useUsers from '../services/useUsers'
 import { useQueryClient } from '@tanstack/react-query'
+import {ShoppingCart} from "lucide-react"
 
 function Cart() {
 
@@ -30,8 +31,10 @@ function Cart() {
     return <p>Loading...</p>
   }
 
+    const list = userCart.cart.map( (book)=> book ) 
 
- const list = userCart.cart.map( (book)=> book )
+   
+ 
 
   const removecart = async (id)=> {
 
@@ -107,16 +110,21 @@ const handleBuyAll = () => {
 
   const cartItems = list.filter((item)=> item.id )
   
-
- if(cartItems.length === 0){
+  if(cartItems.length === 0){
   return( 
-  <div className='w-full h-screen text-center'>
+  <div className=' text-center'>
           <Navbar/>
-  <p className=' text-red text-xl font-semibold m-[20%]'> Not Added Yet</p>
+  <div className='w-full my-[20%] flex justify-center '>
+    <ShoppingCart />
+    <p className=' text-red text-xl ml-5 font-semibold '> 
+     Not Added Yet</p> 
+  </div>
   <Footer/>
   </div>
   )
  }
+
+
   return (
     <div className='w-full h-screen '>
           <Navbar/>

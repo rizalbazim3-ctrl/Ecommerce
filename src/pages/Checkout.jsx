@@ -207,6 +207,7 @@ const handlePlaceOrder = async () => {
     },
 
     payment: paymentMethod,
+    delivery : "success",
 
     items: checkoutItems
   }

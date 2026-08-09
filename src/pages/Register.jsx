@@ -49,6 +49,7 @@ function Register() {
         email : email,
         phone : phone,
         password : pass,
+        role : "user",
         orderedUserDetails : [],
         cart : [],
         wishlist : []

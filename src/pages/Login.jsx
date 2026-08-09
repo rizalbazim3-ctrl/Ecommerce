@@ -2,6 +2,13 @@ import React, { useRef, useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import { toast } from "sonner"
+import Dashboard from './admin/Dashboard'
+import { useQuery } from '@tanstack/react-query'
+
+ const fetchLogin = async () => {
+    const response = await axios.get(`http://localhost:4001/users`)
+    return response.data
+  }
 
 function Login() { 
   const inputRef = useRef(null)
@@ -9,29 +16,48 @@ function Login() {
   const [pass, setPass] = useState("")
   const navigate = useNavigate()
 
+  const {
+    data : user = [],
+    isLoading
+  } = useQuery({
+    queryKey : ["allLogins"],
+    queryFn : fetchLogin,
+  })
+
+
   useEffect(() => {
-    inputRef.current.focus()
+    inputRef.current?.focus()
   }, []) 
 
-  const fetchLogin = async () => {
-    const response = await axios.get(`http://localhost:4001/users?email=${email}`)
-    return response.data
+  if(isLoading){
+    return <p>Loading...</p>
   }
+
         
   const handleSignIn = async () => {
-    const data = await fetchLogin()
+    // const data = await fetchLogin()
+    const data = user.filter((item)=> item.email === email)
 
     if (data.length === 0) {
       toast.error("invalid email")
     } else if (data[0].password !== pass) {
       toast.error("invalid password")
     } else if (data.length !== 0 && data[0].password === pass) {
-      console.log(typeof data[0].password)
-      toast.success("Login successfull")
+      
+     if(data[0].role !== "admin"){
+       toast.success("Login successfull")
       localStorage.setItem("userId", data[0].id)
       setEmail("")
       setPass("")
       navigate("/")
+     }else if(data[0].role === "admin"){
+      toast.success("Admin logged successfully")
+      navigate("/Admin/Dashboard")
+      localStorage.setItem("userId", data[0].id)
+      setEmail("")
+      setPass("")
+      
+     }
     }
   }
         

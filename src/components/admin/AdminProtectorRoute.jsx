@@ -15,8 +15,6 @@ function AdminProtectorRoute(){
 
     const role = users.role
 
-    console.log(role)
-
     if(isError || !users){
       return  <Navigate to = "/Login" replace/>
     }

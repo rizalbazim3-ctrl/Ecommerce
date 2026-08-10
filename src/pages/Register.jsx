@@ -44,12 +44,13 @@ function Register() {
       console.log("finish")
 
       const newUser = {
-        id : crypto.randomUUID(),
+        id : Date.now(),
         name : name,
         email : email,
         phone : phone,
         password : pass,
         role : "user",
+        status : false,
         orderedUserDetails : [],
         cart : [],
         wishlist : []

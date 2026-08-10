@@ -11,7 +11,8 @@
       "pages": 180,
       "description": "A classic novel about wealth, love, ambition, and the American Dream.",
       "image": "https://media.bookchor.com/images/cover/568/9781447225928.jpg",
-      "bestSeller": true
+      "bestSeller": true,
+      "isDelete": true
     },
     {
       "id": 2,
@@ -115,7 +116,8 @@
       "pages": 352,
       "description": "The diary of Anne Frank documenting her life and experiences during World War II.",
       "image": "https://media.bookchor.com/images/cover/579/9780140264739.jpg",
-      "bestSeller": true
+      "bestSeller": true,
+      "isDelete": true
     },
     {
       "id": 16,
@@ -719,14 +721,16 @@
           "description": "A touching love story about Hazel and Augustus, two young people who find love while facing the challenges of illness.",
           "image": "https://atlanticbooks.com/cdn/shop/files/9780142424179_437x650.webp?v=1767142127"
         }
-      ]
+      ],
+      "status": true
     },
     {
       "id": "12830",
       "name": "admin",
       "email": "admin@gmail.com",
       "password": "123321",
-      "role": "admin"
+      "role": "admin",
+      "status": false
     },
     {
       "id": "a809e549-735a-4e06-a79c-f077e050a820",
@@ -870,7 +874,8 @@
           "image": "https://media.bookchor.com/images/cover/583/9788190105910.jpg",
           "bestSeller": true
         }
-      ]
+      ],
+      "status": true
     },
     {
       "id": "7330b7a5-f32c-42a1-afdf-08022e2c0b14",
@@ -881,7 +886,8 @@
       "role": "user",
       "orderedUserDetails": [],
       "cart": [],
-      "wishlist": []
+      "wishlist": [],
+      "status": true
     },
     {
       "id": "6c716e6f-6c29-4e68-b3f5-ffebec8cd56d",
@@ -1063,7 +1069,8 @@
           "image": "https://media.bookchor.com/images/cover/595/9780349139623.jpg",
           "bestSeller": true
         }
-      ]
+      ],
+      "status": false
     },
     {
       "id": "4531d1f5-2a04-4c5b-aac4-afcc72587508",
@@ -1137,7 +1144,8 @@
           "bestSeller": true
         }
       ],
-      "wishlist": []
+      "wishlist": [],
+      "status": true
     }
   ]
 }

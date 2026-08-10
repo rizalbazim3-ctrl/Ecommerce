@@ -9,10 +9,10 @@ function AdminHeader() {
 
 
             {/* searchBar */}
-           <div className='w-[40%] flex border border-yellow-900 rounded-2xl bg-yellow-100 p-2 pr-2  hover:border-yellow-900 transition duration-500 focus:ring-2' >
+           <div className='w-[40%] flex border border-yellow-900 rounded-2xl bg-yellow-100 p-2 pr-2  hover:border-yellow-900 transition duration-500 focus:ring-2 ' >
              <input type="text"
              placeholder='search...'
-             className='w-[100%] pl-3'
+             className='w-[100%] pl-3 outline-none'
              />
              <Search
              className = "bg-yellow-700 w-10 h-7 text-yellow-100 rounded-full p-1 hover:scale-105 transition duration-300"

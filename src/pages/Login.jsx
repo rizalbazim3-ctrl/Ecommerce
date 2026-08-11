@@ -38,6 +38,7 @@ function Login() {
     // const data = await fetchLogin()
     const data = user.filter((item)=> item.email === email)
 
+
     if (data.length === 0) {
       toast.error("invalid email")
     } else if (data[0].password !== pass) {
@@ -46,6 +47,7 @@ function Login() {
       
      if(data[0].role !== "admin"){
        toast.success("Login successfull")
+      localStorage.setItem("role", data[0].role)
       localStorage.setItem("userId", data[0].id)
       setEmail("")
       setPass("")
@@ -54,6 +56,7 @@ function Login() {
       toast.success("Admin logged successfully")
       navigate("/Admin/Dashboard")
       localStorage.setItem("userId", data[0].id)
+      localStorage.setItem("role", data[0].role)
       setEmail("")
       setPass("")
       

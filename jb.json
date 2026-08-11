@@ -7,12 +7,13 @@
       "category": "Fiction",
       "price": 715,
       "rating": 4.4,
-      "stock": 20,
+      "stock": "15",
       "pages": 180,
       "description": "A classic novel about wealth, love, ambition, and the American Dream.",
       "image": "https://media.bookchor.com/images/cover/568/9781447225928.jpg",
       "bestSeller": true,
-      "isDelete": true
+      "isDelete": false,
+      "page": ""
     },
     {
       "id": 2,
@@ -25,7 +26,8 @@
       "pages": 336,
       "description": "A powerful story about justice, morality, and growing up in a divided society.",
       "image": "https://media.bookchor.com/images/cover/568/9780099549482.jpg",
-      "bestSeller": true
+      "bestSeller": true,
+      "isDelete": true
     },
     {
       "id": 3,
@@ -77,7 +79,8 @@
       "pages": 320,
       "description": "A classic personal development book about mindset, goals, and achieving success.",
       "image": "https://media.bookchor.com/images/cover/586/9788192681047.jpg",
-      "bestSeller": true
+      "bestSeller": true,
+      "isDelete": true
     },
     {
       "id": 13,
@@ -482,7 +485,8 @@
       "stock": 22,
       "pages": 236,
       "description": "A guide to mindfulness and living in the present moment to find greater peace and awareness.",
-      "image": "https://atlanticbooks.com/cdn/shop/files/9781399743303_404x650.webp?v=1769289820"
+      "image": "https://atlanticbooks.com/cdn/shop/files/9781399743303_404x650.webp?v=1769289820",
+      "isDelete": true
     },
     {
       "id": 53,
@@ -509,6 +513,30 @@
       "pages": 371,
       "description": "A powerful story of friendship, betrayal, redemption, and the lasting impact of childhood choices.",
       "image": "https://atlanticbooks.com/cdn/shop/files/9781594631931_416x650.webp?v=1769202670"
+    },
+    {
+      "title": "The Secret Garden",
+      "author": "Frances Hodgson Burnett",
+      "category": "Fiction",
+      "price": "450",
+      "rating": "4.7",
+      "stock": "14",
+      "pages": "375",
+      "description": "A young orphan discovers a hidden garden on an English estate and, with the help of new friends, brings the forgotten garden and their own lives back to life.",
+      "image": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e",
+      "id": 57
+    },
+    {
+      "title": "dsfadsf",
+      "author": "dsfadsf",
+      "category": "sdfasdfa",
+      "price": "2342",
+      "rating": "2",
+      "stock": "32",
+      "pages": "232",
+      "description": "sdfafdas",
+      "image": "afsdfasfsfasdfsadfsa",
+      "id": 58
     }
   ],
   "users": [
@@ -722,7 +750,7 @@
           "image": "https://atlanticbooks.com/cdn/shop/files/9780142424179_437x650.webp?v=1767142127"
         }
       ],
-      "status": true
+      "status": false
     },
     {
       "id": "12830",
@@ -808,6 +836,45 @@
       ],
       "cart": [
         {
+          "id": 18,
+          "title": "Project Hail Mary",
+          "author": "Andy Weir",
+          "category": "Science Fiction",
+          "price": 424,
+          "rating": 4.9,
+          "stock": 3,
+          "pages": 496,
+          "description": "A lone astronaut awakens on a desperate mission to save humanity from an extinction-level threat.",
+          "image": "https://99bookstores.com/cdn/shop/files/245571012.jpg?v=1781511935&width=990",
+          "bestSeller": true
+        },
+        {
+          "id": 17,
+          "title": "The Martian",
+          "author": "Andy Weir",
+          "category": "Science Fiction",
+          "price": 720,
+          "rating": 4.7,
+          "stock": 19,
+          "pages": 384,
+          "description": "An astronaut stranded on Mars uses science and engineering to survive against impossible odds.",
+          "image": "https://99bookstores.com/cdn/shop/files/29752927.jpg?v=1780827624&width=990",
+          "bestSeller": true
+        },
+        {
+          "id": 51,
+          "title": "How to Win Friends and Influence People",
+          "author": "Dale Carnegie",
+          "category": "Self-Help",
+          "price": 1688,
+          "rating": 4.8,
+          "stock": 18,
+          "pages": 288,
+          "description": "A practical guide to improving communication, building relationships, and interacting effectively with others.",
+          "image": "https://atlanticbooks.com/cdn/shop/files/9781946963758_434x650.webp?v=1774892166",
+          "bestSeller": true
+        },
+        {
           "id": 2,
           "title": "To Kill a Mockingbird",
           "author": "Harper Lee",
@@ -872,6 +939,19 @@
           "pages": 236,
           "description": "A guide to mindfulness and living peacefully in the present moment.",
           "image": "https://media.bookchor.com/images/cover/583/9788190105910.jpg",
+          "bestSeller": true
+        },
+        {
+          "id": 14,
+          "title": "Long Walk to Freedom",
+          "author": "Nelson Mandela",
+          "category": "Biography",
+          "price": 525,
+          "rating": 4.8,
+          "stock": 5,
+          "pages": 656,
+          "description": "Nelson Mandela's autobiography describing his journey and struggle against apartheid.",
+          "image": "https://media.bookchor.com/images/cover/595/9780349139623.jpg",
           "bestSeller": true
         }
       ],
@@ -1070,7 +1150,7 @@
           "bestSeller": true
         }
       ],
-      "status": false
+      "status": true
     },
     {
       "id": "4531d1f5-2a04-4c5b-aac4-afcc72587508",

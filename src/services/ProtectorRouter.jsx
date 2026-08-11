@@ -3,6 +3,7 @@ import {Navigate} from "react-router-dom"
 import { Outlet } from 'react-router-dom'
 
 function ProtectorRouter() {
+    console.log("adminProte")
  const user = localStorage.getItem("userId")
     if(!user){
         return <Navigate to = "/Login" replace />

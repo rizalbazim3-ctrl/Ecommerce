@@ -1,17 +1,20 @@
 import React,{useState} from 'react'
 import AdminBooks from '../../pages/admin/AdminBooks'
-import {  Plus, Pencil, Trash2 } from "lucide-react"
+import {  Plus, Pencil, Trash2 ,Eye  } from "lucide-react"
 import { useMutation } from '@tanstack/react-query'
 import axios from "axios"
 import { useQueryClient } from '@tanstack/react-query'
 import {toast} from "sonner"
 import DeleteBook from '../../pages/admin/DeleteBook'
+import BookView from "../../pages/admin/BookView"
 
 function BookTable({books}) {
      const [editBook , setEditBook] = useState({})
      const [isEditOpen,setIsEditOpen] = useState(false)
      const [isDeleting,setIsdeleting] = useState(false)
      const [deleteItemId,setDeleteItemId] = useState(0)
+     const [bookView,setBookView ] = useState(false)
+     const [viewBookId,setViewBookId] = useState(0)
 
      const queryClient = useQueryClient()
 
@@ -44,11 +47,12 @@ function BookTable({books}) {
 
         })
 
-     
-
   
        return  ( 
         <>
+        { bookView &&
+          <BookView value = {{viewBookId,books,setBookView}}/>
+        }
               {
         isDeleting && (
             <DeleteBook data = {{deleteItemId,setIsdeleting}}/>
@@ -232,6 +236,16 @@ function BookTable({books}) {
               </p>
 
               <div className="flex justify-center gap-3">
+
+                <button
+                 className="p-2 rounded-lg hover:bg-yellow-300"
+                 onClick={()=>{
+                  setViewBookId(book.id)
+                  setBookView(true) 
+                 }}
+                >
+                  <Eye  size={20}/>
+                </button>
 
                 <button 
                 onClick={()=> handleEdit(book.id)}

@@ -9,9 +9,21 @@ import {
 import { useNavigate } from "react-router-dom";
 import {toast} from "sonner"
 import { NavLink } from "react-router-dom";
+import { useQueryClient } from "@tanstack/react-query";
 
 function AdminSideBar() {
   const navigate = useNavigate()
+  const queryClient =  useQueryClient() 
+
+  const handleLogout = ()=>{
+          localStorage.removeItem("userId") 
+          localStorage.removeItem("role")
+          queryClient.invalidateQueries({
+            querKey : ["user"]
+          })
+          toast.success("Logouted successfully")
+          navigate("/Login")
+  }
   return (
     <aside className="w-64  bg-yellow-100 text-yellow-900 flex flex-col rounded-lg ml-5 mt-5 ">
 
@@ -91,11 +103,7 @@ function AdminSideBar() {
       <div className="p-4 border-t border-slate-700">
         <button 
         className="flex items-center gap-3 w-full hover:bg-red-600 hover:text-white transition duration-500 rounded-lg px-4 py-3"
-        onClick = {()=>{
-          localStorage.removeItem("userId")
-          toast.success("Logouted successfully")
-          navigate("/Login")
-        }}
+        onClick = { handleLogout }
         >
           <LogOut size={20} />
           Logout

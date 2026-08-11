@@ -3,23 +3,10 @@ import useUsers from "../../services/useUsers";
 import { User } from "lucide-react";
 
 function AdminProtectorRoute(){
-    const {
-        data : users = {},
-        isLoading,
-        isError
-    } = useUsers()
+    const role = localStorage.getItem("role")
 
-    if(isLoading){
-        return <p>Loading...</p>
-    }
 
-    const role = users.role
-
-    if(isError || !users){
-      return  <Navigate to = "/Login" replace/>
-    }
-
-    if(role !== "admin"){
+    if(  role !== "admin"){
         return <Navigate to = "/"/>
     }
 

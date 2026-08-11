@@ -79,6 +79,7 @@ function Profile() {
                 shadow-md"
                 onClick={()=>{
                     localStorage.removeItem("userId")
+                    localStorage.removeItem("role")
                     navigate("/")
                     toast.success("You have successfully logged out")
                 }}

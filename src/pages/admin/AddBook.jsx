@@ -1,6 +1,78 @@
-import React from 'react'
+import React, { useState } from 'react'
+import {useMutation} from "@tanstack/react-query"
+import axios from "axios"
+import { useQueryClient } from '@tanstack/react-query'
+import {toast} from "sonner"
 
 function AddBook({setAddNewNote}) {
+  const [newBook,setNewBook] = useState({
+      title: "",
+      author: "",
+      category: "",
+      price: 0,
+      rating: 0,
+      stock: 0,
+      pages: 0,
+      description: "",
+      image: "",
+  })
+  const queryClinet = useQueryClient()
+
+  const addNewBook = async ()=>{
+    const response = await axios.post(` http://localhost:4001/books`,newBook)
+  }
+
+  const addNewBookMutation = useMutation({
+    mutationFn : addNewBook,
+
+    onSuccess : ()=>{
+      queryClinet.invalidateQueries({
+        queryKey : ["books"]
+      })
+      setNewBook({
+                title: "",
+                author: "",
+                category: "",
+                price: 0,
+                rating: 0,
+                stock: 0,
+                pages: 0,
+                description: "",
+                image: "",
+             })
+             setAddNewNote(false)
+      console.log("ok ann addbook")
+    }
+  })
+  
+  const checking = (newBook.category.length >= 2 && newBook.price >= 50 && newBook.stock >= 1 &&  newBook.pages >= 10 && 
+    newBook.description.length >= 5 && newBook.image.length >= 10 && newBook.title.length >= 2 && newBook.author.length > 3)
+
+  const handleAddBook = (e)=>{
+    e.preventDefault()
+    console.log("button")
+    if(newBook.title.length < 3){
+      toast.error("Check Your New Book Title")
+    }else if(newBook.author.length < 3){
+      toast.error("You should provide Athour")
+    }else if(newBook.category.length < 3){
+      toast.error("You should provide category")
+    }else if(newBook.price < 50){
+      toast.error("Set price")
+    }else if(newBook.stock < 1){
+      toast.error("Empty stock is not allowed")
+    }else if(newBook.pages < 10 ){
+      toast.error("Put real page number")
+    }else if(newBook.description.length < 5){
+      toast.error("Put Good Description")
+    }else if(newBook.image.length < 10){
+      toast.error("Put Image URL ")
+    }else if(checking){
+      toast.success("Added successfully")
+      addNewBookMutation.mutate()
+    }
+  }
+
   return (
 
   <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
@@ -20,13 +92,6 @@ function AddBook({setAddNewNote}) {
           </p>
         </div>
 
-        <button
-          onClick={() => setAddNewNote(false)}
-          className="text-gray-500 hover:text-yellow-900 text-xl"
-        >
-          ✕
-        </button>
-
       </div>
 
 
@@ -43,6 +108,12 @@ function AddBook({setAddNewNote}) {
             type="text"
             placeholder="Enter book title"
             className="w-full border border-yellow-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-yellow-800"
+            onChange={(e)=>{
+              setNewBook({
+                ...newBook,
+                title : e.target.value
+              })
+            }}
           />
         </div>
 
@@ -59,6 +130,12 @@ function AddBook({setAddNewNote}) {
               type="text"
               placeholder="Enter author"
               className="w-full border border-yellow-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-yellow-800"
+              onChange={(e)=>{
+                setNewBook({
+                  ...newBook,
+                  author : e.target.value
+                })
+              }}
             />
           </div>
 
@@ -72,6 +149,12 @@ function AddBook({setAddNewNote}) {
               type="text"
               placeholder="Enter category"
               className="w-full border border-yellow-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-yellow-800"
+                onChange={(e)=>{
+                setNewBook({
+                  ...newBook,
+                  category : e.target.value
+                })
+              }}
             />
           </div>
 
@@ -90,6 +173,12 @@ function AddBook({setAddNewNote}) {
               type="number"
               placeholder="₹ Price"
               className="w-full border border-yellow-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-yellow-800"
+                onChange={(e)=>{
+                setNewBook({
+                  ...newBook,
+                  price : e.target.value
+                })
+              }}
             />
           </div>
 
@@ -103,6 +192,12 @@ function AddBook({setAddNewNote}) {
               type="number"
               placeholder="Stock"
               className="w-full border border-yellow-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-yellow-800"
+                onChange={(e)=>{
+                setNewBook({
+                  ...newBook,
+                  stock : e.target.value
+                })
+              }}
             />
           </div>
 
@@ -116,6 +211,12 @@ function AddBook({setAddNewNote}) {
               type="number"
               placeholder="Pages"
               className="w-full border border-yellow-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-yellow-800"
+                onChange={(e)=>{
+                setNewBook({
+                  ...newBook,
+                  pages : e.target.value
+                })
+              }}
             />
           </div>
 
@@ -136,6 +237,12 @@ function AddBook({setAddNewNote}) {
             max="5"
             placeholder="Rating (0 - 5)"
             className="w-full border border-yellow-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-yellow-800"
+                onChange={(e)=>{
+                setNewBook({
+                  ...newBook,
+                  rating : e.target.value
+                })
+              }}
           />
 
         </div>
@@ -152,6 +259,12 @@ function AddBook({setAddNewNote}) {
             type="url"
             placeholder="https://example.com/book.jpg"
             className="w-full border border-yellow-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-yellow-800"
+                onChange={(e)=>{
+                setNewBook({
+                  ...newBook,
+                  image : e.target.value
+                })
+              }}
           />
 
         </div>
@@ -168,36 +281,35 @@ function AddBook({setAddNewNote}) {
             rows="4"
             placeholder="Enter book description"
             className="w-full border border-yellow-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-yellow-800 resize-none"
+            onChange={(e)=>{
+                setNewBook({
+                  ...newBook,
+                  description : e.target.value
+                })
+              }}
           />
 
         </div>
-
-
-        {/* Best Seller */}
-        <div className="flex items-center gap-3">
-
-          <input
-            type="checkbox"
-            id="bestSeller"
-            className="w-4 h-4 accent-yellow-900"
-          />
-
-          <label
-            htmlFor="bestSeller"
-            className="text-sm font-semibold text-yellow-900"
-          >
-            Mark as Best Seller
-          </label>
-
-        </div>
-
 
         {/* Buttons */}
         <div className="flex justify-end gap-3 pt-3">
 
           <button
             type="button"
-            onClick={() => setAddNewNote(false)}
+            onClick={() => {
+              setAddNewNote(false)
+              setNewBook({
+                title: "",
+                author: "",
+                category: "",
+                price: 0,
+                rating: 0,
+                stock: 0,
+                pages: 0,
+                description: "",
+                image: "",
+             })
+            }}
             className="px-5 py-3 rounded-lg border border-yellow-900 text-yellow-900 hover:bg-yellow-100 transition"
           >
             Cancel
@@ -205,9 +317,8 @@ function AddBook({setAddNewNote}) {
 
           <button
             type="submit"
-            className="px-5 py-3 rounded-lg
-            bg-yellow-900 text-white
-            hover:bg-yellow-800 transition"
+            className="px-5 py-3 rounded-lg bg-yellow-900 text-white hover:bg-yellow-800 transition"
+            onClick={handleAddBook}
           >
             Add Book
           </button>

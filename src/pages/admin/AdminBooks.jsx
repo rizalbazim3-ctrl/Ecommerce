@@ -7,10 +7,11 @@ import AddBook from "./AddBook";
 function AdminBooks() {
 
   const [addNewNote,setAddNewNote] = useState(false)
+  const [category,setCategory] = useState("all")
 
     const {
-    data : books = [],
-    isLoading,
+    data : Allbooks = [],
+    isLoading,           
     isError
   } = useBooks()
 

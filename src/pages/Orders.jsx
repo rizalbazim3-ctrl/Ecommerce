@@ -81,8 +81,13 @@ function Orders() {
 
           {/* Status */}
           <div className='w-[30%] flex justify-center items-center'>
-            <p className='text-green-500 italic text-lg'>
-              Delivered
+            <p 
+            className={`${user.delivery === "Delivered" && 'text-green-600 italic text-lg'}
+          ${user.delivery === "Shipped" && 'text-blue-500 italic text-lg'}
+          ${user.delivery === "Pending" && 'text-yellow-500 italic text-lg'}
+          ${user.delivery === "Cancelled" && 'text-red-600 italic text-lg'}`}
+            >
+              {user.delivery}
             </p>
           </div>
 

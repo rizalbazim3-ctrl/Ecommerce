@@ -51,24 +51,27 @@ function BookCard({book}) {
   //adding wishlist
 
   const wishlist = async ()=> {
-    try{
 
       if(checkWish.length !== 0){
         const deletedWish = data.wishlist.filter((item)=> item.id !== book.id)
 
-        const response = await axios.patch(`http://localhost:4001/users/${userid}`,{
+        try{const response = await axios.patch(`http://localhost:4001/users/${userid}`,{
           wishlist : deletedWish
         }) 
         queryClient.invalidateQueries({
                 queryKey : ["user"]
               })
          toast.success("removed successfully")
+         }
+      catch(error){
+      console.log(error)
+    }
       }else{
         const updated = [
         ...(data.wishlist || []),book
       ]
 
-      const response = axios.patch(` http://localhost:4001/users/${userid}`,{
+     try{ const response = await axios.patch(` http://localhost:4001/users/${userid}`,{
         wishlist : updated
     })
 
@@ -77,9 +80,10 @@ function BookCard({book}) {
               })
      toast.success("Added successfully")
       }
-      
-    }catch(error){
+      catch(error){
       console.log(error)
+    }
+      
     }
     
     }
@@ -91,12 +95,13 @@ function BookCard({book}) {
         ...(data.cart || []),book
       ]
 
-        const response = axios.patch(` http://localhost:4001/users/${userid}`,{
+        const response = await axios.patch(` http://localhost:4001/users/${userid}`,{
                 cart : updated
               })
 
               queryClient.invalidateQueries({
                 queryKey : ["user"]
+                
               })
             toast.success("Added successfully")
     }catch(error){

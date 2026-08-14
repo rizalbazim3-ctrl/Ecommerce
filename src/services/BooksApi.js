@@ -5,7 +5,9 @@ export async function  AllBooks (){
     const response = await axios.get(
       "http://localhost:4001/books"
     )
-    return response.data
+    const result = response.data.filter((item)=> item?.isDelete != true )
+    
+    return result
     }
 export async function Users(){
   const id = localStorage.getItem("userId")

@@ -5,6 +5,7 @@ import {
   Users,
   Tags,
   LogOut,
+  Home
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import {toast} from "sonner"
@@ -25,7 +26,8 @@ function AdminSideBar() {
           navigate("/Login")
   }
   return (
-    <aside className="w-64  bg-yellow-100 text-yellow-900 flex flex-col rounded-lg ml-5 mt-5 ">
+    <div>
+      <aside className="w-64   bg-[#F2EFE9] text-yellow-900 flex flex-col rounded-lg ml-5 sticky  top-5 mt-5 h-[730px]">
 
       {/* Logo */}
       <div className="p-6 border-b border-slate-700">
@@ -86,6 +88,18 @@ function AdminSideBar() {
           <span>Users</span>
         </NavLink>
 
+        <NavLink to = "/"
+          className={(info) => (
+            info.isActive ?
+              "flex items-center gap-3 bg-yellow-800 text-yellow-100  rounded-lg px-4 py-3 "
+              :
+              "flex items-center gap-3 hover:bg-yellow-800 rounded-lg px-4 py-3 hover:text-yellow-100 transition duration-300"
+            )}>
+
+          <Home size={20} />
+          <span>Home</span>
+        </NavLink>
+
       </nav>
 
       {/* Logout */}
@@ -100,6 +114,7 @@ function AdminSideBar() {
       </div>
 
     </aside>
+    </div>
   );
 }
 

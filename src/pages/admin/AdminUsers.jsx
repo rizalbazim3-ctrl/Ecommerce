@@ -1,8 +1,10 @@
-import React from 'react'
+import React,{useState} from 'react'
 import UserTable from '../../components/admin/UserTable'
 import { useQuery,useQueryClient } from '@tanstack/react-query'
 import axios from "axios"
 import UserCard from "../../components/admin/UserCard"
+import {useEffect} from "react"
+import { useSelector } from 'react-redux'
 
 function AdminUsers() {
   
@@ -11,6 +13,7 @@ function AdminUsers() {
         return response.data
     }
     const queryClient = useQueryClient()
+    const adminSearch = useSelector((state)=> state.adminFilter.adminSearch)
 
     const {
         data : Allusers = [],
@@ -19,11 +22,55 @@ function AdminUsers() {
         queryKey : ["Allusers"],
         queryFn : fetchUsers,
     })
-    if(isLoading){
-      return <p>Loading...</p>
+
+    console.log(Allusers)
+
+    const Loginusers = Allusers.filter((item)=>   adminSearch === "" ? item.role === "user" : item.role === "user" && item.name.toLowerCase().includes(adminSearch.toLowerCase()) )
+
+    //paginantion
+    const [startPage,setStartPage] = useState(0)
+    const pages = 5 
+    const [endPage,setEndPage] = useState(pages)
+    const users = Loginusers.slice(startPage,endPage)
+    const [value,setValue] = useState(1)
+     
+
+    const paginationList =[]
+
+     for(let i =1; i<=Math.ceil(Loginusers.length/5);i++){
+      paginationList.push(<button 
+        key = {i}
+        className = {`px-3 py-1  rounded mx-3 ${value === i ? "bg-yellow-500" : "bg-yellow-700" } `}
+        value = {i}
+        onClick={(e)=>{
+          const value = e.target.value 
+          setStartPage( (value-1) * pages)
+          setEndPage( value * pages)
+          setValue(i)
+        }}
+      >{i}</button>)
     }
 
-    const users = Allusers.filter((item)=> item.role === "user")
+        useEffect(()=>{
+        if(startPage === 0 ){
+           setValue(1)
+        }else{
+          setValue(startPage/pages + 1)
+        }
+        console.log("useEffect")
+      },[startPage])
+
+      useEffect(()=>{
+
+        setStartPage(0)
+
+        setEndPage(pages)
+        
+      },[adminSearch])
+
+        if(isLoading){
+      return <p>Loading...</p>
+    }
     return (
     <>
      <div className="p-8">
@@ -39,7 +86,7 @@ function AdminUsers() {
     </p>
   </div>
 
-  <UserCard users = {users}/>
+  <UserCard Loginusers = {Loginusers}/>
 
 
   {/* User Table */}
@@ -69,6 +116,38 @@ function AdminUsers() {
         }
 
   </section>
+
+  <div className='flex flex-wrap justify-center mt-4'>
+      
+    <p className = 'px-3 py-1 bg-yellow-400 rounded'
+    onClick={()=>{
+      if(endPage !== pages){
+      setStartPage((prev)=>prev-pages)
+      setEndPage((prev)=> prev-pages)
+      
+      }
+    }}
+    >{ "< "}Previous</p>
+    {
+      paginationList.map((item)=>{
+        return (
+          item
+        )
+      })
+    }
+
+    <p className = 'px-5 py-1 bg-yellow-400 rounded'
+    onClick={()=>{
+      if(Loginusers.length > endPage){
+        setStartPage((prev)=>prev+pages)
+        setEndPage((prev)=> prev+pages)
+
+      }
+    }}
+
+    >Next{ " >"}</p>
+
+    </div>
 
   </div>
     </>

@@ -12,7 +12,7 @@
       "description": "A classic novel about wealth, love, ambition, and the American Dream.",
       "image": "https://media.bookchor.com/images/cover/568/9781447225928.jpg",
       "bestSeller": true,
-      "isDelete": false,
+      "isDelete": true,
       "page": ""
     },
     {
@@ -53,7 +53,8 @@
       "pages": 320,
       "description": "A practical guide to building good habits and breaking bad ones through small improvements.",
       "image": "https://media.bookchor.com/images/cover/bc/9781847941831_1.jpg",
-      "bestSeller": true
+      "bestSeller": true,
+      "isDelete": true
     },
     {
       "id": 5,
@@ -660,7 +661,7 @@
       "email": "admin@gmail.com",
       "password": "123321",
       "role": "admin",
-      "status": false
+      "status": true
     },
     {
       "id": "a809e549-735a-4e06-a79c-f077e050a820",
@@ -682,7 +683,7 @@
             "orderedState": "kerala"
           },
           "payment": "online",
-          "delivery": "Delivered",
+          "delivery": "Shipped",
           "items": [
             {
               "id": 18,
@@ -802,7 +803,7 @@
           "bestSeller": true
         }
       ],
-      "status": true
+      "status": false
     },
     {
       "id": "7330b7a5-f32c-42a1-afdf-08022e2c0b14",
@@ -832,6 +833,29 @@
               "title": "Long Walk to Freedom",
               "price": 525,
               "quantity": 1
+            }
+          ]
+        },
+        {
+          "orderDate": "2026-08-14T09:58:01.404Z",
+          "orderId": 1786701481412,
+          "address": {
+            "orderedName": "shadhil",
+            "orderedNumber": "7994263688",
+            "orderedStreet": "koppam",
+            "orderedPlace": "pattambi",
+            "orderedPincode": "897780",
+            "orderedState": "kerala"
+          },
+          "payment": "Cash On Delivery",
+          "delivery": "Delivered",
+          "items": [
+            {
+              "id": 3,
+              "image": "https://media.bookchor.com/images/cover/bc/9780785841722.jpg",
+              "title": "The Alchemist",
+              "price": 614,
+              "quantity": 2
             }
           ]
         }
@@ -936,7 +960,7 @@
             "orderedState": "kerala"
           },
           "payment": "Cash On Delivery",
-          "delivery": "Delivered",
+          "delivery": "Pending",
           "items": [
             {
               "id": 4,
@@ -965,6 +989,30 @@
       "cart": [],
       "wishlist": [],
       "status": true
+    },
+    {
+      "id": 1786702774230,
+      "name": "anu",
+      "email": "anu@gmail.com",
+      "phone": "7998878767",
+      "password": "123456",
+      "role": "user",
+      "status": true,
+      "orderedUserDetails": [],
+      "cart": [],
+      "wishlist": []
+    },
+    {
+      "id": 1786702805640,
+      "name": "afla",
+      "email": "afla@gmail.com",
+      "phone": "7998674658",
+      "password": "123456",
+      "role": "user",
+      "status": true,
+      "orderedUserDetails": [],
+      "cart": [],
+      "wishlist": []
     }
   ]
 }

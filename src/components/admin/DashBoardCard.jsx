@@ -50,7 +50,7 @@ function DashBoardCard() {
 
       <section className="grid grid-cols-4 gap-6">
 
-        <div className="rounded-xl bg-yellow-100 shadow-md p-6 hover:shadow-xl transition">
+        <div className="rounded-xl bg-[#F2EFE9] shadow-md p-6 hover:shadow-xl transition">
           <div className="flex justify-between items-center">
             <h2 className="text-gray-500 font-medium">Books</h2>
             <BookOpen className="text-blue-600" size={28} />
@@ -61,7 +61,7 @@ function DashBoardCard() {
           <p className="text-gray-500 mt-2">Total Books</p>
         </div>
 
-        <div className="rounded-xl bg-yellow-100 shadow-md p-6 hover:shadow-xl transition">
+        <div className="rounded-xl bg-[#F2EFE9] shadow-md p-6 hover:shadow-xl transition">
           <div className="flex justify-between items-center">
             <h2 className="text-gray-500 font-medium">Users</h2>
             <Users className="text-green-600" size={28} />
@@ -72,7 +72,7 @@ function DashBoardCard() {
           <p className="text-gray-500 mt-2">Registered Users</p>
         </div>
 
-        <div className="rounded-xl bg-yellow-100 shadow-md p-6 hover:shadow-xl transition">
+        <div className="rounded-xl bg-[#F2EFE9] shadow-md p-6 hover:shadow-xl transition">
           <div className="flex justify-between items-center">
             <h2 className="text-gray-500 font-medium">Orders</h2>
             <ShoppingCart className="text-orange-500" size={28} />
@@ -83,7 +83,7 @@ function DashBoardCard() {
           <p className="text-gray-500 mt-2">Completed Orders</p>
         </div>
 
-        <div className="rounded-xl bg-yellow-100 shadow-md p-6 hover:shadow-xl transition">
+        <div className="rounded-xl bg-[#F2EFE9] shadow-md p-6 hover:shadow-xl transition">
           <div className="flex justify-between items-center">
             <h2 className="text-gray-500 font-medium">Revenue</h2>
             <IndianRupee className="text-purple-600" size={28} />

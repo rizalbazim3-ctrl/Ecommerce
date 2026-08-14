@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import BookCard from "../components/BookCard";
 import {useNavigate} from "react-router-dom"
 import useBooks from "../services/useBooks";
+import { Link } from "lucide-react";
 
 function Home() {
 
@@ -14,11 +15,21 @@ function Home() {
     isError
   } = useBooks()
   const featuredBook = books.filter((item)=> item.bestSeller)
+
+  const role =localStorage.getItem("role")
   
 
   return (
     <div className="m-4 ">
       <Navbar/>
+      {
+        role === "admin" 
+        && <p className="rounded-lg py-1 bg-yellow-900/90 w-20 text-center text-white mt-4"
+        onClick={()=>{
+          navigate(-1)
+        }}
+        >{"< "}Back</p>
+      }
         <div className = "flex flex-row justify-center group">
           <p className="text-4xl font-serif font-bold text-[#3b2a20] text-center my-10 group-hover:-rotate-7 duration-500 ">
             WELCOME

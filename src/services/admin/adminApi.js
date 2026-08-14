@@ -7,3 +7,8 @@ export async function users (){
 
     return response.data
 } 
+
+export async function Books(){
+    const response = await axios.get(`http://localhost:4001/books`)
+    return response.data
+}

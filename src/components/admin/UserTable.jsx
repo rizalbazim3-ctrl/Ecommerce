@@ -38,7 +38,7 @@ function UserTable({user}) {
      <div
       className="grid grid-cols-5 items-center
       px-5 py-5 mt-2 rounded-lg
-      hover:bg-yellow-200 transition"
+      hover:bg-yellow-200 transition "
     >
 
       {/* User */}

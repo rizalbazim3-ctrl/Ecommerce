@@ -1,6 +1,7 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import OrderTable from "../../components/admin/OrderTable"
 import useAdminUsers from "../../services/admin/useAdminUsers"
+import {useSelector} from "react-redux"
 
 
 function AdminOrders() {
@@ -10,14 +11,17 @@ function AdminOrders() {
         isLoading,
         isError
     } = useAdminUsers()
+    const adminSearch = useSelector((state)=> state.adminFilter.adminSearch)
+    
 
-    if(isLoading){
-      return <p>Loading...</p>
-    }
+    //pagination
+    const [startPage,setStartPage] = useState(0)
+    const [endPage,setEndPage] = useState(5)
+    const perPage = 5
 
     const users = Allusers.filter((user)=> user.role === "user")
 
-    const orders = users.flatMap((user)=>{
+    const AllOrders = users.flatMap((user)=>{
       return user.orderedUserDetails.map((order)=>{
         return (
           {
@@ -34,8 +38,40 @@ function AdminOrders() {
       })
     })
 
+    const searchedOrders = AllOrders.filter((item)=> adminSearch.trim().length === 0? true : String(item.orderId).includes(adminSearch) )
+    console.log(searchedOrders)
+    const orders =searchedOrders.slice(startPage,endPage)
+
+    const paginationButton = []
+
+    for(let i =1; i<=Math.ceil(AllOrders.length/5);i++){
+      paginationButton.push(<button 
+        key = {i}
+        className='px-3 py-1 bg-yellow-700 rounded mx-3'
+        value = {i}
+        onClick={(e)=>{
+          const value = e.target.value 
+          
+          setStartPage( (value-1) * perPage)
+
+          setEndPage( value * perPage)
+
+        }}
+      >{i}</button>)
+    }
+
+    useEffect(()=>{
+      setStartPage(0)
+      setEndPage(perPage)
+    },[adminSearch])
+    
+
+    if(isLoading){
+      return <p>Loading...</p>
+    }
+
   return (
-    <div className='rounded-lg bg-yellow-100 p-5 mx-10'>
+    <div className='rounded-lg bg-yellow-100 p-5 mx-10 min-h-[400px]'>
 
       {/* Table Header */}
   <div className="grid grid-cols-7 gap-4 px-6 py-4 bg-yellow-50 border-b border-yellow-200 rounded-xl text-sm font-semibold text-yellow-900  ">
@@ -53,6 +89,20 @@ function AdminOrders() {
        order = {order} 
       />)
     }
+
+    <div className='flex flex-wrap justify-center'>
+      <p>{"<"}</p>
+    {
+      paginationButton.map((item)=>{
+        return (
+          item
+        )
+      })
+    }
+
+    <p>{">"}</p>
+
+    </div>
     </div>
   )
 }

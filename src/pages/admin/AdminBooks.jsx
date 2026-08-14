@@ -1,8 +1,9 @@
-import React, { useState } from "react"
-import useBooks from "../../services/useBooks"
+import React, { useState,useEffect } from "react"
+import useAdminBooks from "../../services/admin/useAdminBooks"
 import BookTable from "../../components/admin/BookTable"
 import {  Plus } from "lucide-react";
 import AddBook from "./AddBook";
+import { useSelector } from "react-redux";
 
 function AdminBooks() {
 
@@ -12,36 +13,23 @@ function AdminBooks() {
   const [perPage,setPerPage] = useState(5)
   const [startPage,setStartPage] = useState(0)
   const [endPage,setEndPage] = useState(startPage + perPage)
+  const [value, setValue] = useState(1)
+  const adminSearch = useSelector((state)=> state.adminFilter.adminSearch)
+
   
     const {
     data : Allbooks = [],
     isLoading,           
     isError
-  } = useBooks()
+  } = useAdminBooks()
   
+//searching
+const serachedBooks = Allbooks.filter((book)=> adminSearch === "" ? true : 
+book.title.toLowerCase().includes(adminSearch.toLowerCase()))
 
-  if(isLoading){
-    return <p>Loading...</p>
-  } 
 
-  //pagination
-
-  const pages = (Math.ceil(Allbooks.length/5))
-  const buttonList = []
-      for(let i=1; i<=pages; i++){
-
-      buttonList.push(<button className = "rounded bg-yellow-600 font-semibold px-4  py-1 mx-2 mt-3" 
-        value = {i}
-        key = {crypto.randomUUID()}
-        onClick={(e)=>{
-          setStartPage(((e.target.value)-1)*perPage)
-        }}
-       >{i}</button>)
-
-      }
-      console.log(startPage)
-
-const books = Allbooks.filter((book)=>{
+ //filtering
+const FilteredBooks = serachedBooks.filter((book)=>{
   const selected = category === "All Categories" ? book :
    book.category === category 
 
@@ -53,9 +41,52 @@ const books = Allbooks.filter((book)=>{
 
    return selected && selectedStock
   })
-  .slice(startPage,endPage)
-  
+  const books = FilteredBooks.slice(startPage,endPage)
 
+   //pagination
+  const pages = (Math.ceil(FilteredBooks.length/5))
+  const buttonList = []
+      for(let i=1; i<=pages; i++){
+
+      buttonList.push(<button 
+        value = {i}
+        
+        key = {crypto.randomUUID()}
+        onClick={(e)=>{
+          setValue(i)
+          const vlaue = e.target.value
+          setStartPage((vlaue-1)*perPage)
+          setEndPage(vlaue*perPage)
+        }}
+
+        className = {`rounded  font-semibold px-4  
+        py-1 mx-2 mt-3 ${(i === value) ? "bg-yellow-600"  : "bg-yellow-800"}` }
+       >{i}</button>)
+
+      }
+
+    useEffect(()=>{
+    if(startPage === 0 ){
+       setValue(1)
+    }else{
+      setValue(startPage/perPage + 1)
+    }
+
+  },[startPage])
+
+   useEffect(()=>{
+   
+      setStartPage(0)
+
+      setEndPage(perPage)
+
+  },[category,StockCategory,adminSearch])
+  
+  
+  
+if(isLoading){
+    return <p>Loading...</p>
+  } 
 
   return (
     <div className="p-8">
@@ -129,14 +160,37 @@ const books = Allbooks.filter((book)=>{
 
       </div>
 
-        <BookTable books = {books}/>
+        
+
+        {
+        FilteredBooks.length === 0 ? 
+        <div className="w-full h-[400px] text-center text-red-700 font-bold text-xl italic mt-[200px]">
+          Not Found
+        </div>
+        : <BookTable books = {books}/>
+      }
 
        <div className="text-center mt-3 flex flex-wrap justify-center">
-        <button className="rounded bg-yellow-400 mr-5 px-2 mt-3">{"< "}Previous</button>
+        <button className="rounded bg-yellow-400 mr-5 px-2 mt-3"
+        onClick={()=>{
+          if(startPage !== 0){
+            setStartPage((prev)=> prev-1 * perPage)
+            setEndPage((prev)=>prev-5)
+          }
+        }}
+        >{"< "}Previous</button>
           {
           buttonList.map((item)=> item )
           }
-          <button className="rounded bg-yellow-400 px-4 ml-5 mt-3">Next{" >"}</button>
+          <button
+           className="rounded bg-yellow-400 px-4 ml-5 mt-3"
+           onClick={()=>{
+            if(endPage !== FilteredBooks.length && endPage < FilteredBooks.length ){
+              setStartPage((prev)=>prev + 1*perPage)
+               setEndPage((prev => prev + perPage )) 
+              }
+           }}
+           >Next{" >"}</button>
        </div>
 
     </div>

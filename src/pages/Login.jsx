@@ -43,6 +43,8 @@ function Login() {
       toast.error("invalid email")
     } else if (data[0].password !== pass) {
       toast.error("invalid password")
+    }else if(data[0].status === false){
+      toast.error("Can't Login")
     } else if (data.length !== 0 && data[0].password === pass) {
       
      if(data[0].role !== "admin"){

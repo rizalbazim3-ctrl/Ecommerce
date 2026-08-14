@@ -1,8 +1,8 @@
 import React from 'react'
 import {Users,UserCheck, UserX} from "lucide-react"
-function UserCard({users}) {
-        const bolockedUsers = users.filter((item)=> item.status === false)
-        const ActiveUsers = users.filter((item)=> item.status === true)
+function UserCard({Loginusers}) {
+        const bolockedUsers = Loginusers.filter((item)=> item.status === false)
+        const ActiveUsers = Loginusers.filter((item)=> item.status === true)
   return (
    <div >
 
@@ -15,7 +15,7 @@ function UserCard({users}) {
             
           </div>
 
-          <h1 className="text-4xl font-bold mt-6 text-yellow-900">{users.length}</h1>
+          <h1 className="text-4xl font-bold mt-6 text-yellow-900">{Loginusers.length}</h1>
 
           <p className="text-gray-500 mt-2">Total Users</p>
         </div>

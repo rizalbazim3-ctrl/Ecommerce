@@ -35,6 +35,8 @@ function SalesOverview() {
     if(booksLoading){
         return <p>Loading...</p>
     }
+
+
 // monhtly graph
     const months = [
     "Jan", "Feb", "Mar", "Apr", "May", "Jun",
@@ -132,7 +134,7 @@ function SalesOverview() {
 
   return (
     <div className='w-full grid grid-cols-2 gap-5 mx-5'>
-        <div className=" h-[400px]  rounded-xl bg-yellow-100 hover:shadow-xl p-5">
+        <div className=" h-[400px]  rounded-xl bg-[#F2EFE9] hover:shadow-xl p-5">
 
             {/* time pireods */}
             <div className = "flex gap-10 ml-10 mb-3">
@@ -156,8 +158,8 @@ function SalesOverview() {
 
                 <Tooltip />
 
-                <Bar dataKey="sales"  fill="#713f12"
-                barSize={20}
+                <Bar dataKey="sales"  fill="#a95f1d"
+                barSize={29}
                 activeBar={null}
                 />
 
@@ -166,7 +168,7 @@ function SalesOverview() {
 
         </div>
 
-        <section className=' h-[400px] bg-yellow-100 mr-10 rounded-xl p-5'>
+        <section className=' h-[400px] bg-[#F2EFE9] mr-10 rounded-xl p-5 '>
             <h1 className='text-2xl font-semibold text-yellow-900 underline text-center'>Low Stock Books</h1>
             
             <div className=' grid grid-cols-3  mt-3 text-lg text-Green-900 font-semibold text-center'>
@@ -175,11 +177,11 @@ function SalesOverview() {
                 <p>Stock</p>
             </div>
             
-            <div className = 'overflow-y-auto h-[300px]'>
+            <div className = 'overflow-y-auto h-[300px] hide-scrollbar border-t'>
 
                 {
                 LowStockBooks.map((book)=> (
-                <div className='grid grid-cols-3 rounded-xl  mt-5  gap-5 p-5 bg-yellow-900 text-white ' key={book.id}>
+                <div className='grid grid-cols-3 rounded-xl  mt-5  gap-5 p-5 bg-[#B08D46]/60 text-white ' key={book.id}>
                     <p className='text-center font-semibold'>{book.title}</p>
                     <p className='text-center underline'>{book.category}</p>
                     <p className='text-center '>{book.stock}</p>
@@ -190,7 +192,7 @@ function SalesOverview() {
             </div>    
            
         </section>
-        <section className=' rounded-xl h-[400px] bg-yellow-100 p-5 '>
+        <section className=' rounded-xl h-[400px] bg-[#F2EFE9] p-5 hide-srollbar mb-5'>
            <h1 className= "text-center text-2xl text-yellow-900 font-semibold underline mb-5">Recent Orders</h1>
 
             <div className=' grid grid-cols-4  mt-3 text-lg text-Green-900 font-semibold text-center'>
@@ -200,10 +202,10 @@ function SalesOverview() {
                 <p>Date</p>
             </div>
                 
-                <div className='overflow-y-auto h-[300px]'>
+                <div className='overflow-y-auto hide-scrollbar h-[300px] pt-3 border-t '>
                     {
                         recentOrdersSorted.map((item,index)=>(
-                            <div className = "grid grid-cols-4 gap-3 rounded-lg text-center items-center bg-yellow-900 text-gray-200 mb-3 p-5"
+                            <div className = "grid grid-cols-4 gap-3 rounded-lg text-center items-center bg-[#B08D46]/60 text-gray-200 mb-3 p-5"
                                 key = {index}>
                                 <p className='text-center font-semibold'>{item.title}</p>
                                 <p className='text-center '>{item.name}</p>
@@ -221,18 +223,18 @@ function SalesOverview() {
                 </div>
            
         </section>
-        <section className=' h-[400px] bg-yellow-100 mr-10 rounded-xl p-5'>
-           <h1 className= "text-center text-2xl text-yellow-900 font-semibold underline mb-5">Best Selling Books</h1>
+        <section className=' h-[400px] bg-[#F2EFE9] mr-10 rounded-xl p-5 '>
+           <h1 className= "text-center text-2xl font-semibold underline mb-5">Best Selling Books</h1>
             <div className=' grid grid-cols-3  mt-3 text-lg text-Green-900 font-semibold text-center'>
                 <p>Book</p>
-                <p>Pricce</p>
+                <p>Pricce</p>   
                 <p>Quantity</p>
             </div>
            
-           <div className='overflow-y-auto h-[300px] '>
+           <div className='overflow-y-auto h-[300px] hide-scrollbar border-t'>
              {
             bestSellingBooksOrderly.map((book)=> (
-                <div className = "grid grid-cols-3 rounded-lg text-center items-center bg-yellow-900 text-gray-200 mb-3 p-5"
+                <div className = "grid grid-cols-3 rounded-lg text-center items-center bg-[#B08D46]/60 mt-3 text-gray-200 mb-3 p-5"
                 key = {book.id}>
                     <p className='text-center font-semibold'>{book.title}</p>
                     <p className='text-center underline'>₹{book.price}</p>

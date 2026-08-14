@@ -21,13 +21,13 @@ function UserTable({user}) {
             queryClient.invalidateQueries({
                 queryKey : ["Allusers"]
             })
-            console.log("ok")
+      
         }
     })
 
     const blockUser = (id,status)=>{
         blockMutation.mutate({id,status})
-        console.log("ok")
+    
     }
 
   return (

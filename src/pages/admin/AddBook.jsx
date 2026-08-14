@@ -15,6 +15,7 @@ function AddBook({setAddNewNote}) {
       pages: 0,
       description: "",
       image: "",
+      isDelete : false
   })
   const queryClinet = useQueryClient()
 
@@ -46,7 +47,7 @@ function AddBook({setAddNewNote}) {
   })
   
   const checking = (newBook.category.length >= 2 && newBook.price >= 50 && newBook.stock >= 1 &&  newBook.pages >= 10 && 
-    newBook.description.length >= 5 && newBook.image.length >= 10 && newBook.title.length >= 2 && newBook.author.length > 3)
+    newBook.description.length >= 5 && newBook.image.length >= 10 && newBook.title.length >= 2 && newBook.author.length >=   3)
 
   const handleAddBook = (e)=>{
     e.preventDefault()

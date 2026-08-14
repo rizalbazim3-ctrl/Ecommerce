@@ -33,7 +33,6 @@ import AdminLayout from './components/admin/AdminLayout'
 import Dashboard from './pages/admin/Dashboard'
 import AdminBooks from "./pages/admin/AdminBooks"
 import AdminProtectorRoute from './components/admin/AdminProtectorRoute'
-import AdminCategories from './pages/admin/AdminCategories'
 import AdminUsers from './pages/admin/AdminUsers'
 import AdminOrders from './pages/admin/AdminOrders'
 
@@ -52,7 +51,6 @@ function App() {
             <Route path="/Admin/Dashboard" element={<Dashboard />} />
             <Route path="/Admin/Books" element={<AdminBooks />} />
             <Route path="/Admin/Orders" element={<AdminOrders />} />
-            <Route path="/Admin/Categories" element={<AdminCategories />} />
             <Route path="/Admin/Users" element={<AdminUsers />} />
           </Route>
         </Route>

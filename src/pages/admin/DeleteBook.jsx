@@ -1,12 +1,12 @@
 import React from 'react'
-import { useMutation } from '@tanstack/react-query'
+import { useMutation,useQueryClient } from '@tanstack/react-query'
 import {toast} from "sonner"
 import axios from "axios"
 import useBooks from '../../services/useBooks'
 import {Plus} from "lucide-react"
 
 function DeleteBook({data}) {
-
+  const queryClient = useQueryClient()
   const {
     data : books = [],
     isLoading
@@ -35,6 +35,7 @@ function DeleteBook({data}) {
                 queryKey : ["books"]
             })
             toast.Success("Deleted sucessfully")
+            console.log("deleted")
         }
      })
 
@@ -54,7 +55,7 @@ function DeleteBook({data}) {
         }
         const deletingBook = books?.find((item)=> item.id === data.deleteItemId)
         const state = deletingBook.isDelete ? false : true
-        console.log(deletingBook)
+       
   return (
     <>
     <div className='w-full inset-0 fixed bg-black/40 '>

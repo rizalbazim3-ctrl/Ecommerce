@@ -196,6 +196,7 @@ const handlePlaceOrder = async () => {
 
   const newDetails = {
     orderDate: new Date().toISOString(),
+    orderId : Date.now(),
 
     address: {
       orderedName: name,

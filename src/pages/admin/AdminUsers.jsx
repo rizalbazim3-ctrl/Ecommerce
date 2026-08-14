@@ -2,6 +2,7 @@ import React from 'react'
 import UserTable from '../../components/admin/UserTable'
 import { useQuery,useQueryClient } from '@tanstack/react-query'
 import axios from "axios"
+import UserCard from "../../components/admin/UserCard"
 
 function AdminUsers() {
   
@@ -37,6 +38,8 @@ function AdminUsers() {
       Manage registered customers
     </p>
   </div>
+
+  <UserCard users = {users}/>
 
 
   {/* User Table */}

@@ -86,17 +86,6 @@ function AdminSideBar() {
           <span>Users</span>
         </NavLink>
 
-        <NavLink to = "/Admin/Categories"
-        className = {({isActive})=>(
-          isActive ? "flex items-center gap-3 text-yellow-100 bg-yellow-800 rounded-lg px-4 py-3 "
-          :
-          "flex items-center gap-3 hover:bg-yellow-800 rounded-lg px-4 py-3 hover:text-yellow-100 transition duration-300"
-        )}
-        >
-          <Tags size={20} />
-          <span>Categories</span>
-        </NavLink>
-
       </nav>
 
       {/* Logout */}

@@ -2,7 +2,7 @@ import React from 'react'
 
 function UserDetails({value}) {
     const user = value.user
-    console.log(user)
+   
   return (
   <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
 

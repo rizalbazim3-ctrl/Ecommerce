@@ -128,7 +128,7 @@ function SalesOverview() {
         new Date(b.date)- new Date(a.date)
     )
    }).slice(0,5)
-   console.log(recentOrdersSorted)
+
 
   return (
     <div className='w-full grid grid-cols-2 gap-5 mx-5'>

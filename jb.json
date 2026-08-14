@@ -258,18 +258,6 @@
       "image": "https://atlanticbooks.com/cdn/shop/files/9781545524138_434x650.webp?v=1767125810"
     },
     {
-      "id": 27,
-      "title": "Pride and Prejudice",
-      "author": "Jane Austen",
-      "category": "Romance",
-      "price": 1779,
-      "rating": 4.8,
-      "stock": 3,
-      "pages": 352,
-      "description": "A timeless romantic classic about Elizabeth Bennet and Mr. Darcy, exploring love, pride, prejudice, and social expectations.",
-      "image": "https://atlanticbooks.com/cdn/shop/files/9781773566078_434x650.webp?v=1782912266"
-    },
-    {
       "id": 28,
       "title": "The Fault in Our Stars",
       "author": "John Green",
@@ -513,30 +501,6 @@
       "pages": 371,
       "description": "A powerful story of friendship, betrayal, redemption, and the lasting impact of childhood choices.",
       "image": "https://atlanticbooks.com/cdn/shop/files/9781594631931_416x650.webp?v=1769202670"
-    },
-    {
-      "title": "The Secret Garden",
-      "author": "Frances Hodgson Burnett",
-      "category": "Fiction",
-      "price": "450",
-      "rating": "4.7",
-      "stock": "14",
-      "pages": "375",
-      "description": "A young orphan discovers a hidden garden on an English estate and, with the help of new friends, brings the forgotten garden and their own lives back to life.",
-      "image": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e",
-      "id": 57
-    },
-    {
-      "title": "dsfadsf",
-      "author": "dsfadsf",
-      "category": "sdfasdfa",
-      "price": "2342",
-      "rating": "2",
-      "stock": "32",
-      "pages": "232",
-      "description": "sdfafdas",
-      "image": "afsdfasfsfasdfsadfsa",
-      "id": 58
     }
   ],
   "users": [
@@ -547,94 +511,33 @@
       "phone": "7994263689",
       "password": "666666",
       "role": "user",
+      "status": true,
       "orderedUserDetails": [
         {
-          "orderDate": "2026-07-07T13:49:22.214Z",
+          "orderDate": "2026-08-12T14:24:09.721Z",
+          "orderId": 1786544649721,
           "address": {
-            "orderedName": "basim",
-            "orderedNumber": "1234567890",
-            "orderedStreet": "koppa,",
-            "orderedPlace": "kappad",
-            "orderedPincode": "789678",
+            "orderedName": "Baism",
+            "orderedNumber": "9995555308",
+            "orderedStreet": "kaladi",
+            "orderedPlace": "wayanad",
+            "orderedPincode": "789798",
             "orderedState": "kerala"
           },
           "payment": "Cash On Delivery",
-          "delivery": "success",
+          "delivery": "Delivered",
           "items": [
             {
-              "id": 4,
-              "image": "https://media.bookchor.com/images/cover/bc/9781847941831_1.jpg",
-              "title": "Atomic Habits",
-              "price": 522,
-              "quantity": 1
-            },
-            {
-              "id": 2,
-              "image": "https://media.bookchor.com/images/cover/568/9780099549482.jpg",
-              "title": "To Kill a Mockingbird",
-              "price": 818,
-              "quantity": 1
-            }
-          ]
-        },
-        {
-          "orderDate": "2026-07-07T13:50:31.976Z",
-          "address": {
-            "orderedName": "basim",
-            "orderedNumber": "5678904321",
-            "orderedStreet": "patambi",
-            "orderedPlace": "pattambi",
-            "orderedPincode": "789987",
-            "orderedState": "kerala"
-          },
-          "payment": "online",
-          "delivery": "success",
-          "items": [
-            {
-              "id": 33,
-              "image": "https://atlanticbooks.com/cdn/shop/files/9780670090747_426x651.webp?v=1769298645",
-              "title": "I Too Had a Love Story",
-              "price": 399,
-              "quantity": 1
-            }
-          ]
-        },
-        {
-          "orderDate": "2026-07-07T13:51:02.777Z",
-          "address": {
-            "orderedName": "basim",
-            "orderedNumber": "7890654321",
-            "orderedStreet": "kochi",
-            "orderedPlace": "kochi",
-            "orderedPincode": "897786",
-            "orderedState": "kerala"
-          },
-          "payment": "online",
-          "delivery": "success",
-          "items": [
-            {
-              "id": 30,
-              "image": "https://atlanticbooks.com/cdn/shop/files/9781455582877_408x650.webp?v=1769290427",
-              "title": "The Notebook",
-              "price": 399,
+              "id": 31,
+              "image": "https://atlanticbooks.com/cdn/shop/files/9781501110368_419x650.webp?v=1769201618",
+              "title": "It Ends with Us",
+              "price": 499,
               "quantity": 1
             }
           ]
         }
       ],
       "cart": [
-        {
-          "id": 31,
-          "title": "It Ends with Us",
-          "author": "Colleen Hoover",
-          "category": "Romance",
-          "price": 499,
-          "rating": 4.5,
-          "stock": 28,
-          "pages": 384,
-          "description": "A powerful contemporary romance that explores love, difficult choices, relationships, and breaking harmful cycles.",
-          "image": "https://atlanticbooks.com/cdn/shop/files/9781501110368_419x650.webp?v=1769201618"
-        },
         {
           "id": 28,
           "title": "The Fault in Our Stars",
@@ -749,8 +652,7 @@
           "description": "A touching love story about Hazel and Augustus, two young people who find love while facing the challenges of illness.",
           "image": "https://atlanticbooks.com/cdn/shop/files/9780142424179_437x650.webp?v=1767142127"
         }
-      ],
-      "status": false
+      ]
     },
     {
       "id": "12830",
@@ -769,85 +671,30 @@
       "role": "user",
       "orderedUserDetails": [
         {
-          "orderDate": "2026-06-07T13:53:28.591Z",
+          "orderDate": "2026-08-12T14:22:17.797Z",
+          "orderId": 1786544537811,
           "address": {
-            "orderedName": "shan",
-            "orderedNumber": "8765432190",
-            "orderedStreet": "kochi",
+            "orderedName": "Shan",
+            "orderedNumber": "7994263689",
+            "orderedStreet": "kallom",
             "orderedPlace": "pattambi",
-            "orderedPincode": "786786",
+            "orderedPincode": "789987",
             "orderedState": "kerala"
           },
           "payment": "online",
-          "delivery": "success",
+          "delivery": "Delivered",
           "items": [
             {
-              "id": 15,
-              "image": "https://media.bookchor.com/images/cover/579/9780140264739.jpg",
-              "title": "The Diary of a Young Girl",
-              "price": 417,
-              "quantity": 1
-            },
-            {
-              "id": 14,
-              "image": "https://media.bookchor.com/images/cover/595/9780349139623.jpg",
-              "title": "Long Walk to Freedom",
-              "price": 525,
-              "quantity": 1
-            },
-            {
-              "id": 13,
-              "image": "https://media.bookchor.com/images/cover/592/9781451648539.jpg",
-              "title": "Steve Jobs",
-              "price": 430,
-              "quantity": 1
-            },
-            {
-              "id": 50,
-              "image": "https://atlanticbooks.com/cdn/shop/files/9781684818358_434x650.webp?v=1769294418",
-              "title": "The 7 Habits of Highly Effective People",
-              "price": 1553,
-              "quantity": 1
-            }
-          ]
-        },
-        {
-          "orderDate": "2026-08-09T14:00:46.515Z",
-          "address": {
-            "orderedName": "Rizal Bazim",
-            "orderedNumber": "7994263689",
-            "orderedStreet": "koorachi",
-            "orderedPlace": "pattambi",
-            "orderedPincode": "679309",
-            "orderedState": "kerala"
-          },
-          "payment": "Cash On Delivery",
-          "delivery": "success",
-          "items": [
-            {
-              "id": 2,
-              "image": "https://media.bookchor.com/images/cover/568/9780099549482.jpg",
-              "title": "To Kill a Mockingbird",
-              "price": 818,
+              "id": 18,
+              "image": "https://99bookstores.com/cdn/shop/files/245571012.jpg?v=1781511935&width=990",
+              "title": "Project Hail Mary",
+              "price": 424,
               "quantity": 1
             }
           ]
         }
       ],
       "cart": [
-        {
-          "id": 18,
-          "title": "Project Hail Mary",
-          "author": "Andy Weir",
-          "category": "Science Fiction",
-          "price": 424,
-          "rating": 4.9,
-          "stock": 3,
-          "pages": 496,
-          "description": "A lone astronaut awakens on a desperate mission to save humanity from an extinction-level threat.",
-          "image": "https://99bookstores.com/cdn/shop/files/245571012.jpg?v=1781511935&width=990",
-          "bestSeller": true
-        },
         {
           "id": 17,
           "title": "The Martian",
@@ -964,7 +811,31 @@
       "phone": "7994324567",
       "password": "123456",
       "role": "user",
-      "orderedUserDetails": [],
+      "orderedUserDetails": [
+        {
+          "orderDate": "2026-08-12T14:25:36.188Z",
+          "orderId": 1786544736188,
+          "address": {
+            "orderedName": "Shadhil",
+            "orderedNumber": "9089898574",
+            "orderedStreet": "koorachi",
+            "orderedPlace": "koppam",
+            "orderedPincode": "789897",
+            "orderedState": "kerala"
+          },
+          "payment": "Cash On Delivery",
+          "delivery": "Delivered",
+          "items": [
+            {
+              "id": 14,
+              "image": "https://media.bookchor.com/images/cover/595/9780349139623.jpg",
+              "title": "Long Walk to Freedom",
+              "price": 525,
+              "quantity": 1
+            }
+          ]
+        }
+      ],
       "cart": [],
       "wishlist": [],
       "status": true
@@ -976,133 +847,27 @@
       "phone": "7994362678",
       "password": "123456",
       "role": "user",
+      "status": true,
       "orderedUserDetails": [
         {
-          "orderDate": "2026-06-07T13:44:59.532Z",
+          "orderDate": "2026-08-12T14:26:55.997Z",
+          "orderId": 1786544815997,
           "address": {
-            "orderedName": "jhon",
-            "orderedNumber": "1234567890",
-            "orderedStreet": "street",
-            "orderedPlace": "malappuram",
-            "orderedPincode": "679309",
+            "orderedName": "Jhon",
+            "orderedNumber": "7878787878",
+            "orderedStreet": "killivayio",
+            "orderedPlace": "kochi",
+            "orderedPincode": "78978",
             "orderedState": "kerala"
           },
           "payment": "Cash On Delivery",
-          "delivery": "success",
+          "delivery": "Delivered",
           "items": [
-            {
-              "id": 2,
-              "image": "https://media.bookchor.com/images/cover/568/9780099549482.jpg",
-              "title": "To Kill a Mockingbird",
-              "price": 818,
-              "quantity": 2
-            }
-          ]
-        },
-        {
-          "orderDate": "2026-06-07T13:45:49.542Z",
-          "address": {
-            "orderedName": "jhon",
-            "orderedNumber": "6789012345",
-            "orderedStreet": "kaladi",
-            "orderedPlace": "palakkad",
-            "orderedPincode": "789765",
-            "orderedState": "kerala"
-          },
-          "payment": "Cash On Delivery",
-          "delivery": "success",
-          "items": [
-            {
-              "id": 15,
-              "image": "https://media.bookchor.com/images/cover/579/9780140264739.jpg",
-              "title": "The Diary of a Young Girl",
-              "price": 417,
-              "quantity": 1
-            }
-          ]
-        },
-        {
-          "orderDate": "2026-05-07T13:46:28.607Z",
-          "address": {
-            "orderedName": "jhon",
-            "orderedNumber": "8765432190",
-            "orderedStreet": "koppam",
-            "orderedPlace": "pattambi",
-            "orderedPincode": "890765",
-            "orderedState": "kerala"
-          },
-          "payment": "Cash On Delivery",
-          "delivery": "success",
-          "items": [
-            {
-              "id": 50,
-              "image": "https://atlanticbooks.com/cdn/shop/files/9781684818358_434x650.webp?v=1769294418",
-              "title": "The 7 Habits of Highly Effective People",
-              "price": 1553,
-              "quantity": 1
-            }
-          ]
-        },
-        {
-          "orderDate": "2026-05-07T13:47:44.907Z",
-          "address": {
-            "orderedName": "jhon",
-            "orderedNumber": "7890543216",
-            "orderedStreet": "vilayur",
-            "orderedPlace": "koppam",
-            "orderedPincode": "789876",
-            "orderedState": "kerala"
-          },
-          "payment": "Cash On Delivery",
-          "delivery": "success",
-          "items": [
-            {
-              "id": 5,
-              "image": "https://media.bookchor.com/images/cover/583/9788190105910.jpg",
-              "title": "The Power of Now",
-              "price": 519,
-              "quantity": 1
-            },
             {
               "id": 3,
               "image": "https://media.bookchor.com/images/cover/bc/9780785841722.jpg",
               "title": "The Alchemist",
               "price": 614,
-              "quantity": 1
-            },
-            {
-              "id": 2,
-              "image": "https://media.bookchor.com/images/cover/568/9780099549482.jpg",
-              "title": "To Kill a Mockingbird",
-              "price": 818,
-              "quantity": 1
-            },
-            {
-              "id": 14,
-              "image": "https://media.bookchor.com/images/cover/595/9780349139623.jpg",
-              "title": "Long Walk to Freedom",
-              "price": 525,
-              "quantity": 1
-            },
-            {
-              "id": 51,
-              "image": "https://atlanticbooks.com/cdn/shop/files/9781946963758_434x650.webp?v=1774892166",
-              "title": "How to Win Friends and Influence People",
-              "price": 1688,
-              "quantity": 1
-            },
-            {
-              "id": 50,
-              "image": "https://atlanticbooks.com/cdn/shop/files/9781684818358_434x650.webp?v=1769294418",
-              "title": "The 7 Habits of Highly Effective People",
-              "price": 1553,
-              "quantity": 1
-            },
-            {
-              "id": 18,
-              "image": "https://99bookstores.com/cdn/shop/files/245571012.jpg?v=1781511935&width=990",
-              "title": "Project Hail Mary",
-              "price": 424,
               "quantity": 1
             }
           ]
@@ -1149,8 +914,7 @@
           "image": "https://media.bookchor.com/images/cover/595/9780349139623.jpg",
           "bestSeller": true
         }
-      ],
-      "status": true
+      ]
     },
     {
       "id": "4531d1f5-2a04-4c5b-aac4-afcc72587508",
@@ -1161,69 +925,44 @@
       "role": "user",
       "orderedUserDetails": [
         {
-          "orderDate": "2026-05-08T14:10:27.347Z",
+          "orderDate": "2026-08-12T14:28:12.759Z",
+          "orderId": 1786544892759,
           "address": {
-            "orderedName": "thahir",
-            "orderedNumber": "7994266893",
-            "orderedStreet": "kodinki",
-            "orderedPlace": "malappuram",
-            "orderedPincode": "798574",
+            "orderedName": "Thahir",
+            "orderedNumber": "6543217890",
+            "orderedStreet": "kodiji",
+            "orderedPlace": "chemmad",
+            "orderedPincode": "789987",
             "orderedState": "kerala"
           },
           "payment": "Cash On Delivery",
-          "delivery": "success",
+          "delivery": "Delivered",
           "items": [
             {
-              "id": 3,
-              "image": "https://media.bookchor.com/images/cover/bc/9780785841722.jpg",
-              "title": "The Alchemist",
-              "price": 614,
+              "id": 4,
+              "image": "https://media.bookchor.com/images/cover/bc/9781847941831_1.jpg",
+              "title": "Atomic Habits",
+              "price": 522,
+              "quantity": 1
+            },
+            {
+              "id": 18,
+              "image": "https://99bookstores.com/cdn/shop/files/245571012.jpg?v=1781511935&width=990",
+              "title": "Project Hail Mary",
+              "price": 424,
+              "quantity": 1
+            },
+            {
+              "id": 50,
+              "image": "https://atlanticbooks.com/cdn/shop/files/9781684818358_434x650.webp?v=1769294418",
+              "title": "The 7 Habits of Highly Effective People",
+              "price": 1553,
               "quantity": 1
             }
           ]
         }
       ],
-      "cart": [
-        {
-          "id": 4,
-          "title": "Atomic Habits",
-          "author": "James Clear",
-          "category": "Self-Help",
-          "price": 522,
-          "rating": 4.9,
-          "stock": 30,
-          "pages": 320,
-          "description": "A practical guide to building good habits and breaking bad ones through small improvements.",
-          "image": "https://media.bookchor.com/images/cover/bc/9781847941831_1.jpg",
-          "bestSeller": true
-        },
-        {
-          "id": 18,
-          "title": "Project Hail Mary",
-          "author": "Andy Weir",
-          "category": "Science Fiction",
-          "price": 424,
-          "rating": 4.9,
-          "stock": 21,
-          "pages": 496,
-          "description": "A lone astronaut awakens on a desperate mission to save humanity from an extinction-level threat.",
-          "image": "https://99bookstores.com/cdn/shop/files/245571012.jpg?v=1781511935&width=990",
-          "bestSeller": true
-        },
-        {
-          "id": 50,
-          "title": "The 7 Habits of Highly Effective People",
-          "author": "Stephen R. Covey",
-          "category": "Self-Help",
-          "price": 1553,
-          "rating": 4.7,
-          "stock": 20,
-          "pages": 464,
-          "description": "A timeless guide to developing effective habits and improving personal and professional success.",
-          "image": "https://atlanticbooks.com/cdn/shop/files/9781684818358_434x650.webp?v=1769294418",
-          "bestSeller": true
-        }
-      ],
+      "cart": [],
       "wishlist": [],
       "status": true
     }

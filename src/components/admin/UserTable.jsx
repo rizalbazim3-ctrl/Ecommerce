@@ -37,13 +37,17 @@ function UserTable({user}) {
     }
      <div
       className="grid grid-cols-5 items-center
-      px-5 py-5 mt-2 rounded-lg
-      hover:bg-yellow-200 transition "
+      px-5 py-5 mt-2 rounded-lg shadow-lg hover:shadow-2xl hover:scale-101 
+      hover:bg-gray-200 transition duration-300 "
+      onClick={()=>{
+            setOpenUser(true)
+           }}
     >
 
       {/* User */}
 
-      <div className="flex flex-col   gap-3">
+      <div className="flex flex-col   gap-3
+      ">
 
         <div
           className="w-10 h-10 rounded-full bg-yellow-900 text-white flex items-center justify-center font-semibold"
@@ -76,7 +80,9 @@ function UserTable({user}) {
       {/* status */}
       <div>
         <span
-          className="px-3 py-1 rounded-full bg-green-100 text-green-700 text-sm font-medium"
+          className = {`${user.status  ? "px-3 py-1 rounded-lg bg-green-100 text-green-700 text-sm font-medium" :
+             "px-3 py-1 rounded-lg bg-red-100 text-red-700 text-sm font-medium"
+          }`}
         >
           {user.status  ? "Active" : "Block"}
         </span>
@@ -86,16 +92,6 @@ function UserTable({user}) {
       {/* Actions */}
       <div className="flex justify-center gap-3">
 
-        {/* View */}
-        <button
-            className="p-2 rounded-lg text-yellow-900  hover:bg-yellow-300 transition"
-           onClick={()=>{
-            setOpenUser(true)
-           }}
-        >
-            <Eye size={19} />
-        </button>
-
         {/* Block */}
         <button
               className={
@@ -104,7 +100,8 @@ function UserTable({user}) {
       : "p-2 rounded-lg text-red-600 hover:bg-red-100 transition"
   }
 
-            onClick={()=>{
+            onClick={(e)=>{
+              e.stopPropagation()
              const status =   user?.status ?  false :  true
                blockUser(user.id,status)
             }}

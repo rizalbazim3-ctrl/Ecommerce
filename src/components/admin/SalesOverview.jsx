@@ -158,7 +158,7 @@ function SalesOverview() {
 
                 <Tooltip />
 
-                <Bar dataKey="sales"  fill="#a95f1d"
+                <Bar dataKey="sales"  fill="#734115"
                 barSize={29}
                 activeBar={null}
                 />
@@ -177,14 +177,15 @@ function SalesOverview() {
                 <p>Stock</p>
             </div>
             
-            <div className = 'overflow-y-auto h-[300px] hide-scrollbar border-t'>
+            <div className = 'overflow-y-auto h-[300px] hide-scrollbar border-t '>
 
                 {
                 LowStockBooks.map((book)=> (
-                <div className='grid grid-cols-3 rounded-xl  mt-5  gap-5 p-5 bg-[#B08D46]/60 text-white ' key={book.id}>
-                    <p className='text-center font-semibold'>{book.title}</p>
-                    <p className='text-center underline'>{book.category}</p>
-                    <p className='text-center '>{book.stock}</p>
+                <div className='grid grid-cols-3 mt-5  gap-5 p-5 rounded-xl border-b  shadow-xl border-white  hover:shadow-2xl transition' 
+                key={book.id}>
+                    <p className='text-center font-semibold text-yellow-900'>{book.title}</p>
+                    <p className='text-center underline text-gray-700'>{book.category}</p>
+                    <p className='text-center text-red-600'>{book.stock}</p>
                  </div>
                     ))
                 }
@@ -205,12 +206,13 @@ function SalesOverview() {
                 <div className='overflow-y-auto hide-scrollbar h-[300px] pt-3 border-t '>
                     {
                         recentOrdersSorted.map((item,index)=>(
-                            <div className = "grid grid-cols-4 gap-3 rounded-lg text-center items-center bg-[#B08D46]/60 text-gray-200 mb-3 p-5"
+                            <div 
+                            className = "grid grid-cols-4 gap-3 rounded-lg text-center items-center mb-3 p-5 border-b border-white shadow-xl text-black hover:shadow-2xl transition"
                                 key = {index}>
-                                <p className='text-center font-semibold'>{item.title}</p>
-                                <p className='text-center '>{item.name}</p>
-                                <p className='text-center font-semibold'>{item.email}</p>
-                                <p className='text-center '>{
+                                <p className='text-center text-yellow-900 font-semibold'>{item.title}</p>
+                                <p className='text-center font-semibold'>{item.name}</p>
+                                <p className='text-center text-gray-700'>{item.email}</p>
+                                <p className='text-center italic text-gray-900'>{
                                     new Date(item.date).toLocaleString("en-US",{
                                         month : "short",
                                         day : "numeric",
@@ -234,11 +236,11 @@ function SalesOverview() {
            <div className='overflow-y-auto h-[300px] hide-scrollbar border-t'>
              {
             bestSellingBooksOrderly.map((book)=> (
-                <div className = "grid grid-cols-3 rounded-lg text-center items-center bg-[#B08D46]/60 mt-3 text-gray-200 mb-3 p-5"
+                <div className = "grid grid-cols-3 rounded-lg text-center items-center mt-3 mb-3 p-5 border-b  shadow-xl border-white  text-black hover:shadow-2xl transition"
                 key = {book.id}>
-                    <p className='text-center font-semibold'>{book.title}</p>
-                    <p className='text-center underline'>₹{book.price}</p>
-                    <p className='text-center '>{book.quantity}</p>  
+                    <p className='text-center font-semibold text-yellow-900'>{book.title}</p>
+                    <p className='text-center underline italic'>₹{book.price}</p>
+                    <p className='text-center text-gray-600'>{book.quantity}</p>  
                 </div>
             ))
            }

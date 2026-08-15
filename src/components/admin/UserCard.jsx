@@ -8,7 +8,7 @@ function UserCard({Loginusers}) {
 
       <section className="grid grid-cols-3 gap-6 my-5">
 
-        <div className="rounded-xl bg-yellow-100 shadow-md p-6 hover:shadow-xl transition">
+        <div className="rounded-xl bg-[#F2EFE9] shadow-xl p-6 hover:shadow-2xl transition">
           <div className="flex justify-between items-center">
             <h2 className="text-gray-500 font-medium">Users</h2>
             <Users className="text-yellow-900" size={28} />
@@ -20,7 +20,7 @@ function UserCard({Loginusers}) {
           <p className="text-gray-500 mt-2">Total Users</p>
         </div>
 
-        <div className="rounded-xl bg-yellow-100 shadow-md p-6 hover:shadow-xl transition">
+        <div className="rounded-xl bg-[#F2EFE9] shadow-md p-6 hover:shadow-xl transition">
           <div className="flex justify-between items-center">
             <h2 className="text-gray-500 font-medium">Users</h2>
             <UserCheck className="text-green-500" size={28} />
@@ -32,7 +32,7 @@ function UserCard({Loginusers}) {
           <p className="text-gray-500 mt-2">Active Users</p>
         </div>
 
-        <div className="rounded-xl bg-yellow-100 shadow-md p-6 hover:shadow-xl transition">
+        <div className="rounded-xl bg-[#F2EFE9] shadow-md p-6 hover:shadow-xl transition">
           <div className="flex justify-between items-center">
             <h2 className="text-gray-500 font-medium">Users</h2>
             <UserX className="text-red-500" size={28} />

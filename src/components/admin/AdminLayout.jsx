@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom'
 
 function AdminLayout() {
   return (
-    <div className=" w-full flex min-h-screen  bg-[#DCC7A1] ">
+    <div className=" w-full flex min-h-screen  ">
 
     <AdminSideBar />
 

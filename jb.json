@@ -40,7 +40,8 @@
       "pages": 208,
       "description": "A young shepherd follows his dreams and discovers the meaning of destiny.",
       "image": "https://media.bookchor.com/images/cover/bc/9780785841722.jpg",
-      "bestSeller": true
+      "bestSeller": true,
+      "isDelete": false
     },
     {
       "id": 4,
@@ -512,7 +513,7 @@
       "phone": "7994263689",
       "password": "666666",
       "role": "user",
-      "status": true,
+      "status": false,
       "orderedUserDetails": [
         {
           "orderDate": "2026-08-12T14:24:09.721Z",
@@ -683,7 +684,7 @@
             "orderedState": "kerala"
           },
           "payment": "online",
-          "delivery": "Shipped",
+          "delivery": "Pending",
           "items": [
             {
               "id": 18,
@@ -803,7 +804,7 @@
           "bestSeller": true
         }
       ],
-      "status": false
+      "status": true
     },
     {
       "id": "7330b7a5-f32c-42a1-afdf-08022e2c0b14",
@@ -825,7 +826,7 @@
             "orderedState": "kerala"
           },
           "payment": "Cash On Delivery",
-          "delivery": "Delivered",
+          "delivery": "Cancelled",
           "items": [
             {
               "id": 14,
@@ -862,7 +863,7 @@
       ],
       "cart": [],
       "wishlist": [],
-      "status": true
+      "status": false
     },
     {
       "id": "6c716e6f-6c29-4e68-b3f5-ffebec8cd56d",

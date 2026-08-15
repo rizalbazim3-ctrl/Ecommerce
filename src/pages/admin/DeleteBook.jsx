@@ -2,7 +2,7 @@ import React from 'react'
 import { useMutation,useQueryClient } from '@tanstack/react-query'
 import {toast} from "sonner"
 import axios from "axios"
-import useBooks from '../../services/useBooks'
+import useAdminBooks from '../../services/admin/useAdminBooks'
 import {Plus} from "lucide-react"
 
 function DeleteBook({data}) {
@@ -10,7 +10,7 @@ function DeleteBook({data}) {
   const {
     data : books = [],
     isLoading
-  } = useBooks()
+  } = useAdminBooks()
 
   // {deleteItemId,setIsdeleting}
 
@@ -53,8 +53,10 @@ function DeleteBook({data}) {
      if(isLoading){
           return <p>Loading...</p>
         }
+
+        console.log(books)
         const deletingBook = books?.find((item)=> item.id === data.deleteItemId)
-        const state = deletingBook.isDelete ? false : true
+        const state = deletingBook?.isDelete ? false : true
        
   return (
     <>

@@ -18,8 +18,8 @@ function AdminHeader() {
 
 
             {/* searchBar */}
-           <div className='w-[40%] flex border border-yellow-900 rounded-2xl 
-           bg-yellow-100 p-2 pr-2  hover:border-yellow-900 transition duration-500 focus:ring-2 ' >
+           <div className='w-[40%] flex border border-yellow-900/70 hover:border-yellow-900 hover:border-2 rounded-2xl 
+           bg-yellow-50 p-2 pr-2  hover:border-yellow-900 transition duration-500 focus:ring-2 ' >
              <input type="text"
              placeholder={`${pathname === '/Admin/Orders' ? "Find orderId..." : "Searching..."}`}
              className='w-[100%] pl-3 outline-none'
@@ -29,7 +29,7 @@ function AdminHeader() {
              }}
              />
              <Search
-             className = "bg-yellow-700 w-10 h-7 text-yellow-100 rounded-full p-1 hover:scale-105 transition duration-300"
+             className = "bg-[#4E342E] w-10 h-7 text-yellow-100 rounded-full p-1 hover:scale-105 transition duration-300"
              />
            </div>
 

@@ -181,11 +181,11 @@ function BookTable({books}) {
     )}
         <div>
            {/* Books Table */}
-      <section className="mt-8 bg-yellow-100 rounded-xl p-5">
+      <section className="mt-8 bg-[#F2EFE9] rounded-xl p-5">
 
          {/* Heading */}
-        <div className="grid grid-cols-6 px-5 py-3 
-        text-yellow-900 font-semibold border-b border-yellow-300">
+        <div className="grid grid-cols-6 px-5 py-3 rounded-xl
+        text-yellow-900 font-semibold border-b border-yellow-900">
 
           <p>Book</p>
           <p>Author</p>
@@ -205,8 +205,13 @@ function BookTable({books}) {
             <div
               key={book.id}
               className="grid grid-cols-6 items-center 
-              px-5 py-5 mt-2 rounded-lg 
-              hover:bg-yellow-200 transition"
+              px-5 py-5 mt-2 rounded-lg shadow-lg hover:shadow-2xl hover:scale-101
+              hover:bg-gray-200 transition"
+
+              onClick={()=>{
+                  setViewBookId(book.id)
+                  setBookView(true) 
+                 }}
             >
 
               <p className="font-semibold text-yellow-900">
@@ -237,23 +242,16 @@ function BookTable({books}) {
 
               <div className="flex justify-center gap-3">
 
-                <button
-                 className="p-2 rounded-lg hover:bg-yellow-300"
-                 onClick={()=>{
-                  setViewBookId(book.id)
-                  setBookView(true) 
-                 }}
-                >
-                  <Eye  size={20}/>
-                </button>
-
                 <button 
-                onClick={()=> handleEdit(book.id)}
-                className="p-2 rounded-lg hover:bg-yellow-300">
+                onClick={(e)=> {
+                  e.stopPropagation()
+                  handleEdit(book.id)}}
+                className="p-2 rounded-lg hover:bg-gray-300">
                   <Pencil size={18} />
                 </button>
 
-                <button onClick={()=> {
+                <button onClick={(e)=> {
+                  e.stopPropagation()
                     setIsdeleting(true)
                     setDeleteItemId(book.id)
                 } }

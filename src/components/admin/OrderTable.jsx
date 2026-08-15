@@ -48,14 +48,14 @@ function OrderTable({order}) {
     }
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden  my-5">
+    <div className=" rounded-xl shadow-xl  overflow-hidden my-1 py-3 hover:shadow-2xl hover:scale-102 hover:bg-gray-900/30 transition-scale-bg duration-500">
 
         {
         OrderViewCheck && <OrderView value = {{setOrderViewCheck,order}}/> 
        }
 
   {/* Order Row */}
-  <div className="grid grid-cols-7 gap-4 items-center px-6 py-5 border-b border-gray-100 hover:bg-gray-50 transition">
+  <div className="grid grid-cols-7  items-center px-6 py-5   ">
 
     <div className="font-semibold text-gray-800">
      #{order.orderId}

@@ -59,8 +59,8 @@ const FilteredBooks = serachedBooks.filter((book)=>{
           setEndPage(vlaue*perPage)
         }}
 
-        className = {`rounded  font-semibold px-4  
-        py-1 mx-2 mt-3 ${(i === value) ? "bg-yellow-600"  : "bg-yellow-800"}` }
+        className = {`rounded  font-semibold px-4  text-white 
+        py-1 mx-2 mt-3 ${(i === value) ? "bg-yellow-900/80"  : "bg-yellow-900/50 hover:bg-yellow-900/70"}` }
        >{i}</button>)
 
       }
@@ -96,7 +96,7 @@ if(isLoading){
         }
 
       {/* Header */}
-      <div className="flex justify-between items-center rounded-xl bg-yellow-100 p-3">
+      <div className="flex justify-between items-center rounded-xl bg-[#F2EFE9] p-3">
 
         <div>
           <h1 className="text-3xl font-semibold text-yellow-900">
@@ -109,7 +109,7 @@ if(isLoading){
         </div>
 
         <button
-          className="flex items-center gap-2 bg-yellow-900 text-white  px-5 py-3 rounded-lg hover:bg-yellow-800 transition"
+          className="flex items-center gap-2 bg-yellow-900 text-white  px-5 py-3 rounded-lg hover:bg-yellow-900/70 hover:scale-102 transition duration-500"
 
           onClick={()=>{
             setAddNewNote(true)
@@ -131,8 +131,8 @@ if(isLoading){
           onChange={(e) => {
             setCategory(e.target.value)
           }}
-          className="bg-yellow-100 border border-yellow-800 
-          rounded-lg px-4 py-2 text-yellow-900 outline-none"
+          className="bg-[#F2EFE9] border border-yellow-800 
+          rounded-lg px-4 py-2 text-yellow-900 hover:bg-yellow-900/50 hover:text-white transition outline-none"
         >
           <option>All Categories</option>
           <option>Fiction</option>
@@ -150,7 +150,8 @@ if(isLoading){
            onChange={(e) => {
             setStockCategory(e.target.value)
           }}
-          className="bg-yellow-100 border border-yellow-800  rounded-lg px-4 py-2 text-yellow-900 outline-none"
+          className="bg-[#F2EFE9] border border-yellow-800  rounded-lg px-4 py-2 text-yellow-900 
+          outline-none hover:bg-yellow-900/50 hover:text-white transition duration-500"
         >
           <option>All Stock</option>
           <option>In Stock</option>
@@ -171,7 +172,7 @@ if(isLoading){
       }
 
        <div className="text-center mt-3 flex flex-wrap justify-center">
-        <button className="rounded bg-yellow-400 mr-5 px-2 mt-3"
+        <button className="rounded bg-yellow-900/70 text-white hover:bg-yellow-900/90  mr-5 px-2 mt-3"
         onClick={()=>{
           if(startPage !== 0){
             setStartPage((prev)=> prev-1 * perPage)
@@ -183,7 +184,7 @@ if(isLoading){
           buttonList.map((item)=> item )
           }
           <button
-           className="rounded bg-yellow-400 px-4 ml-5 mt-3"
+           className="rounded bg-yellow-900/70 text-white hover:bg-yellow-900/90 px-4 ml-5 mt-3"
            onClick={()=>{
             if(endPage !== FilteredBooks.length && endPage < FilteredBooks.length ){
               setStartPage((prev)=>prev + 1*perPage)

@@ -23,7 +23,6 @@ function AdminUsers() {
         queryFn : fetchUsers,
     })
 
-    console.log(Allusers)
 
     const Loginusers = Allusers.filter((item)=>   adminSearch === "" ? item.role === "user" : item.role === "user" && item.name.toLowerCase().includes(adminSearch.toLowerCase()) )
 
@@ -40,7 +39,8 @@ function AdminUsers() {
      for(let i =1; i<=Math.ceil(Loginusers.length/5);i++){
       paginationList.push(<button 
         key = {i}
-        className = {`px-3 py-1  rounded mx-3 ${value === i ? "bg-yellow-500" : "bg-yellow-700" } `}
+        className = {`rounded  font-semibold px-4  text-white 
+        py-1 mx-2  ${(i === value) ? "bg-yellow-900/80"  : "bg-yellow-900/50 hover:bg-yellow-900/70"}` }
         value = {i}
         onClick={(e)=>{
           const value = e.target.value 
@@ -76,7 +76,7 @@ function AdminUsers() {
      <div className="p-8">
 
   {/* Header */}
-  <div className="bg-yellow-100 rounded-xl px-6 py-5">
+  <div className="bg-[#F2EFE9] rounded-xl px-6 py-5">
     <h1 className="text-3xl font-semibold text-yellow-900">
       Users
     </h1>
@@ -90,11 +90,11 @@ function AdminUsers() {
 
 
   {/* User Table */}
-  <section className="mt-8 bg-yellow-100 rounded-xl p-5">
+  <section className="mt-8 bg-[#F2EFE9] rounded-xl p-5">
 
     {/* Table Heading */}
     <div
-      className="grid grid-cols-5 justify-between px-5 py-4 text-yellow-900 font-semibold border-b border-yellow-300"
+      className="grid grid-cols-5 justify-between px-5 py-4 text-yellow-900 font-semibold border-b border-yellow-900 rounded-2xl"
     >
       <p>User</p>
       <p>Email</p>
@@ -117,9 +117,9 @@ function AdminUsers() {
 
   </section>
 
-  <div className='flex flex-wrap justify-center mt-4'>
+  <div className='flex flex-wrap justify-center mt-4  '>
       
-    <p className = 'px-3 py-1 bg-yellow-400 rounded'
+    <p className = 'px-3 py-1 bg-yellow-900/70 text-white hover:bg-yellow-900/90 rounded'
     onClick={()=>{
       if(endPage !== pages){
       setStartPage((prev)=>prev-pages)
@@ -136,7 +136,7 @@ function AdminUsers() {
       })
     }
 
-    <p className = 'px-5 py-1 bg-yellow-400 rounded'
+    <p className = 'px-5 py-1 bg-yellow-900/70 text-white hover:bg-yellow-900/90 rounded'
     onClick={()=>{
       if(Loginusers.length > endPage){
         setStartPage((prev)=>prev+pages)

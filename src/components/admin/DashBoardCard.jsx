@@ -41,16 +41,34 @@ function DashBoardCard() {
     },0)
   },0)
 
-  if(isLoading){
-  return <p> Loading...</p>
+
+  //Loadnig
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="bg-white px-15 py-8 rounded-xl shadow-md flex flex-col items-center ">
+        
+        <div className="w-12 h-12 border-4 border-gray-200 border-t-yellow-900 rounded-full animate-spin"></div>
+
+        <p className="mt-4 text-gray-700 font-semibold">
+          Loading...
+        </p>
+
+        <p className="text-sm text-gray-400 mt-1">
+          Please wait
+        </p>
+
+      </div>
+    </div>
+  );
 }
 
   return (
     <div className="p-6">
 
-      <section className="grid grid-cols-4 gap-6">
+      <section className="grid md:grid-cols-4 md:gap-6 ">
 
-        <div className="rounded-xl bg-[#F2EFE9] shadow-md p-6 hover:shadow-xl transition">
+        <div className="rounded-xl bg-[#F2EFE9] shadow-md md:p-6 p-4 hover:shadow-xl transition">
           <div className="flex justify-between items-center">
             <h2 className="text-gray-500 font-medium">Books</h2>
             <BookOpen className="text-blue-600" size={28} />

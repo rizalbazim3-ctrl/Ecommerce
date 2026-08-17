@@ -12,7 +12,7 @@ import {toast} from "sonner"
 import { NavLink } from "react-router-dom";
 import { useQueryClient } from "@tanstack/react-query";
 
-function AdminSideBar() {
+function AdminSideBar({sidebarOpen,setSidebarOpen}) {
   const navigate = useNavigate()
   const queryClient =  useQueryClient() 
 
@@ -20,15 +20,46 @@ function AdminSideBar() {
           localStorage.removeItem("userId") 
           localStorage.removeItem("role")
           queryClient.invalidateQueries({
-            querKey : ["user"]
+            queryKey : ["user"]
           })
           toast.success("Logouted successfully")
           navigate("/Login")
   }
+
+  const handleMenuClick = () => {
+    setSidebarOpen(false);
+  };
+
   return (
     <div>
-      <aside className="w-64   bg-[#F2EFE9] text-yellow-900 flex flex-col rounded-lg ml-5 sticky  top-5 mt-5 h-[730px]">
+      {/* small screen */}
+      {sidebarOpen && (
+        <div
+          onClick={() => setSidebarOpen(false)}
+          className="fixed inset-0 z-40 bg-black/40 md:hidden"
+        />
+      )}
 
+      {/* Normal */}
+      <aside
+            className={`top:0 h-[800px] fixed md:sticky md:top-5 left-0 z-50 w-64 md:h-[730px] mt-5 ml-0 md:ml-5 bg-[#F2EFE9]
+              text-yellow-900 flex flex-col rounded-lgshadow-lg transition-transform duration-300
+
+              ${
+                sidebarOpen
+                  ? "translate-x-0"
+                  : "-translate-x-full md:translate-x-0"
+              }
+            `}
+          >
+
+            {/* Close button */}
+          <button
+            onClick={() => setSidebarOpen(false)}
+            className="md:hidden absolute top-5 right-4 text-xl"
+          >
+            ✕
+          </button>
       {/* Logo */}
       <div className="p-6 border-b border-slate-700">
            <div className='flex gap-3'>
@@ -44,6 +75,8 @@ function AdminSideBar() {
       <nav className="flex-1 p-4 space-y-2">
 
         <NavLink  to = "/Admin/Dashboard"
+
+        onClick={handleMenuClick}
           className = {({isActive})=>(
           isActive ? "flex items-center gap-3 text-yellow-100 bg-yellow-800 rounded-lg px-4 py-3 "
           :
@@ -55,6 +88,7 @@ function AdminSideBar() {
         </NavLink>
 
         <NavLink to = "/Admin/Books"
+        onClick={handleMenuClick}
           className = {({isActive})=>(
           isActive ? "flex items-center gap-3 text-yellow-100 bg-yellow-800 rounded-lg px-4 py-3  "
           :
@@ -66,6 +100,7 @@ function AdminSideBar() {
         </NavLink>
 
         <NavLink to = "/Admin/Orders"
+        onClick={handleMenuClick}
           className = {({isActive})=>(
           isActive ? "flex items-center gap-3 text-yellow-100 bg-yellow-800 rounded-lg px-4 py-3  "
           :
@@ -77,6 +112,7 @@ function AdminSideBar() {
         </NavLink>
 
         <NavLink to = "/Admin/Users"
+        onClick={handleMenuClick}
           className={(info) => (
             info.isActive ?
               "flex items-center gap-3 bg-yellow-800 text-yellow-100  rounded-lg px-4 py-3 "
@@ -89,6 +125,7 @@ function AdminSideBar() {
         </NavLink>
 
         <NavLink to = "/"
+        onClick={handleMenuClick}
           className={(info) => (
             info.isActive ?
               "flex items-center gap-3 bg-yellow-800 text-yellow-100  rounded-lg px-4 py-3 "

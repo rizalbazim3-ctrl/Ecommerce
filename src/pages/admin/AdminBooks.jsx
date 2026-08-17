@@ -84,9 +84,25 @@ const FilteredBooks = serachedBooks.filter((book)=>{
   
   
   
-if(isLoading){
-    return <p>Loading...</p>
-  } 
+if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center ">
+        <div className="bg-white px-8 py-6 rounded-xl shadow-md flex flex-col items-center">
+        
+        <div className="w-12 h-12 border-4 border-gray-200 border-t-yellow-900 rounded-full animate-spin"></div>
+
+        <p className="mt-4 text-gray-700 font-semibold">
+          Loading books...
+        </p>
+
+        <p className="text-sm text-gray-400 mt-1">
+          Please wait
+        </p>
+
+      </div>
+    </div>
+  );
+}
 
   return (
     <div className="p-8">

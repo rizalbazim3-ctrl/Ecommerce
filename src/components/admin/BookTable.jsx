@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import AdminBooks from '../../pages/admin/AdminBooks'
 import {  Plus, Pencil, Trash2 ,Eye  } from "lucide-react"
 import { useMutation } from '@tanstack/react-query'
@@ -46,6 +46,14 @@ function BookTable({books}) {
             }
 
         })
+        
+        useEffect(()=>{
+          if(isEditOpen){
+            document.body.style.overflow = "hidden"
+          }else{
+            document.body.style.overflow = "auto"
+          }
+        },[isEditOpen])
 
   
        return  ( 
@@ -59,15 +67,15 @@ function BookTable({books}) {
         )
       }
         {isEditOpen && (
-  <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
+  <div className="fixed inset-0 bg-black/50 flex items-center justify-center ">
 
-    <div className="bg-white w-[500px] rounded-xl p-6">
+    <div className="bg-yellow-50 w-[500px] h-[80%] rounded-xl p-6 overflow-auto hide-scrollbar">
 
-      <h2 className="text-2xl font-bold mb-5">
+      <h2 className="text-2xl font-bold mb-5 text-yellow-900">
         Edit Book
       </h2>
 
-      <label>Title</label>
+      <label className='text-gray-500'>Title</label>
       <input
         value={editBook.title}
         onChange={(e) =>
@@ -76,11 +84,11 @@ function BookTable({books}) {
             title: e.target.value
           })
         }
-        className="w-full border p-2 rounded mb-3"
+        className="w-full border border-yellow-300  p-2 rounded mb-3 hover:bg-yellow-100  hover:scale-102 transition duration-300"
         placeholder="Book title"
       />
 
-      <label>Author</label>
+      <label className='text-gray-500'>Author</label>
       <input
         value={editBook.author}
         onChange={(e) =>
@@ -89,11 +97,11 @@ function BookTable({books}) {
             author: e.target.value
           })
         }
-        className="w-full border p-2 rounded mb-3"
+        className="w-full border border-yellow-300  p-2 rounded mb-3 hover:bg-yellow-100  hover:scale-102 transition duration-300"
         placeholder="Author"
       />
 
-      <label>Price</label>
+      <label className='text-gray-500'>Price</label>
       <input
         value={editBook.price}
         onChange={(e) =>
@@ -102,11 +110,11 @@ function BookTable({books}) {
             price: e.target.value
           })
         }
-        className="w-full border p-2 rounded mb-3"
+        className="w-full border border-yellow-300  p-2 rounded mb-3 hover:bg-yellow-100  hover:scale-102 transition duration-300"
         placeholder="Price"
       />
 
-      <label>Stock</label>
+      <label className='text-gray-500'>Stock</label>
       <input
         value={editBook.stock}
         onChange={(e) =>
@@ -115,14 +123,14 @@ function BookTable({books}) {
             stock: e.target.value
           })
         }
-        className="w-full border p-2 rounded mb-5"
+        className="w-full border border-yellow-300  p-2 rounded mb-5 hover:bg-yellow-100  hover:scale-102 transition duration-300"
         placeholder="Stock"
       />
 
-      <label>Description</label>
+      <label className='text-gray-500'>Description</label>
       <textarea type="text" 
       value={editBook.description}
-      className='w-full border p-2 rounded mb-5'
+      className='w-full border border-yellow-300  p-2 rounded mb-5 hover:bg-yellow-100  hover:scale-102 transition duration-300'
       placeholder='Description'
       onChange={(e)=>(
         setEditBook({
@@ -132,9 +140,9 @@ function BookTable({books}) {
       )}
       />
 
-      <label>Image</label>
+      <label className='text-gray-500'>Image</label>
       <textarea type="text"
-      className='w-full border p-2 rounded mb-5'
+      className='w-full border border-yellow-300  p-2 rounded mb-5 hover:bg-yellow-100  hover:scale-102 transition duration-300'
       placeholder= "image-URL"
       value={editBook.image}
       onChange={(e)=>(
@@ -145,9 +153,9 @@ function BookTable({books}) {
       )}
       />
       
-      <label>Pages</label>
+      <label className='text-gray-500'>Pages</label>
       <input type="text"
-      className='w-full border p-2 rounded mb-5'
+      className='w-full border border-yellow-300  p-2 rounded mb-5 hover:bg-yellow-100  hover:scale-102 transition duration-300'
       placeholder= "pages"
       value={editBook.pages}
       onChange={(e)=>(
@@ -161,7 +169,7 @@ function BookTable({books}) {
       <div className="flex justify-end gap-3">
         <button
           onClick={() => setIsEditOpen(false)}
-          className="px-4 py-2 border rounded"
+          className="px-4 py-2 border border-yellow-300  rounded"
         >
           Cancel
         </button>
@@ -198,15 +206,15 @@ function BookTable({books}) {
 
 
          {/* Books */}
-        <div className="mt-2">
+        <div className="mt-1">
 
          { books.map((book) => (
 
             <div
               key={book.id}
               className="grid grid-cols-6 items-center 
-              px-5 py-5 mt-2 rounded-lg shadow-lg hover:shadow-2xl hover:scale-101
-              hover:bg-gray-200 transition"
+              px-5 py-10 mt-1 rounded-lg shadow-xl hover:shadow-2xl
+              hover:bg-gray-800/30 hover:scale-102 transition duration-500"
 
               onClick={()=>{
                   setViewBookId(book.id)

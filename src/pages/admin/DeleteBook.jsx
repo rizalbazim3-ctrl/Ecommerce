@@ -62,7 +62,7 @@ function DeleteBook({data}) {
     <>
     <div className='w-full inset-0 fixed bg-black/40 '>
 
-    <div className='rounded-xl bg-gray-100/50 w-[40%] mx-auto mt-[30%] text-center p-5'>
+    <div className='rounded-xl bg-yellow-50 w-[40%] mx-auto mt-[30%] text-center p-5'>
     <div className='w-full flex justify-end'>
       <button 
       onClick={()=>{
@@ -72,18 +72,19 @@ function DeleteBook({data}) {
       <Plus className='rotate-45' size={28}/>
     </button>
     </div>
-      <p className='px-3 py-1 rounded bg-black-600 underline'
+      <p className='px-3 py-1 rounded bg-black-600 underline font-semibold text-lg'
       >Are you sure?</p>
       <div className='p-3 flex gap-3 justify-center'>
 
         {/* softDelete */}
+        
         <button className='px-3 py-1 rounded bg-green-600 text-white'
         onClick={()=>{
          
           SoftDeleteMutation.mutate(state)
           data.setIsdeleting(false)
         }}
-        >{deletingBook.isDelete ? "unSoft Delete?" : "Soft  Delete?"}
+        >{deletingBook.isDelete ? "Restore" : "Soft  Delete?"}
         </button>
 
         {/* hardDelete */}

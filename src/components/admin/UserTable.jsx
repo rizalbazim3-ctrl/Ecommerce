@@ -37,8 +37,8 @@ function UserTable({user}) {
     }
      <div
       className="grid grid-cols-5 items-center
-      px-5 py-5 mt-2 rounded-lg shadow-lg hover:shadow-2xl hover:scale-101 
-      hover:bg-gray-200 transition duration-300 "
+      px-5 py-5 mt-1 rounded-lg shadow-xl hover:shadow-2xl hover:scale-102 
+      hover:bg-gray-800/30 transition duration-300 "
       onClick={()=>{
             setOpenUser(true)
            }}
@@ -46,7 +46,7 @@ function UserTable({user}) {
 
       {/* User */}
 
-      <div className="flex flex-col   gap-3
+      <div className="flex flex-col   gap-1
       ">
 
         <div

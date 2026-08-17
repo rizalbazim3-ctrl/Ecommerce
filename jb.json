@@ -12,7 +12,7 @@
       "description": "A classic novel about wealth, love, ambition, and the American Dream.",
       "image": "https://media.bookchor.com/images/cover/568/9781447225928.jpg",
       "bestSeller": true,
-      "isDelete": true,
+      "isDelete": false,
       "page": ""
     },
     {
@@ -513,7 +513,7 @@
       "phone": "7994263689",
       "password": "666666",
       "role": "user",
-      "status": false,
+      "status": true,
       "orderedUserDetails": [
         {
           "orderDate": "2026-08-12T14:24:09.721Z",
@@ -694,6 +694,29 @@
               "quantity": 1
             }
           ]
+        },
+        {
+          "orderDate": "2026-08-16T13:48:38.712Z",
+          "orderId": 1786888118734,
+          "address": {
+            "orderedName": "kjnkjnk",
+            "orderedNumber": "1234567890",
+            "orderedStreet": "vhjbjl",
+            "orderedPlace": "jvhjbk",
+            "orderedPincode": "hgvjhvh",
+            "orderedState": "uihuih"
+          },
+          "payment": "online",
+          "delivery": "success",
+          "items": [
+            {
+              "id": 5,
+              "image": "https://media.bookchor.com/images/cover/583/9788190105910.jpg",
+              "title": "The Power of Now",
+              "price": 519,
+              "quantity": 1
+            }
+          ]
         }
       ],
       "cart": [
@@ -778,19 +801,6 @@
           "bestSeller": true
         },
         {
-          "id": 5,
-          "title": "The Power of Now",
-          "author": "Eckhart Tolle",
-          "category": "Self-Help",
-          "price": 519,
-          "rating": 4.6,
-          "stock": 18,
-          "pages": 236,
-          "description": "A guide to mindfulness and living peacefully in the present moment.",
-          "image": "https://media.bookchor.com/images/cover/583/9788190105910.jpg",
-          "bestSeller": true
-        },
-        {
           "id": 14,
           "title": "Long Walk to Freedom",
           "author": "Nelson Mandela",
@@ -801,6 +811,19 @@
           "pages": 656,
           "description": "Nelson Mandela's autobiography describing his journey and struggle against apartheid.",
           "image": "https://media.bookchor.com/images/cover/595/9780349139623.jpg",
+          "bestSeller": true
+        },
+        {
+          "id": 13,
+          "title": "Steve Jobs",
+          "author": "Walter Isaacson",
+          "category": "Biography",
+          "price": 430,
+          "rating": 4.7,
+          "stock": 12,
+          "pages": 656,
+          "description": "A detailed biography of Steve Jobs and his life, career, creativity, and impact on technology.",
+          "image": "https://media.bookchor.com/images/cover/592/9781451648539.jpg",
           "bestSeller": true
         }
       ],

@@ -133,7 +133,7 @@ function SalesOverview() {
 
 
   return (
-    <div className='w-full grid grid-cols-2 gap-5 mx-5'>
+    <div className='w-full grid md:grid-cols-2 gap-5 mx-5'>
         <div className=" h-[400px]  rounded-xl bg-[#F2EFE9] hover:shadow-xl p-5">
 
             {/* time pireods */}
@@ -226,7 +226,7 @@ function SalesOverview() {
            
         </section>
         <section className=' h-[400px] bg-[#F2EFE9] mr-10 rounded-xl p-5 '>
-           <h1 className= "text-center text-2xl font-semibold underline mb-5">Best Selling Books</h1>
+           <h1 className= "text-center text-2xl font-semibold underline mb-5 text-yellow-900 ">Best Selling Books</h1>
             <div className=' grid grid-cols-3  mt-3 text-lg text-Green-900 font-semibold text-center'>
                 <p>Book</p>
                 <p>Pricce</p>   

@@ -9,7 +9,7 @@ function BookView({value}) {
    
   <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
 
-    <div className="bg-yellow-50 w-[700px] max-h-[90vh]
+    <div className="bg-[#F2EFE9] w-[700px] max-h-[90vh]
       overflow-y-auto hide-scrollbar rounded-2xl shadow-xl p-7">
 
       {/* Header */}
@@ -29,7 +29,7 @@ function BookView({value}) {
 
 
       {/* Product Top Section */}
-      <div className="flex gap-6 bg-yellow-100 rounded-xl p-5">
+      <div className="flex gap-6 bg-gray-50 rounded-xl p-5">
 
         {/* Book Image */}
         <div className="w-36 h-52 flex-shrink-0 bg-white rounded-lg p-2">
@@ -75,7 +75,7 @@ function BookView({value}) {
 
         <div className="grid grid-cols-2 gap-4">
 
-          <div className="bg-white rounded-lg p-4">
+          <div className="bg-gray-500/30 rounded-lg p-4">
             <p className="text-sm text-gray-500">
               Rating
             </p>
@@ -86,7 +86,7 @@ function BookView({value}) {
           </div>
 
 
-          <div className="bg-white rounded-lg p-4">
+          <div className="bg-gray-500/30 rounded-lg p-4">
             <p className="text-sm text-gray-500">
               Stock
             </p>
@@ -101,7 +101,7 @@ function BookView({value}) {
           </div>
 
 
-          <div className="bg-white rounded-lg p-4">
+          <div className="bg-gray-500/30 rounded-lg p-4">
             <p className="text-sm text-gray-500">
               Pages
             </p>
@@ -112,7 +112,7 @@ function BookView({value}) {
           </div>
 
 
-          <div className="bg-white rounded-lg p-4">
+          <div className="bg-gray-500/30 rounded-lg p-4">
             <p className="text-sm text-gray-500">
               Best Seller
             </p>
@@ -134,7 +134,7 @@ function BookView({value}) {
           Description
         </h3>
 
-        <div className="bg-white rounded-lg p-4">
+        <div className="bg-gray-500/30 rounded-lg p-4">
           <p className="text-gray-600 leading-7">
             {selectedBook.description}
           </p>
@@ -147,7 +147,7 @@ function BookView({value}) {
       <button
         onClick={() => setBookView(false)}
         className="w-full mt-7 bg-yellow-900 text-white
-        py-3 rounded-lg hover:bg-yellow-800 transition"
+        py-3 rounded-lg hover:bg-yellow-900/90 transition"
       >
         Close
       </button>

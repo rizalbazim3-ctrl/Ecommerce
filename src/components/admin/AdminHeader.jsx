@@ -1,21 +1,26 @@
-import React from 'react'
-import { Bell , User ,Search , BookOpen} from 'lucide-react'
+import React, { useState } from 'react'
+import { Bell , User ,Search , BookOpen,Menu} from 'lucide-react'
 import {useSelector,useDispatch} from "react-redux"
 import { setAdminSearch } from '../../services/admin/adminSlice'
 import { useLocation } from 'react-router-dom'
 
-function AdminHeader() {
+function AdminHeader({setSidebarOpen}) {
 
   const adminSearch = useSelector((state)=> state.adminFilter.adminSearch)
   const dispatch = useDispatch()
   const {pathname} = useLocation()
-
+  const [adminIcon,setAdminIcon] = useState(false)
   
   return (
     <div className=' mr-3 ml-3 bg-[#F2EFE9] p-5 my-5 rounded-xl shadow-xl'>
         <section className='w-full flex justify-around'>
-          
 
+            <button
+          onClick={() => setSidebarOpen(true)}
+          className="md:hidden p-2 rounded-lg hover:bg-yellow-100 transition"
+        >
+          <Menu size={25} />
+        </button>
 
             {/* searchBar */}
            <div className='w-[40%] flex border border-yellow-900/70 hover:border-yellow-900 hover:border-2 rounded-2xl 

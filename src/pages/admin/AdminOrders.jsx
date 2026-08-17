@@ -69,9 +69,25 @@ function AdminOrders() {
     },[adminSearch])
     
 
-    if(isLoading){
-      return <p>Loading...</p>
-    }
+    if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center ">
+        <div className="bg-white px-8 py-6 rounded-xl shadow-md flex flex-col items-center">
+        
+        <div className="w-12 h-12 border-4 border-gray-200 border-t-yellow-900 rounded-full animate-spin"></div>
+
+        <p className="mt-4 text-gray-700 font-semibold">
+          Loading orders...
+        </p>
+
+        <p className="text-sm text-gray-400 mt-1">
+          Please wait
+        </p>
+
+      </div>
+    </div>
+  );
+}
 
   return (
     <div >
@@ -99,7 +115,7 @@ function AdminOrders() {
         <div className='flex flex-wrap justify-center mt-3 mb-5'>
      <p className = 'px-3 py-1 bg-yellow-900/70 text-white hover:bg-yellow-900/90 rounded'
     onClick={()=>{
-      if(endPage !== pages){
+      if(endPage !== perPage){
       setStartPage((prev)=>prev-perPage)
       setEndPage((prev)=> prev-perPage)
       
@@ -116,7 +132,7 @@ function AdminOrders() {
 
      <p className = 'px-5 py-1 bg-yellow-900/70 text-white hover:bg-yellow-900/90 rounded'
     onClick={()=>{
-      if(Loginusers.length > endPage){
+      if(orders.length > endPage){
         setStartPage((prev)=>prev+perPage)
         setEndPage((prev)=> prev+perPage)
 

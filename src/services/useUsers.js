@@ -4,9 +4,10 @@ import {Users} from "./BooksApi"
 
 function useUsers() {
 const userId = localStorage.getItem("userId")
-return useQuery({
+return  useQuery({
     queryKey : ["user"],
     queryFn : Users,
+    enabled : !!userId,
     })
 }
 

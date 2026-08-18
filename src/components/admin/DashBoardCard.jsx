@@ -28,11 +28,11 @@ function DashBoardCard() {
     //successsfullOrders
     const successFullOrders = withoutAdmin.reduce((orders,item)=>{
       return orders + item.orderedUserDetails.filter(
-        (value)=> value.delivery === "success"
+        (value)=> value.delivery === "Delivered"
       ).length
     },0)
 
-// total revvenue
+// total revenue
   const Total = withoutAdmin.reduce((orderTotal,user)=>{
     return orderTotal + user.orderedUserDetails.reduce((product,order)=>{
       return product + order.items.reduce((price,item)=>{

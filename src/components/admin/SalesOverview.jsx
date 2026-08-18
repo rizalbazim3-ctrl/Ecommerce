@@ -136,7 +136,7 @@ function SalesOverview() {
     <div className='w-full grid md:grid-cols-2 gap-5 mx-5'>
         <div className=" h-[400px]  rounded-xl bg-[#F2EFE9] hover:shadow-xl p-5">
 
-            {/* time pireods */}
+            {/* time pireods
             <div className = "flex gap-10 ml-10 mb-3">
                 <button className='rounded-xl bg-white px-2 border border-white hover:border-black transition duration-500' 
                 >All</button>
@@ -144,7 +144,7 @@ function SalesOverview() {
                 >7 Day</button>
                 <button className='rounded-xl bg-white px-2 border border-white hover:border-black transition duration-500'
                 >Month</button>
-            </div>
+            </div> */}
 
             <ResponsiveContainer width="100%" height="100%" 
             className="pb-5"  >

@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,memo} from 'react'
 import {Heart} from "lucide-react"
 import Books from '../pages/Books'
 import { useNavigate } from 'react-router-dom'
@@ -8,19 +8,7 @@ import useUsers from "../services/useUsers"
 import { useQueryClient } from '@tanstack/react-query'
 
 function BookCard({book}) {
-  // const  uptaing = async()=>{
-  //                 const response = await axios.get(` http://localhost:4001/books`)
-
-  //                 const data = response.data
-
-  //                 await Promise.all(
-  //                     data.map((book)=> {
-  //                        axios.delete(` http://localhost:4001/books/${book.id}`,{
-  //                           addcart :   false 
-  //                        })
-  //                     })
-  //                 )
-  //               }
+  console.log("BookCard rendered:", book.title);
   const [isclick,setIsclick] = useState(false)
   const navigate =useNavigate()
 
@@ -33,9 +21,25 @@ function BookCard({book}) {
   } = useUsers()
 
   
-  if(isLoading){
-  return <p className='text-lg font-semibold text-blue-500 '>Loading...</p>
- }
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="bg-white px-15 py-8 rounded-xl shadow-md flex flex-col items-center ">
+        
+        <div className="w-12 h-12 border-4 border-gray-200 border-t-yellow-900 rounded-full animate-spin"></div>
+
+        <p className="mt-4 text-gray-700 font-semibold">
+          Loading...
+        </p>
+
+        <p className="text-sm text-gray-400 mt-1">
+          Please wait
+        </p>
+
+      </div>
+    </div>
+  );
+}
 
 //checking items
 
@@ -161,4 +165,4 @@ function BookCard({book}) {
   )
 }
 
-export default BookCard
+export default memo(BookCard)

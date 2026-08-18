@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { Bell , User ,Search , BookOpen,Menu} from 'lucide-react'
 import {useSelector,useDispatch} from "react-redux"
 import { setAdminSearch } from '../../services/admin/adminSlice'
@@ -10,12 +10,25 @@ function AdminHeader({setSidebarOpen}) {
   const dispatch = useDispatch()
   const {pathname} = useLocation()
   const [adminIcon,setAdminIcon] = useState(false)
+  const [search,setSearch] = useState("")
+
+  useEffect(() => {
+
+  const timer = setTimeout(() => {
+    dispatch(setAdminSearch(search));
+  }, 500);
+
+  return () => {
+    clearTimeout(timer);
+  };
+
+}, [search, dispatch]);
   
   return (
-    <div className=' mr-3 ml-3 bg-[#F2EFE9] p-5 my-5 rounded-xl shadow-xl'>
+    <div className=' mr-3 ml-3 bg-[#F2EFE9] px-5  mt-5 py-4 rounded-xl shadow-xl '>
         <section className='w-full flex justify-around'>
 
-            <button
+          <button
           onClick={() => setSidebarOpen(true)}
           className="md:hidden p-2 rounded-lg hover:bg-yellow-100 transition"
         >
@@ -23,26 +36,25 @@ function AdminHeader({setSidebarOpen}) {
         </button>
 
             {/* searchBar */}
-           <div className='w-[40%] flex border border-yellow-900/70 hover:border-yellow-900 hover:border-2 rounded-2xl 
-           bg-yellow-50 p-2 pr-2  hover:border-yellow-900 transition duration-500 focus:ring-2 ' >
+         
              <input type="text"
              placeholder={`${pathname === '/Admin/Orders' ? "Find orderId..." : "Searching..."}`}
-             className='w-[100%] pl-3 outline-none'
+             className='w-[60%] pl-3 h-13 mt-4 outline-none border border-yellow-900/70 hover:border-yellow-900 hover:border-2 rounded-xl 
+           bg-yellow-50  hover:border-yellow-900 transition duration-500'
              onChange={(e)=> {
               const value = e.target.value
-              dispatch(setAdminSearch(value))
+              setSearch(value)
              }}
              />
-             <Search
-             className = "bg-[#4E342E] w-10 h-7 text-yellow-100 rounded-full p-1 hover:scale-105 transition duration-300"
-             />
-           </div>
+            
+           
 
 
-           {/* user,bell */}
-            <div className='flex gap-5 m-2 text-yellow-900 '>
-                <Bell className='hover:text-gray-900'/>
-                <User className='hover:text-gray-900'/>
+            <div className='w-[50%] flex flex-col m-2 text-yellow-50  items-end '>
+                <div className='rounded-full bg-yellow-900 p-1 mr-2'>
+                  <User  />
+                </div>
+                <p className="text-yellow-900 italic ">ADMIN</p>
             </div>
         </section>
     </div>

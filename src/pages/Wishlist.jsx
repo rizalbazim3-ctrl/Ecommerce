@@ -36,7 +36,7 @@
 
           const wishUpdated = list.filter((item)=> item.id !== id )
 
-          axios.patch(` http://localhost:4001/users/${userid}`,{
+         await axios.patch(` http://localhost:4001/users/${userid}`,{
                 wishlist : wishUpdated
               })
 
@@ -55,9 +55,13 @@
       const book = list.find((item)=> item.id === id )
 
       if(cartUpdated.length === 0){
-        axios.patch(` http://localhost:4001/users/${userid}`,{
+       await axios.patch(` http://localhost:4001/users/${userid}`,{
           cart : [...(user.cart) || []
             ,book]
+        })
+
+        queryClient.invalidateQueries({
+          queryKey : ["user"]
         })
         
         toast.success("Added successfully")

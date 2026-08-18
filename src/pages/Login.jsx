@@ -57,7 +57,7 @@ function Login() {
      }else if(data[0].role === "admin"){
       toast.success("Admin logged successfully")
       navigate("/Admin/Dashboard")
-      localStorage.setItem("userId", data[0].id)
+      
       localStorage.setItem("role", data[0].role)
       setEmail("")
       setPass("")

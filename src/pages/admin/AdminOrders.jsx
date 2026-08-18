@@ -71,8 +71,8 @@ function AdminOrders() {
 
     if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center ">
-        <div className="bg-white px-8 py-6 rounded-xl shadow-md flex flex-col items-center">
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="bg-white px-8 py-6 rounded-xl shadow-md flex flex-col items-center ">
         
         <div className="w-12 h-12 border-4 border-gray-200 border-t-yellow-900 rounded-full animate-spin"></div>
 
@@ -91,7 +91,7 @@ function AdminOrders() {
 
   return (
     <div >
-    <div className='rounded-lg bg-[#F2EFE9] p-5 mx-10 min-h-[400px]'>
+    <div className='rounded-lg bg-[#F2EFE9] p-5 mx-10 min-h-[400px] mt-10'>
 
       {/* Table Header */}
   <div className="grid grid-cols-7 gap-4 px-6 py-4 bg-[#F2EFE9] border-b border-yellow-900 rounded-xl text-sm font-semibold text-yellow-900  ">

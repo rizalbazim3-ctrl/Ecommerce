@@ -2,15 +2,56 @@ import React from 'react'
 import useUsers from '../services/useUsers'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
+import { useMutation,useQueryClient } from '@tanstack/react-query'
+import axios from "axios"
 
 function Orders() {
+
+  const queryClient = useQueryClient()
 
   const {data ,
     isLoading,
     isError
   } = useUsers()
   
+//cancelling  order
+  const cancelFetch  = async (mainUpdate)=>{
 
+    try{const response = await axios.patch(`http://localhost:4001/users/${data.id}`,{
+      orderedUserDetails : mainUpdate
+    })}catch(error){
+      console.log(data.email,mainUpdate)
+      console.log(error)
+    }
+  }
+
+  const cancelMutation = useMutation({
+    mutationFn : cancelFetch,
+
+    onSuccess : ()=>{
+      queryClient.invalidateQueries({
+        queryKey : ["user"]
+      })
+    }
+
+  })
+//cancel button handling
+  const handleCancel = (orderId)=>{
+    const UpdateOrder = data.orderedUserDetails.find((order)=> (
+      order.orderId === orderId 
+    ))
+
+    const updated = {
+      ...UpdateOrder,delivery : "Cancelled"
+    }
+
+    const mainUpdate =  data.orderedUserDetails.map((order)=>(
+      order.orderId === orderId ? updated : order
+    ))
+
+
+    cancelMutation.mutate(mainUpdate)
+  }
 
    if(isLoading){
     return <p>Loading...</p>
@@ -80,15 +121,24 @@ function Orders() {
           </div>
 
           {/* Status */}
-          <div className='w-[30%] flex justify-center items-center'>
-            <p 
+          <div className='w-[30%] flex  justify-center items-center'>
+            <div>
+              <p 
             className={`${user.delivery === "Delivered" && 'text-green-600 italic text-lg'}
           ${user.delivery === "Shipped" && 'text-blue-500 italic text-lg'}
           ${user.delivery === "Pending" && 'text-yellow-500 italic text-lg'}
           ${user.delivery === "Cancelled" && 'text-red-600 italic text-lg'}`}
             >
               {user.delivery}
-            </p>
+            </p><br />
+           {
+            user.delivery !== "Cancelled" &&  <button className='rounded-xl px-6 py-2 bg-gray-800/60 hover:text-white hover:bg-gray-800/90 transition duration-500 '
+            onClick={()=>{
+              handleCancel(user.orderId)
+            }}
+            >Cancel</button>
+           }
+            </div>
           </div>
 
         </div>

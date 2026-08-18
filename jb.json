@@ -513,7 +513,7 @@
       "phone": "7994263689",
       "password": "666666",
       "role": "user",
-      "status": true,
+      "status": false,
       "orderedUserDetails": [
         {
           "orderDate": "2026-08-12T14:24:09.721Z",
@@ -527,7 +527,7 @@
             "orderedState": "kerala"
           },
           "payment": "Cash On Delivery",
-          "delivery": "Delivered",
+          "delivery": "Pending",
           "items": [
             {
               "id": 31,
@@ -684,7 +684,7 @@
             "orderedState": "kerala"
           },
           "payment": "online",
-          "delivery": "Pending",
+          "delivery": "Cancelled",
           "items": [
             {
               "id": 18,
@@ -707,7 +707,7 @@
             "orderedState": "uihuih"
           },
           "payment": "online",
-          "delivery": "success",
+          "delivery": "Delivered",
           "items": [
             {
               "id": 5,
@@ -717,49 +717,76 @@
               "quantity": 1
             }
           ]
-        }
-      ],
-      "cart": [
-        {
-          "id": 17,
-          "title": "The Martian",
-          "author": "Andy Weir",
-          "category": "Science Fiction",
-          "price": 720,
-          "rating": 4.7,
-          "stock": 19,
-          "pages": 384,
-          "description": "An astronaut stranded on Mars uses science and engineering to survive against impossible odds.",
-          "image": "https://99bookstores.com/cdn/shop/files/29752927.jpg?v=1780827624&width=990",
-          "bestSeller": true
         },
         {
-          "id": 51,
-          "title": "How to Win Friends and Influence People",
-          "author": "Dale Carnegie",
-          "category": "Self-Help",
-          "price": 1688,
-          "rating": 4.8,
-          "stock": 18,
-          "pages": 288,
-          "description": "A practical guide to improving communication, building relationships, and interacting effectively with others.",
-          "image": "https://atlanticbooks.com/cdn/shop/files/9781946963758_434x650.webp?v=1774892166",
-          "bestSeller": true
+          "orderDate": "2026-08-17T06:46:27.515Z",
+          "orderId": 1786949187515,
+          "address": {
+            "orderedName": "shan",
+            "orderedNumber": "9995553932",
+            "orderedStreet": "koppam",
+            "orderedPlace": "poolakal",
+            "orderedPincode": "89789",
+            "orderedState": "kerala"
+          },
+          "payment": "Cash On Delivery",
+          "delivery": "Cancelled",
+          "items": [
+            {
+              "id": 16,
+              "image": "https://media.bookchor.com/images/cover/bc/9780593098271.jpg",
+              "title": "Dune",
+              "price": 623,
+              "quantity": 1
+            },
+            {
+              "id": 5,
+              "image": "https://media.bookchor.com/images/cover/583/9788190105910.jpg",
+              "title": "The Power of Now",
+              "price": 519,
+              "quantity": 1
+            }
+          ]
         },
         {
-          "id": 2,
-          "title": "To Kill a Mockingbird",
-          "author": "Harper Lee",
-          "category": "Fiction",
-          "price": 818,
-          "rating": 4.8,
-          "stock": 15,
-          "pages": 336,
-          "description": "A powerful story about justice, morality, and growing up in a divided society.",
-          "image": "https://media.bookchor.com/images/cover/568/9780099549482.jpg",
-          "bestSeller": true
+          "orderDate": "2026-08-17T09:42:04.485Z",
+          "orderId": 1786959724519,
+          "address": {
+            "orderedName": "Rizal bazim",
+            "orderedNumber": "7994263899",
+            "orderedStreet": "vilayur",
+            "orderedPlace": "pattambi",
+            "orderedPincode": "679309",
+            "orderedState": "kerala"
+          },
+          "payment": "Cash On Delivery",
+          "delivery": "Cancelled",
+          "items": [
+            {
+              "id": 2,
+              "image": "https://media.bookchor.com/images/cover/568/9780099549482.jpg",
+              "title": "To Kill a Mockingbird",
+              "price": 818,
+              "quantity": 1
+            },
+            {
+              "id": 4,
+              "image": "https://media.bookchor.com/images/cover/bc/9781847941831_1.jpg",
+              "title": "Atomic Habits",
+              "price": 522,
+              "quantity": 1
+            },
+            {
+              "id": 13,
+              "image": "https://media.bookchor.com/images/cover/592/9781451648539.jpg",
+              "title": "Steve Jobs",
+              "price": 430,
+              "quantity": 1
+            }
+          ]
         }
       ],
+      "cart": [],
       "wishlist": [
         {
           "id": 2,
@@ -772,19 +799,6 @@
           "pages": 336,
           "description": "A powerful story about justice, morality, and growing up in a divided society.",
           "image": "https://media.bookchor.com/images/cover/568/9780099549482.jpg",
-          "bestSeller": true
-        },
-        {
-          "id": 3,
-          "title": "The Alchemist",
-          "author": "Paulo Coelho",
-          "category": "Fiction",
-          "price": 614,
-          "rating": 4.7,
-          "stock": 25,
-          "pages": 208,
-          "description": "A young shepherd follows his dreams and discovers the meaning of destiny.",
-          "image": "https://media.bookchor.com/images/cover/bc/9780785841722.jpg",
           "bestSeller": true
         },
         {
@@ -801,19 +815,6 @@
           "bestSeller": true
         },
         {
-          "id": 14,
-          "title": "Long Walk to Freedom",
-          "author": "Nelson Mandela",
-          "category": "Biography",
-          "price": 525,
-          "rating": 4.8,
-          "stock": 5,
-          "pages": 656,
-          "description": "Nelson Mandela's autobiography describing his journey and struggle against apartheid.",
-          "image": "https://media.bookchor.com/images/cover/595/9780349139623.jpg",
-          "bestSeller": true
-        },
-        {
           "id": 13,
           "title": "Steve Jobs",
           "author": "Walter Isaacson",
@@ -824,6 +825,19 @@
           "pages": 656,
           "description": "A detailed biography of Steve Jobs and his life, career, creativity, and impact on technology.",
           "image": "https://media.bookchor.com/images/cover/592/9781451648539.jpg",
+          "bestSeller": true
+        },
+        {
+          "id": 5,
+          "title": "The Power of Now",
+          "author": "Eckhart Tolle",
+          "category": "Self-Help",
+          "price": 519,
+          "rating": 4.6,
+          "stock": 18,
+          "pages": 236,
+          "description": "A guide to mindfulness and living peacefully in the present moment.",
+          "image": "https://media.bookchor.com/images/cover/583/9788190105910.jpg",
           "bestSeller": true
         }
       ],
@@ -849,7 +863,7 @@
             "orderedState": "kerala"
           },
           "payment": "Cash On Delivery",
-          "delivery": "Cancelled",
+          "delivery": "Delivered",
           "items": [
             {
               "id": 14,
@@ -861,7 +875,7 @@
           ]
         },
         {
-          "orderDate": "2026-08-14T09:58:01.404Z",
+          "orderDate": "2026-07-14T09:58:01.404Z",
           "orderId": 1786701481412,
           "address": {
             "orderedName": "shadhil",
@@ -898,7 +912,7 @@
       "status": true,
       "orderedUserDetails": [
         {
-          "orderDate": "2026-08-12T14:26:55.997Z",
+          "orderDate": "2026-04-12T14:26:55.997Z",
           "orderId": 1786544815997,
           "address": {
             "orderedName": "Jhon",
@@ -919,47 +933,80 @@
               "quantity": 1
             }
           ]
+        },
+        {
+          "orderDate": "2026-08-17T06:29:23.683Z",
+          "orderId": 1786948163692,
+          "address": {
+            "orderedName": "jhon",
+            "orderedNumber": "7995748599",
+            "orderedStreet": "kalikaka",
+            "orderedPlace": "koppam",
+            "orderedPincode": "123345",
+            "orderedState": "keralal"
+          },
+          "payment": "Cash On Delivery",
+          "delivery": "Delivered",
+          "items": [
+            {
+              "id": 5,
+              "image": "https://media.bookchor.com/images/cover/583/9788190105910.jpg",
+              "title": "The Power of Now",
+              "price": 519,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "orderDate": "2026-08-17T06:31:08.112Z",
+          "orderId": 1786948268112,
+          "address": {
+            "orderedName": "jhon",
+            "orderedNumber": "7994368980",
+            "orderedStreet": "vilayur",
+            "orderedPlace": "pattambi",
+            "orderedPincode": "89789",
+            "orderedState": "kerala"
+          },
+          "payment": "Cash On Delivery",
+          "delivery": "Delivered",
+          "items": [
+            {
+              "id": 13,
+              "image": "https://media.bookchor.com/images/cover/592/9781451648539.jpg",
+              "title": "Steve Jobs",
+              "price": 430,
+              "quantity": 1
+            }
+          ]
         }
       ],
       "cart": [],
       "wishlist": [
         {
-          "id": 3,
-          "title": "The Alchemist",
-          "author": "Paulo Coelho",
-          "category": "Fiction",
-          "price": 614,
-          "rating": 4.7,
-          "stock": 25,
-          "pages": 208,
-          "description": "A young shepherd follows his dreams and discovers the meaning of destiny.",
-          "image": "https://media.bookchor.com/images/cover/bc/9780785841722.jpg",
+          "id": 5,
+          "title": "The Power of Now",
+          "author": "Eckhart Tolle",
+          "category": "Self-Help",
+          "price": 519,
+          "rating": 4.6,
+          "stock": 18,
+          "pages": 236,
+          "description": "A guide to mindfulness and living peacefully in the present moment.",
+          "image": "https://media.bookchor.com/images/cover/583/9788190105910.jpg",
           "bestSeller": true
         },
         {
-          "id": 1,
-          "title": "The Great Gatsby",
-          "author": "F. Scott Fitzgerald",
-          "category": "Fiction",
-          "price": 715,
-          "rating": 4.4,
-          "stock": 20,
-          "pages": 180,
-          "description": "A classic novel about wealth, love, ambition, and the American Dream.",
-          "image": "https://media.bookchor.com/images/cover/568/9781447225928.jpg",
-          "bestSeller": true
-        },
-        {
-          "id": 14,
-          "title": "Long Walk to Freedom",
-          "author": "Nelson Mandela",
+          "id": 13,
+          "title": "Steve Jobs",
+          "author": "Walter Isaacson",
           "category": "Biography",
-          "price": 525,
-          "rating": 4.8,
-          "stock": 17,
+          "price": 430,
+          "rating": 4.7,
+          "stock": 12,
           "pages": 656,
-          "description": "Nelson Mandela's autobiography describing his journey and struggle against apartheid.",
-          "image": "https://media.bookchor.com/images/cover/595/9780349139623.jpg",
+          "description": "A detailed biography of Steve Jobs and his life, career, creativity, and impact on technology.",
+          "image": "https://media.bookchor.com/images/cover/592/9781451648539.jpg",
           "bestSeller": true
         }
       ]
@@ -973,7 +1020,7 @@
       "role": "user",
       "orderedUserDetails": [
         {
-          "orderDate": "2026-08-12T14:28:12.759Z",
+          "orderDate": "2026-07-12T14:28:12.759Z",
           "orderId": 1786544892759,
           "address": {
             "orderedName": "Thahir",
@@ -984,7 +1031,7 @@
             "orderedState": "kerala"
           },
           "payment": "Cash On Delivery",
-          "delivery": "Pending",
+          "delivery": "Delivered",
           "items": [
             {
               "id": 4,

@@ -13,9 +13,9 @@ export async function  AllBooks (){
 export async function Users(){
   const id = localStorage.getItem("userId")
 
-    const response = await axios.get(
+    const response =  await axios.get(
     `http://localhost:4001/users/${id}`
-  )
+  ) 
   return response.data
 
 } 
